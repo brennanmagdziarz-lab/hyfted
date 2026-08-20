@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starter Website 2</title>
+
+    <!-- LOADING BOTH FONTS (Outfit for 'hyfted', Great Vibes for everything else) -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@600;900&display=swap" rel="stylesheet">
+
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            
+            /* CURSIVE AS THE BASE FONT FOR THE PAGE */
+            font-family: 'Great Vibes', cursive;
+
+            /* GEMINI-INSPIRED RAINBOW GRADIENT */
+            background: linear-gradient(
+                135deg, 
+                #1a73e8, 
+                #7c4dff, 
+                #9c27b0, 
+                #e040fb, 
+                #1a73e8
+            );
+            background-size: 300% 300%;
+            animation: geminiWave 6s ease-in-out infinite;
+        }
+
+        .container {
+            text-align: center;
+            padding: 0 15px; 
+            max-width: 500px; 
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* KEEPING "HYFTED" IN THE CLEAN READABLE GEOMETRIC FONT */
+        .logo-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 4.5rem; 
+            font-weight: 900; 
+            letter-spacing: -2px; 
+            text-transform: lowercase; 
+            margin-bottom: 30px; 
+
+            /* GLOWING TEXT GRADIENT */
+            background: linear-gradient(270deg, #ffffff, #a5f3fc, #fbcfe8, #ffffff);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            
+            /* Color shift + Floating movement */
+            animation: moveTextGradient 4s ease infinite, floatLogo 3s ease-in-out infinite;
+        }
+
+        /* LOWER TEXT BLOCKS STAY AUTOMATICALLY IN CURSIVE */
+        h1 {
+            font-size: 3.5rem; 
+            margin-bottom: 5px;
+            background: linear-gradient(270deg, #ffffff, #a5f3fc, #fbcfe8, #ffffff);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: moveTextGradient 5s ease infinite;
+        }
+
+        p {
+            font-size: 1.8rem; 
+            line-height: 1.2;
+            margin-bottom: 35px; /* Added spacing above the button */
+            background: linear-gradient(270deg, #ffffff, #a5f3fc, #fbcfe8, #ffffff);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: moveTextGradient 6s ease infinite;
+        }
+
+        /* 1. BUTTON STYLING (Uses Outfit font for crisp readability) */
+        .next-btn {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #ffffff;
+            text-decoration: none; /* Removes default link underline */
+            
+            /* Sizing & Shape */
+            padding: 12px 35px;
+            border-radius: 50px;
+            
+            /* Glassmorphism Styling */
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            
+            /* Smooth animations */
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 2. HOVER EFFECT FOR BUTTON */
+        .next-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: scale(1.05); /* Bounces slightly larger */
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+        }
+
+        /* BACKGROUND TIMELINE */
+        @keyframes geminiWave {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* TEXT GRADIENT TIMELINE */
+        @keyframes moveTextGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* FLOATING TIMELINE FOR THE TOP TEXT */
+        @keyframes floatLogo {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); } 
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body>
+	</head>
+<body>
+      <!-- 🌐 UNIVERSAL HYFTED SCROLL NAVIGATION CAPSULE (BLACK TEXT EDITION) -->
+<div style="width: 100%; display: flex; justify-content: center; position: fixed; top: 20px; left: 0; z-index: 1000; font-family: 'Outfit', sans-serif; padding: 0 15px;">
+    <div style="display: flex; gap: 6px; background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(255, 255, 255, 0.3); padding: 6px; border-radius: 50px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); overflow-x: auto; max-width: 100%; white-space: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none;">
+        <style>
+            div::-webkit-scrollbar { display: none; }
+            .nav-link-item { color: #000000 !important; text-decoration: none; padding: 8px 16px; font-size: 0.85rem; font-weight: 700; border-radius: 50px; transition: all 0.2s; display: inline-block; }
+            .nav-link-item:hover { background: rgba(255, 255, 255, 0.4); }
+            .nav-link-item.active-tab { background: #ffffff !important; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        </style>
+        <a href="index.html" class="nav-link-item">Home</a>
+        <a href="page2.html" class="nav-link-item">Music</a>
+        <a href="page3.html" class="nav-link-item">Breathing</a>
+        <a href="page4.html" class="nav-link-item">Journal</a>
+        <a href="page5.html" class="nav-link-item">AI Chat</a>
+        <a href="page6.html" class="nav-link-item">Visualizer</a>
+        <a href="page7.html" class="nav-link-item">Affirmations</a>
+    </div>
+</div>
+<div style="margin-top: 75px;"></div>
+
+
+    <div class="container">
+        <!-- The rest of your normal page code continues down here -->
+
+    <div class="container">
+        <div class="logo-title">hyfted</div>
+        
+        <h1>Welcome</h1>
+        <p>Chill sounds</p>
+
+        <!-- 3. NEW BUTTON ELEMENT (Update href="next.html" to your actual destination filename) -->
+        <!-- Change this line near the bottom of your code -->
+<a href="page2.html" class="next-btn">Continue</a>
+
+
+    </div>
+</body>
+</html>

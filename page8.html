@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 8 - Night Sky Star Gaze</title>
+    
+    <!-- LOADING FONTS -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* RESET ALL PARSING STYLES CLEANLY TO FORCE VISIBILITY */
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+
+        body {
+            display: block !important;
+            min-height: 100vh;
+            font-family: 'Outfit', sans-serif !important;
+            position: relative !important;
+            
+            /* FIXED BACKDROP: High-contrast midnight indigo void ensures screen never goes pitch black */
+            background-color: #0b111e !important; 
+            overflow: hidden;
+        }
+
+        /* 🌌 FIXED OPTIMIZED STARFIELD MATRIX: Renders a dense sky on a single layer to prevent crashes */
+        body::before {
+            content: "" !important;
+            position: absolute !important;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: 
+                radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+                radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+                radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px);
+            background-size: 550px 550px, 350px 350px, 250px 250px;
+            background-position: 0 0, 40px 60px, 130px 270px;
+            opacity: 0.6;
+            animation: infiniteCosmicGlow 4s infinite ease-in-out;
+            z-index: 1;
+        }
+
+        /* 🏷️ GEMINI WAVY GRADIENT TEXT TITLE */
+        .page-branding-title {
+            position: absolute !important;
+            top: 110px !important; 
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            font-family: 'Outfit', sans-serif !important;
+            font-size: 1.5rem !important;
+            font-weight: 900 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 4px !important;
+            z-index: 10 !important;
+            white-space: nowrap !important;
+            
+            background: linear-gradient(270deg, #ffffff, #a5f3fc, #e040fb, #a5f3fc, #ffffff);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: moveTextGradient 4s ease infinite;
+        }
+
+        /* 💨 CENTERED MINDFULNESS MESSAGE DECK WRAPPER */
+        .calm-message-stage {
+            position: absolute !important;
+            top: 52% !important; 
+            left: 50% !important;
+            transform: translate(-50%, -50%) !important;
+            width: 90% !important;
+            max-width: 440px !important;
+            height: 80px !important;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            z-index: 5 !important;
+        }
+
+        /* THE INDIVIDUAL PHRASE DECK TARGETS */
+        .calm-text-card {
+            position: absolute !important;
+            font-family: 'Outfit', sans-serif !important;
+            font-size: 1.6rem !important;
+            font-weight: 700 !important;
+            text-align: center !important;
+            letter-spacing: 1px !important;
+            text-transform: capitalize !important;
+            opacity: 0; 
+            pointer-events: none;
+            width: 100% !important;
+            
+            background: linear-gradient(135deg, #ffffff, #bae6fd, #e040fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            
+            /* 12s hardware loop manages exactly 3 seconds per phase cleanly */
+            animation: cloudPhraseEngine 12s infinite ease-in-out;
+        }
+
+        .phrase1 { animation-delay: 0s; }
+        .phrase2 { animation-delay: 3s; }
+        .phrase3 { animation-delay: 6s; }
+        .phrase4 { animation-delay: 9s; }
+
+        /* 🎬 PERFORMANCE TIMELINE KEYFRAMES PROCESSED DIRECTLY BY CHIP CORES */
+        @keyframes moveTextGradient { 
+            0% { background-position: 0% 50%; } 
+            50% { background-position: 100% 50%; } 
+            100% { background-position: 0% 50%; } 
+        }
+
+        /* Smooth single-layer global star cluster breathing loop */
+        @keyframes infiniteCosmicGlow {
+            0%, 100% { opacity: 0.3; transform: scale(0.98); }
+            50% { opacity: 0.75; transform: scale(1.02); }
+        }
+
+        @keyframes cloudPhraseEngine {
+            0% { opacity: 0; transform: scale(0.95); filter: blur(4px); }
+            4%, 21% { opacity: 1; transform: scale(1); filter: blur(0px); }
+            24.9% { opacity: 0; transform: scale(1.02); filter: blur(3px); }
+            25%, 100% { opacity: 0; }
+        }
+
+        /* 🌐 UNIVERSAL HYFTED SCROLL NAVIGATION CAPSULE STYLE */
+        .nav-capsule {
+            width: 100% !important;
+            display: flex !important;
+            justify-content: center !important;
+            position: fixed !important;
+            top: 25px !important;
+            left: 0 !important;
+            z-index: 1000 !important;
+            padding: 0 15px !important;
+        }
+
+        .nav-track {
+            display: flex !important;
+            gap: 6px !important;
+            background: #ffffff !important;
+            border: 2px solid #000000 !important;
+            padding: 6px !important;
+            border-radius: 50px !important;
+            box-shadow: 0 6px 0px #000000 !important;
+            overflow-x: auto !important;
+            max-width: 100% !important;
+            white-space: nowrap !important;
+        }
+        .nav-track::-webkit-scrollbar { display: none !important; }
+
+        .nav-link-item { 
+            color: #000000 !important; 
+            text-decoration: none !important; 
+            padding: 8px 14px !important; 
+            font-size: 0.85rem !important; 
+            font-weight: 900 !important; 
+            border-radius: 50px !important; 
+            display: inline-block !important; 
+            white-space: nowrap;
+        }
+        .nav-link-item.active-tab { 
+            background: #000000 !important; 
+            color: #ffffff !important; 
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 🌐 UNIVERSAL ALL-BLACK LINK SCROLLING NAVIGATION DECK -->
+    <div class="nav-capsule">
+        <div class="nav-track">
+            <a href="index.html" class="nav-link-item">Home</a>
+            <a href="page2.html" class="nav-link-item">Music</a>
+            <a href="page3.html" class="nav-link-item">Breathing</a>
+            <a href="page4.html" class="nav-link-item">Journal</a>
+            <a href="page5.html" class="nav-link-item">AI Chat</a>
+            <a href="page6.html" class="nav-link-item">Visualizer</a>
+            <a href="page7.html" class="nav-link-item">Affirmations</a>
+			<a href="page7.html" class="nav-link-item">Wind down stars</a>
+
+        </div>
+    </div>
+
+    <!-- DYNAMIC GEMINI HEADER BADGE -->
+    <div class="page-branding-title">Wind Down Stars</div>
+
+    <!-- HIGH-CONTRAST PLAIN HTML CENTERED PHRASE MATRIX LAYER -->
+    <div class="calm-message-stage">
+        <div class="calm-text-card phrase1">Drop your shoulders...</div>
+        <div class="calm-text-card phrase2">Let your mind settle...</div>
+        <div class="calm-text-card phrase3">Everything is okay...</div>
+        <div class="calm-text-card phrase4">Just breathe deep...</div>
+    </div>
+
+</body>
+</html>

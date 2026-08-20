@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 2 - Hyfted Sounds</title>
+    
+    <!-- LOADING BOTH FONTS (Outfit for buttons/labels, Great Vibes for headings) -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@400;600;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Great Vibes', cursive;
+            
+            /* MATCHING GEMINI BACKGROUND FROM PAGE 1 */
+            background: linear-gradient(135deg, #1a73e8, #7c4dff, #9c27b0, #e040fb, #1a73e8);
+            background-size: 300% 300%;
+            animation: geminiWave 6s ease-in-out infinite;
+            padding: 40px 15px;
+        }
+
+        .container { 
+            text-align: center; 
+            padding: 30px; 
+            max-width: 500px; 
+            width: 100%; 
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 5px;
+            background: linear-gradient(270deg, #ffffff, #a5f3fc, #fbcfe8, #ffffff);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: moveTextGradient 5s ease infinite;
+        }
+
+        .subtitle {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        /* MUSIC AUDIO CARDS */
+        .music-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .music-item {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 15px;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .music-title {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #ffffff;
+        }
+
+        audio {
+            width: 100%;
+            height: 40px;
+            border-radius: 50px;
+        }
+
+        /* BUTTON STYLING */
+        .back-btn {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 35px;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: scale(1.05);
+        }
+
+        /* ANIMATIONS */
+        @keyframes geminiWave { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        @keyframes moveTextGradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+    </style>
+</head>
+<body>
+	</head>
+<body>
+	<!-- 🌐 UNIVERSAL HYFTED SCROLL NAVIGATION CAPSULE (BLACK TEXT EDITION) -->
+<div style="width: 100%; display: flex; justify-content: center; position: fixed; top: 20px; left: 0; z-index: 1000; font-family: 'Outfit', sans-serif; padding: 0 15px;">
+    <div style="display: flex; gap: 6px; background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(255, 255, 255, 0.3); padding: 6px; border-radius: 50px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); overflow-x: auto; max-width: 100%; white-space: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none;">
+        <style>
+            div::-webkit-scrollbar { display: none; }
+            .nav-link-item { color: #000000 !important; text-decoration: none; padding: 8px 16px; font-size: 0.85rem; font-weight: 700; border-radius: 50px; transition: all 0.2s; display: inline-block; }
+            .nav-link-item:hover { background: rgba(255, 255, 255, 0.4); }
+            .nav-link-item.active-tab { background: #ffffff !important; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        </style>
+        <a href="index.html" class="nav-link-item">Home</a>
+        <a href="page2.html" class="nav-link-item">Music</a>
+        <a href="page3.html" class="nav-link-item">Breathing</a>
+        <a href="page4.html" class="nav-link-item">Journal</a>
+        <a href="page5.html" class="nav-link-item">AI Chat</a>
+        <a href="page6.html" class="nav-link-item">Visualizer</a>
+        <a href="page7.html" class="nav-link-item">Affirmations</a>
+    </div>
+</div>
+<div style="margin-top: 75px;"></div>
+
+      
+
+
+    <div class="container">
+        <!-- The rest of your normal page code continues down here -->
+
+
+    <div class="container">
+        <h1>Calm Down Music</h1>
+        <p class="subtitle">1-Minute Preview Samples</p>
+
+        <div class="music-list">
+            <!-- 💾 HERE IS WHERE THE AUDIO FILE CODE GOES -->
+            <div class="music-item">
+                <span class="music-title">🌊 Deep Ocean Relaxation</span>
+                <audio controls src="music1.mp3"></audio>
+            </div>
+
+            <div class="music-item">
+                <span class="music-title">🌧️ Soft Rain & Piano Loft</span>
+                <audio controls src="music2.mp3"></audio>
+            </div>
+
+            <div class="music-item">
+                <span class="music-title">🧘 Tibetan Meditation Bowls</span>
+                <audio controls src="music3.mp3"></audio>
+            </div>
+        </div>
+
+        <!-- Links back to your homepage (index.html) -->
+        <!-- PASTE THIS INSTEAD -->
+<div style="margin-top: 30px; display: flex; gap: 15px; justify-content: center;">
+    <a href="index.html" class="back-btn">Go Back</a>
+    <a href="page3.html" class="back-btn" style="background: rgba(255, 255, 255, 0.3);">Breathing Timer</a>
+</div>
+
+    </div>
+
+    <!-- JAVASCRIPT: Automatically stops the audio precisely at 60 seconds -->
+    <script>
+        const audioPlayers = document.querySelectorAll('audio');
+
+        audioPlayers.forEach(player => {
+            player.addEventListener('timeupdate', function() {
+                if (this.currentTime >= 60) {
+                    this.pause();
+                    this.currentTime = 0;
+                    alert("Your 1-minute sample has finished!");
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
