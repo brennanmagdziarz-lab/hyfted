@@ -196,13 +196,15 @@
             .nav-link-item:hover { background: rgba(255, 255, 255, 0.4); }
             .nav-link-item.active-tab { background: #ffffff !important; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
         </style>
-        <a href="index.html" class="nav-link-item">Home</a>
+        <a href="page1.html" class="nav-link-item">Home</a>
         <a href="page2.html" class="nav-link-item">Music</a>
         <a href="page3.html" class="nav-link-item">Breathing</a>
         <a href="page4.html" class="nav-link-item">Journal</a>
         <a href="page5.html" class="nav-link-item">AI Chat</a>
         <a href="page6.html" class="nav-link-item">Visualizer</a>
         <a href="page7.html" class="nav-link-item">Affirmations</a>
+		<a href="page8.html" class="nav-link-item">star catcher</a>
+		<a href="page9.html" class="nav-link-item">Adventure</a>
     </div>
 </div>
 <div style="margin-top: 75px;"></div>
@@ -234,117 +236,52 @@
     </div>
 
     <script>
-    const chatBox = document.getElementById('chatBox');
-    const userInput = document.getElementById('userInput');
-    const sendButton = document.querySelector('.send-btn');
+        const chatBox = document.getElementById('chatBox');
+        const userInput = document.getElementById('userInput');
 
-    let isThinking = false;
-
-    function handleKeyPress(event) {
-        if (event.key === 'Enter') {
-            event.preventDefault();
-            sendMessage();
-        }
-    }
-
-    async function sendMessage() {
-        const text = userInput.value.trim();
-
-        if (!text || isThinking) return;
-
-        isThinking = true;
-
-        // Show user's message
-        appendMessage(text, 'user-msg');
-
-        // Clear input
-        userInput.value = "";
-
-        // Temporarily disable sending
-        sendButton.disabled = true;
-        sendButton.style.opacity = "0.6";
-        sendButton.textContent = "Thinking...";
-
-        // Show temporary AI bubble
-        const thinkingMessage = document.createElement('div');
-        thinkingMessage.classList.add('message', 'ai-msg');
-        thinkingMessage.textContent = "Thinking... ✨";
-
-        chatBox.appendChild(thinkingMessage);
-        chatBox.scrollTop = chatBox.scrollHeight;
-
-        try {
-            const response = await fetch(
-                "https://hyfted.vercel.app/api/chat",
-                {
-                    method: "POST",
-
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-
-                    body: JSON.stringify({
-                        message: text
-                    })
-                }
-            );
-
-            const data = await response.json();
-
-            if (!response.ok) {
-                throw new Error(
-                    data.error ||
-                    "The AI server returned an error."
-                );
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
             }
-
-            // Replace "Thinking..." with actual AI response
-            thinkingMessage.textContent =
-                data.reply ||
-                "I'm sorry, I couldn't think of a response.";
-
-        } catch (error) {
-
-            console.error(
-                "Hyfted AI error:",
-                error
-            );
-
-            thinkingMessage.textContent =
-                "I'm having trouble connecting to Hyfted AI right now. Please try again in a moment. 🌊";
         }
 
-        chatBox.scrollTop = chatBox.scrollHeight;
+        function sendMessage() {
+            const text = userInput.value.trim();
+            if (!text) return; 
 
-        // Enable sending again
-        isThinking = false;
+            appendMessage(text, 'user-msg');
+            userInput.value = ""; 
 
-        sendButton.disabled = false;
-        sendButton.style.opacity = "1";
-        sendButton.textContent = "Send";
+            setTimeout(() => {
+                const aiResponse = getAIResponse(text);
+                appendMessage(aiResponse, 'ai-msg');
+            }, 1000); 
+        }
 
-        userInput.focus();
-    }
+        function appendMessage(text, className) {
+            const msgDiv = document.createElement('div');
+            msgDiv.classList.add('message', className);
+            msgDiv.textContent = text;
+            chatBox.appendChild(msgDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
 
-
-    function appendMessage(text, className) {
-        const msgDiv =
-            document.createElement('div');
-
-        msgDiv.classList.add(
-            'message',
-            className
-        );
-
-        // textContent keeps messages safe
-        msgDiv.textContent = text;
-
-        chatBox.appendChild(msgDiv);
-
-        chatBox.scrollTop =
-            chatBox.scrollHeight;
-    }
-</script>
+        function getAIResponse(input) {
+            const lowerInput = input.toLowerCase();
+            
+            if (lowerInput.includes('sad') || lowerInput.includes('bad') || lowerInput.includes('stressed')) {
+                return "I'm sorry you're feeling that way. Try opening our Breathing Timer on Page 3 for a quick mental reset. You've got this! 💙";
+            }
+            if (lowerInput.includes('happy') || lowerInput.includes('good') || lowerInput.includes('great')) {
+                return "That's wonderful to hear! Remember to log this positive energy inside your Journal on Page 4! ✨";
+            }
+            if (lowerInput.includes('hello') || lowerInput.includes('hi') || lowerInput.includes('hey')) {
+                return "Hello there! I'm here to listen. Tell me about your day or how your mindset is tracking.";
+            }
+            
+            return "Thank you for sharing that with me. Take a deep breath, listen to some ambient tracks on Page 2, and remember to look after yourself today. 🧘";
+        }
+    </script>
 
 </body>
 </html>

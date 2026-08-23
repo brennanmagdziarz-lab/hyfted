@@ -1,199 +1,932 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page 2 - Hyfted Sounds</title>
-    
-    <!-- LOADING BOTH FONTS (Outfit for buttons/labels, Great Vibes for headings) -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@400;600;900&display=swap" rel="stylesheet">
-    
-    <style>
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            font-family: 'Great Vibes', cursive;
-            
-            /* MATCHING GEMINI BACKGROUND FROM PAGE 1 */
-            background: linear-gradient(135deg, #1a73e8, #7c4dff, #9c27b0, #e040fb, #1a73e8);
-            background-size: 300% 300%;
-            animation: geminiWave 6s ease-in-out infinite;
-            padding: 40px 15px;
-        }
+<title>Page 2 - Hyfted Sounds</title>
 
-        .container { 
-            text-align: center; 
-            padding: 30px; 
-            max-width: 500px; 
-            width: 100%; 
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 24px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@400;600;900&display=swap" rel="stylesheet">
 
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 5px;
-            background: linear-gradient(270deg, #ffffff, #a5f3fc, #fbcfe8, #ffffff);
-            background-size: 400% 400%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: moveTextGradient 5s ease infinite;
-        }
+<style>
 
-        .subtitle {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 30px;
-            letter-spacing: 1px;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        /* MUSIC AUDIO CARDS */
-        .music-list {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin-bottom: 30px;
-        }
+body {
+    min-height: 100vh;
+    padding: 125px 15px 40px;
 
-        .music-item {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 15px;
-            border-radius: 16px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-        }
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-        .music-title {
-            font-family: 'Outfit', sans-serif;
-            font-weight: 600;
-            font-size: 1.1rem;
-            color: #ffffff;
-        }
+    font-family: 'Great Vibes', cursive;
 
-        audio {
-            width: 100%;
-            height: 40px;
-            border-radius: 50px;
-        }
+    background: linear-gradient(
+        135deg,
+        #1677ff,
+        #6246ea,
+        #9b36d6,
+        #e33cff,
+        #ff5fcf,
+        #7c5cff,
+        #29c6ff,
+        #1677ff
+    );
 
-        /* BUTTON STYLING */
-        .back-btn {
-            font-family: 'Outfit', sans-serif;
-            font-weight: 600;
-            font-size: 1rem;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 12px 35px;
-            border-radius: 50px;
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
+    background-size: 500% 500%;
+    animation: geminiWave 5s ease-in-out infinite;
+}
 
-        .back-btn:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: scale(1.05);
-        }
 
-        /* ANIMATIONS */
-        @keyframes geminiWave { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-        @keyframes moveTextGradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-    </style>
+/* NAVIGATION */
+
+.navigation-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    position: fixed;
+    top: 20px;
+    left: 0;
+    z-index: 1000;
+
+    padding: 0 15px;
+
+    font-family: 'Outfit', sans-serif;
+}
+
+.navigation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+
+    padding: 8px;
+    max-width: 100%;
+
+    background: rgba(255,255,255,0.45);
+
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 28px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.nav-link-item {
+    color: #000000 !important;
+    text-decoration: none;
+
+    padding: 9px 15px;
+
+    font-size: 0.82rem;
+    font-weight: 700;
+
+    border-radius: 50px;
+
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.nav-link-item:hover {
+    background: rgba(255,255,255,0.55);
+    transform: translateY(-1px);
+}
+
+.nav-link-item.active-tab {
+    background: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+
+/* MAIN CONTAINER */
+
+.container {
+    width: 100%;
+    max-width: 560px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    background: rgba(255,255,255,0.12);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 26px;
+
+    box-shadow: 0 10px 35px rgba(0,0,0,0.18);
+}
+
+
+/* TITLE */
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+
+    font-size: 3.8rem;
+    font-weight: 400;
+
+    margin-bottom: 5px;
+
+    background: linear-gradient(
+        270deg,
+        #ffffff,
+        #a5f3fc,
+        #fbcfe8,
+        #ffffff
+    );
+
+    background-size: 400% 400%;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: moveTextGradient 5s ease infinite;
+}
+
+
+/* SUBTITLE */
+
+.subtitle {
+    font-family: 'Outfit', sans-serif;
+
+    font-size: 1rem;
+
+    color: rgba(255,255,255,0.85);
+
+    margin-bottom: 30px;
+
+    letter-spacing: 1px;
+}
+
+
+/* MUSIC CARD */
+
+.music-item {
+    padding: 22px;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.12);
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 15px;
+
+    transition: all 0.3s ease;
+}
+
+.music-item:hover {
+    background: rgba(255,255,255,0.18);
+    transform: translateY(-2px);
+}
+
+
+/* MUSIC TITLE */
+
+.music-title {
+    font-family: 'Outfit', sans-serif;
+
+    font-weight: 600;
+    font-size: 1.15rem;
+
+    color: #ffffff;
+}
+
+
+/* PLAY BUTTON */
+
+.sound-button {
+    width: 100%;
+    min-height: 54px;
+
+    padding: 12px 20px;
+
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 50px;
+
+    background: rgba(255,255,255,0.20);
+
+    color: #ffffff;
+
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+
+    transition: all 0.25s ease;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.sound-button:hover {
+    background: rgba(255,255,255,0.32);
+    transform: scale(1.025);
+}
+
+.sound-button:active {
+    transform: scale(0.97);
+}
+
+
+/* PLAY ICON */
+
+.play-icon {
+    width: 0;
+    height: 0;
+
+    border-top: 9px solid transparent;
+    border-bottom: 9px solid transparent;
+    border-left: 14px solid #ffffff;
+}
+
+
+/* PAUSE ICON */
+
+.pause-icon {
+    width: 15px;
+    height: 18px;
+
+    display: inline-flex;
+    gap: 4px;
+}
+
+.pause-icon::before,
+.pause-icon::after {
+    content: "";
+
+    width: 5px;
+    height: 18px;
+
+    background: #ffffff;
+
+    border-radius: 2px;
+}
+
+
+/* PROGRESS */
+
+.progress-container {
+    width: 100%;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 5px;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.25);
+
+    cursor: pointer;
+}
+
+.progress-bar::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+
+    width: 14px;
+    height: 14px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    cursor: pointer;
+}
+
+.progress-bar::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+
+/* TIME */
+
+.time {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+
+    color: rgba(255,255,255,0.7);
+
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.72rem;
+}
+
+
+/* VOLUME */
+
+.volume-row {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.volume-label {
+    color: white;
+
+    font-family: 'Outfit', sans-serif;
+
+    font-size: 0.8rem;
+}
+
+.volume-slider {
+    flex: 1;
+    accent-color: white;
+    cursor: pointer;
+}
+
+
+/* STATUS */
+
+.status {
+    min-height: 18px;
+
+    color: rgba(255,255,255,0.7);
+
+    font-family: 'Outfit', sans-serif;
+
+    font-size: 0.75rem;
+}
+
+
+/* BOTTOM BUTTONS */
+
+.button-row {
+    margin-top: 30px;
+
+    display: flex;
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.back-btn {
+    font-family: 'Outfit', sans-serif;
+
+    font-weight: 600;
+    font-size: 1rem;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 12px 25px;
+
+    border-radius: 50px;
+
+    background: rgba(255,255,255,0.15);
+
+    border: 1px solid rgba(255,255,255,0.3);
+
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: rgba(255,255,255,0.28);
+    transform: scale(1.05);
+}
+
+
+/* ANIMATIONS */
+
+@keyframes geminiWave {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
+}
+
+@keyframes moveTextGradient {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 125px 10px 30px;
+    }
+
+    .navigation-wrapper {
+        padding: 0 10px;
+    }
+
+    .navigation {
+        gap: 4px;
+        padding: 7px;
+    }
+
+    .nav-link-item {
+        font-size: 0.68rem;
+        padding: 8px 10px;
+    }
+
+    .container {
+        padding: 25px 18px;
+    }
+
+    h1 {
+        font-size: 3.2rem;
+    }
+
+    .music-title {
+        font-size: 1rem;
+    }
+
+}
+
+</style>
 </head>
+
 <body>
-	</head>
-<body>
-	<!-- 🌐 UNIVERSAL HYFTED SCROLL NAVIGATION CAPSULE (BLACK TEXT EDITION) -->
-<div style="width: 100%; display: flex; justify-content: center; position: fixed; top: 20px; left: 0; z-index: 1000; font-family: 'Outfit', sans-serif; padding: 0 15px;">
-    <div style="display: flex; gap: 6px; background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(255, 255, 255, 0.3); padding: 6px; border-radius: 50px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); overflow-x: auto; max-width: 100%; white-space: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none;">
-        <style>
-            div::-webkit-scrollbar { display: none; }
-            .nav-link-item { color: #000000 !important; text-decoration: none; padding: 8px 16px; font-size: 0.85rem; font-weight: 700; border-radius: 50px; transition: all 0.2s; display: inline-block; }
-            .nav-link-item:hover { background: rgba(255, 255, 255, 0.4); }
-            .nav-link-item.active-tab { background: #ffffff !important; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        </style>
-        <a href="index.html" class="nav-link-item">Home</a>
-        <a href="page2.html" class="nav-link-item">Music</a>
-        <a href="page3.html" class="nav-link-item">Breathing</a>
-        <a href="page4.html" class="nav-link-item">Journal</a>
-        <a href="page5.html" class="nav-link-item">AI Chat</a>
-        <a href="page6.html" class="nav-link-item">Visualizer</a>
-        <a href="page7.html" class="nav-link-item">Affirmations</a>
+
+
+<!-- NAVIGATION -->
+
+<div class="navigation-wrapper">
+
+    <div class="navigation">
+
+        <a href="page1.html" class="nav-link-item">
+            Home
+        </a>
+
+        <a href="page2.html" class="nav-link-item active-tab">
+            Music
+        </a>
+
+        <a href="page3.html" class="nav-link-item">
+            Breathing
+        </a>
+
+        <a href="page4.html" class="nav-link-item">
+            Journal
+        </a>
+
+        <a href="page5.html" class="nav-link-item">
+            AI Chat
+        </a>
+
+        <a href="page6.html" class="nav-link-item">
+            Visualizer
+        </a>
+
+        <a href="page7.html" class="nav-link-item">
+            Affirmations
+        </a>
+
+        <a href="page8.html" class="nav-link-item">
+            star catcher
+        </a>
+
+        <a href="page9.html" class="nav-link-item">
+            Adventure
+        </a>
+
     </div>
+
 </div>
-<div style="margin-top: 75px;"></div>
-
-      
 
 
-    <div class="container">
-        <!-- The rest of your normal page code continues down here -->
+<!-- MAIN PAGE -->
+
+<div class="container">
+
+    <h1>
+        Calm Down Music
+    </h1>
+
+    <p class="subtitle">
+        Take a moment to slow down
+    </p>
 
 
-    <div class="container">
-        <h1>Calm Down Music</h1>
-        <p class="subtitle">1-Minute Preview Samples</p>
+    <!-- MUSIC -->
 
-        <div class="music-list">
-            <!-- 💾 HERE IS WHERE THE AUDIO FILE CODE GOES -->
-            <div class="music-item">
-                <span class="music-title">🌊 Deep Ocean Relaxation</span>
-                <audio controls src="music1.mp3"></audio>
-            </div>
+    <div class="music-item">
 
-            <div class="music-item">
-                <span class="music-title">🌧️ Soft Rain & Piano Loft</span>
-                <audio controls src="music2.mp3"></audio>
-            </div>
+        <span class="music-title">
+            Calm Music
+        </span>
 
-            <div class="music-item">
-                <span class="music-title">🧘 Tibetan Meditation Bowls</span>
-                <audio controls src="music3.mp3"></audio>
-            </div>
+
+        <!-- YOUR REAL MP3 FILE -->
+
+  <audio id="calmAudio" preload="metadata">
+     <source src="./calm-music.mp3.mp3" type="audio/mpeg">
+  </audio>
+
+        <!-- PLAY BUTTON -->
+
+        <button
+            id="playButton"
+            class="sound-button"
+            onclick="toggleMusic()">
+
+            <span
+                id="playIcon"
+                class="play-icon">
+            </span>
+
+            <span id="buttonText">
+                Play Music
+            </span>
+
+        </button>
+	<!-- FULL SONGS BUTTON -->
+<button
+    class="sound-button"
+    onclick="window.location.href='page10.html'">
+    Full-songs
+</button>	
+		
+
+
+        <!-- PROGRESS BAR -->
+
+        <div class="progress-container">
+
+            <input
+                id="progress"
+                class="progress-bar"
+                type="range"
+                min="0"
+                max="100"
+                value="0"
+                step="0.1"
+                oninput="seekMusic(this.value)"
+            >
+
         </div>
 
-        <!-- Links back to your homepage (index.html) -->
-        <!-- PASTE THIS INSTEAD -->
-<div style="margin-top: 30px; display: flex; gap: 15px; justify-content: center;">
-    <a href="index.html" class="back-btn">Go Back</a>
-    <a href="page3.html" class="back-btn" style="background: rgba(255, 255, 255, 0.3);">Breathing Timer</a>
-</div>
+
+        <!-- TIME -->
+
+        <div class="time">
+
+            <span id="currentTime">
+                0:00
+            </span>
+
+            <span id="duration">
+                0:00
+            </span>
+
+        </div>
+
+
+        <!-- VOLUME -->
+
+        <div class="volume-row">
+
+            <span class="volume-label">
+                Volume
+            </span>
+
+            <input
+                id="volume"
+                class="volume-slider"
+                type="range"
+                min="0"
+                max="1"
+                step="0.01"
+                value="0.5"
+                oninput="changeVolume(this.value)"
+            >
+
+        </div>
+
+
+        <div
+            id="status"
+            class="status">
+
+            Ready
+
+        </div>
 
     </div>
 
-    <!-- JAVASCRIPT: Automatically stops the audio precisely at 60 seconds -->
-    <script>
-        const audioPlayers = document.querySelectorAll('audio');
 
-        audioPlayers.forEach(player => {
-            player.addEventListener('timeupdate', function() {
-                if (this.currentTime >= 60) {
-                    this.pause();
-                    this.currentTime = 0;
-                    alert("Your 1-minute sample has finished!");
-                }
-            });
+    <!-- BUTTONS -->
+
+    <div class="button-row">
+
+        <a
+            href="page1.html"
+            class="back-btn">
+
+            Go Back
+
+        </a>
+
+        <a
+            href="page3.html"
+            class="back-btn"
+            style="background: rgba(255,255,255,0.3);">
+
+            Breathing Timer
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<script>
+console.log("SCRIPT IS RUNNING");
+
+/* GET THE AUDIO */
+
+const audio =
+    document.getElementById("calmAudio");
+const upBeatAudio =
+    document.getElementById("upbeatAudio");	
+
+const playIcon =
+    document.getElementById("playIcon");
+
+const buttonText =
+    document.getElementById("buttonText");
+
+const progress =
+    document.getElementById("progress");
+
+const currentTimeText =
+    document.getElementById("currentTime");
+
+const durationText =
+    document.getElementById("duration");
+
+const volume =
+    document.getElementById("volume");
+
+const status =
+    document.getElementById("status");
+
+
+/* DEFAULT VOLUME */
+
+audio.volume = 0.5;
+
+
+/* PLAY / PAUSE */
+
+function toggleMusic() {
+
+    if (audio.paused) {
+
+        audio.play()
+        .then(function() {
+
+            playIcon.className = "pause-icon";
+
+            buttonText.textContent = "Pause Music";
+
+            status.textContent = "Playing...";
+
+        })
+        .catch(function(error) {
+
+            status.textContent =
+                "Could not play Calm.mp3";
+
+            console.log(error);
+
         });
-    </script>
+
+    } else {
+
+        audio.pause();
+
+        playIcon.className = "play-icon";
+
+        buttonText.textContent = "Play Music";
+
+        status.textContent = "Paused";
+
+    }
+
+}
+
+
+/* WHEN MUSIC PLAYS */
+
+audio.addEventListener("play", function() {
+
+    playIcon.className = "pause-icon";
+
+    buttonText.textContent = "Pause Music";
+
+    status.textContent = "Playing...";
+
+});
+
+
+/* WHEN MUSIC PAUSES */
+
+audio.addEventListener("pause", function() {
+
+    if (!audio.ended) {
+
+        playIcon.className = "play-icon";
+
+        buttonText.textContent = "Play Music";
+
+    }
+
+});
+
+
+/* WHEN MUSIC ENDS */
+
+audio.addEventListener("ended", function() {
+
+    playIcon.className = "play-icon";
+
+    buttonText.textContent = "Play Music";
+
+    progress.value = 0;
+
+    status.textContent = "Finished";
+
+});
+
+
+/* LOAD SONG LENGTH */
+
+audio.addEventListener("loadedmetadata", function() {
+
+    durationText.textContent =
+        formatTime(audio.duration);
+
+});
+
+
+/* UPDATE PROGRESS */
+
+audio.addEventListener("timeupdate", function() {
+
+    if (!audio.duration) {
+        return;
+    }
+
+    const percent =
+        (audio.currentTime / audio.duration) * 100;
+
+    progress.value = percent;
+
+    currentTimeText.textContent =
+        formatTime(audio.currentTime);
+
+});
+
+
+/* MOVE THROUGH SONG */
+
+function seekMusic(value) {
+
+    if (!audio.duration) {
+        return;
+    }
+
+    audio.currentTime =
+        (value / 100) * audio.duration;
+
+}
+
+
+/* CHANGE VOLUME */
+
+function changeVolume(value) {
+
+    audio.volume =
+        parseFloat(value);
+
+}
+
+
+/* FORMAT TIME */
+
+function formatTime(seconds) {
+
+    if (!Number.isFinite(seconds)) {
+        return "0:00";
+    }
+
+    const minutes =
+        Math.floor(seconds / 60);
+
+    const remainingSeconds =
+        Math.floor(seconds % 60);
+
+    return minutes + ":" +
+        remainingSeconds
+        .toString()
+        .padStart(2, "0");
+
+}
+
+
+/* 1-MINUTE PREVIEW */
+
+audio.addEventListener("timeupdate", function() {
+
+    if (audio.currentTime >= 60) {
+
+        audio.pause();
+
+        audio.currentTime = 0;
+
+        progress.value = 0;
+
+        playIcon.className = "play-icon";
+
+        buttonText.textContent = "Play Music";
+
+        status.textContent =
+            "1-minute preview finished";
+
+    }
+
+});
+
+
+/* ERROR CHECK */
+
+audio.addEventListener("error", function() {
+    status.textContent = "Calm.mp3 could not be found.";
+});
+
+
+
+</script>
 
 </body>
 </html>

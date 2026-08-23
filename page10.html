@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Full Songs</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+
+    background: linear-gradient(
+        120deg,
+        #4285f4,
+        #8e44ad,
+        #00bcd4,
+        #4285f4,
+        #9c27b0,
+        #00acc1
+    );
+
+    background-size: 400% 400%;
+    animation: geminiWave 5s ease-in-out infinite;
+}
+
+@keyframes geminiWave {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    25% {
+        background-position: 50% 100%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    75% {
+        background-position: 50% 0%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.song {
+    max-width: 650px;
+    margin: 0 auto 30px auto;
+    padding: 30px;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.15);
+}
+
+.song h2 {
+    margin-top: 0;
+
+    text-decoration: line-through;
+    text-decoration-color: red;
+    text-decoration-thickness: 6px;
+}
+
+.subscription-required {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0 5px 0;
+}
+
+audio {
+    width: 100%;
+    margin-top: 20px;
+}
+
+
+/* MONTHLY SUBSCRIPTION PURCHASE BUTTON */
+
+.subscription-button {
+    display: inline-block;
+
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+    padding: 18px 35px;
+
+    border-radius: 30px;
+
+    background: linear-gradient(
+        120deg,
+        #ff0080,
+        #7928ca,
+        #00c6ff,
+        #00f2fe,
+        #ff0080
+    );
+
+    background-size: 400% 400%;
+
+    animation: subscriptionGeminiWave 4s ease-in-out infinite;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    font-size: 20px;
+
+    box-shadow:
+        0 0 15px rgba(255,255,255,0.35),
+        0 8px 25px rgba(0,0,0,0.25);
+
+    transition: transform 0.2s;
+}
+
+@keyframes subscriptionGeminiWave {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    20% {
+        background-position: 50% 100%;
+    }
+
+    40% {
+        background-position: 100% 50%;
+    }
+
+    60% {
+        background-position: 50% 0%;
+    }
+
+    80% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.subscription-button:hover {
+    transform: scale(1.07);
+}
+
+
+/* BACK BUTTON */
+
+.back-button {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    padding: 15px 30px;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,0.2);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Full Songs</h1>
+
+<p class="subtitle">
+    Listen to the full versions of our music.
+</p>
+
+
+<!-- FIRST FULL SONG -->
+
+<div class="song">
+
+    <h2>Relaxing Piano</h2>
+
+    <p class="subscription-required">
+        🔒 Monthly subscription required
+    </p>
+
+    <audio controls>
+
+        <source
+            src="./calm-music.mp3.mp3"
+            type="audio/mpeg">
+
+    </audio>
+
+</div>
+
+
+<!-- SECOND FULL SONG -->
+
+<div class="song">
+
+    <h2>Relaxing Jazz Coffee Shop</h2>
+
+    <p class="subscription-required">
+        🔒 Monthly subscription required
+    </p>
+
+    <audio controls>
+
+        <source
+            src="./denis-pavlov-music-relaxing-jazz-podcast-coffee-shop-music-192283%202.mp3"
+            type="audio/mpeg">
+
+    </audio>
+
+</div>
+
+
+<!-- THIRD FULL SONG -->
+
+<div class="song">
+
+    <h2>Relaxing Jazz Piano</h2>
+
+    <p class="subscription-required">
+        🔒 Monthly subscription required
+    </p>
+
+    <audio controls>
+
+        <source
+            src="./denis-pavlov-music-jazz-romantic-piano-relax-calm-podcast-instrumental-music-400308%202.mp3"
+            type="audio/mpeg">
+
+    </audio>
+
+</div>
+
+
+<!-- FOURTH FULL SONG -->
+
+<div class="song">
+
+    <h2>Podcast Lo-Fi Music</h2>
+
+    <p class="subscription-required">
+        🔒 Monthly subscription required
+    </p>
+
+    <audio controls>
+
+        <source
+            src="./denis-pavlov-music-podcast-lo-fi-music-205515.mp3"
+            type="audio/mpeg">
+
+    </audio>
+
+</div>
+
+
+<!-- FIFTH FULL SONG -->
+
+<div class="song">
+
+    <h2>Smooth Jazz Instrumental Music</h2>
+
+    <p class="subscription-required">
+        🔒 Monthly subscription required
+    </p>
+
+    <audio controls>
+
+        <source
+            src="./denis-pavlov-music-podcast-smooth-jazz-instrumental-music-225674.mp3"
+            type="audio/mpeg">
+
+    </audio>
+
+</div>
+
+
+<!-- MONTHLY SUBSCRIPTION PURCHASE BUTTON -->
+
+<a
+    href="https://buy.stripe.com/test_7sY00cb6bg2D4yCdJd7wA00"
+    class="subscription-button">
+
+    monthly subscription purchase
+
+</a>
+
+
+<br>
+
+
+<!-- BACK BUTTON -->
+
+<a
+    href="page2.html"
+    class="back-button">
+
+    ← Back to Samples
+
+</a>
+
+
+</body>
+</html>

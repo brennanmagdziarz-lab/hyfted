@@ -4,38 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page 4 - Hyfted Journal</title>
-    
-    <!-- LOADING FONTS -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@400;600;900&display=swap" rel="stylesheet">
-    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@400;600;900&display=swap" rel="stylesheet">
+
     <style>
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             min-height: 100vh;
             font-family: 'Great Vibes', cursive;
-            
-            /* MATCHING GEMINI BACKGROUND FROM THE OTHER PAGES */
-            background: linear-gradient(135deg, #1a73e8, #7c4dff, #9c27b0, #e040fb, #1a73e8);
+            background: linear-gradient(
+                135deg,
+                #1a73e8,
+                #7c4dff,
+                #9c27b0,
+                #e040fb,
+                #1a73e8
+            );
             background-size: 300% 300%;
             animation: geminiWave 6s ease-in-out infinite;
-            padding: 40px 15px;
+            padding: 110px 15px 40px;
         }
 
-        .container { 
-            text-align: center; 
-            padding: 35px 25px; 
-            max-width: 500px; 
-            width: 100%; 
+        .container {
+            text-align: center;
+            padding: 35px 25px;
+            max-width: 550px;
+            width: 100%;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
@@ -47,7 +51,13 @@
         h1 {
             font-size: 3.5rem;
             margin-bottom: 5px;
-            background: linear-gradient(270deg, #ffffff, #a5f3fc, #fbcfe8, #ffffff);
+            background: linear-gradient(
+                270deg,
+                #ffffff,
+                #a5f3fc,
+                #fbcfe8,
+                #ffffff
+            );
             background-size: 400% 400%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -62,7 +72,58 @@
             letter-spacing: 1px;
         }
 
-        /* MOOD SELECTOR WIDGET */
+        .nav-capsule {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            top: 20px;
+            left: 0;
+            z-index: 1000;
+            font-family: 'Outfit', sans-serif;
+            padding: 0 15px;
+        }
+
+        .nav-inner {
+            display: flex;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 6px;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            overflow-x: auto;
+            max-width: 100%;
+            white-space: nowrap;
+            scrollbar-width: none;
+        }
+
+        .nav-inner::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-link-item {
+            color: #000000 !important;
+            text-decoration: none;
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        .nav-link-item:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .active-tab {
+            background: #ffffff !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
         .mood-box {
             display: flex;
             justify-content: space-around;
@@ -82,10 +143,14 @@
             transform: scale(1.25);
         }
 
-        /* INPUT TEXT AREA */
+        .mood-btn.selected {
+            transform: scale(1.3);
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+        }
+
         textarea {
             width: 100%;
-            height: 120px;
+            height: 140px;
             font-family: 'Outfit', sans-serif;
             font-size: 1rem;
             padding: 15px;
@@ -102,20 +167,21 @@
             color: rgba(255, 255, 255, 0.6);
         }
 
-        /* BUTTONS */
         .btn-group {
             display: flex;
-            gap: 15px;
+            gap: 10px;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
-        .control-btn, .back-btn {
+        .control-btn,
+        .back-btn {
             font-family: 'Outfit', sans-serif;
             font-weight: 600;
             font-size: 1rem;
             color: #ffffff;
             text-decoration: none;
-            padding: 12px 30px;
+            padding: 12px 22px;
             border-radius: 50px;
             background: rgba(255, 255, 255, 0.15);
             border: 1px solid rgba(255, 255, 255, 0.3);
@@ -124,7 +190,8 @@
             display: inline-block;
         }
 
-        .control-btn:hover, .back-btn:hover {
+        .control-btn:hover,
+        .back-btn:hover {
             background: rgba(255, 255, 255, 0.25);
             transform: scale(1.05);
         }
@@ -134,87 +201,415 @@
             border-color: #a5f3fc;
         }
 
-        /* ANIMATIONS */
-        @keyframes geminiWave { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-        @keyframes moveTextGradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-    </style>
-</head>
-<body>
-	</head>
-<body>
-      <!-- 🌐 UNIVERSAL HYFTED SCROLL NAVIGATION CAPSULE (BLACK TEXT EDITION) -->
-<div style="width: 100%; display: flex; justify-content: center; position: fixed; top: 20px; left: 0; z-index: 1000; font-family: 'Outfit', sans-serif; padding: 0 15px;">
-    <div style="display: flex; gap: 6px; background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(255, 255, 255, 0.3); padding: 6px; border-radius: 50px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); overflow-x: auto; max-width: 100%; white-space: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none;">
-        <style>
-            div::-webkit-scrollbar { display: none; }
-            .nav-link-item { color: #000000 !important; text-decoration: none; padding: 8px 16px; font-size: 0.85rem; font-weight: 700; border-radius: 50px; transition: all 0.2s; display: inline-block; }
-            .nav-link-item:hover { background: rgba(255, 255, 255, 0.4); }
-            .nav-link-item.active-tab { background: #ffffff !important; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        </style>
-        <a href="index.html" class="nav-link-item">Home</a>
-        <a href="page2.html" class="nav-link-item">Music</a>
-        <a href="page3.html" class="nav-link-item">Breathing</a>
-        <a href="page4.html" class="nav-link-item">Journal</a>
-        <a href="page5.html" class="nav-link-item">AI Chat</a>
-        <a href="page6.html" class="nav-link-item">Visualizer</a>
-        <a href="page7.html" class="nav-link-item">Affirmations</a>
-    </div>
-</div>
-<div style="margin-top: 75px;"></div>
-
-
-    <div class="container">
-        <!-- The rest of your normal page code continues down here -->
-
-
-    <div class="container">
-        <h1>Daily Reflection</h1>
-        <p class="subtitle">How are you feeling right now?</p>
-
-        <!-- Interactive Mood Picker -->
-        <div class="mood-box">
-            <button class="mood-btn" onclick="selectMood('😌')">😌</button>
-            <button class="mood-btn" onclick="selectMood('😊')">😊</button>
-            <button class="mood-btn" onclick="selectMood('🌿')">🌿</button>
-            <button class="mood-btn" onclick="selectMood('😴')">😴</button>
-            <button class="mood-btn" onclick="selectMood('🤯')">🤯</button>
-        </div>
-
-        <!-- Text Input Field -->
-        <textarea id="journalInput" placeholder="Write down a quick thought to clear your mind..."></textarea>
-
-        <!-- PASTE THIS INSTEAD -->
-<div class="btn-group">
-    <a href="page3.html" class="back-btn">Go Back</a>
-    <button class="control-btn save-btn" onclick="saveEntry()">Save Entry</button>
-    <a href="page5.html" class="back-btn" style="background: rgba(165, 243, 252, 0.25); border-color: #a5f3fc;">Talk to AI</a>
-</div>
-
-    </div>
-
-    <!-- JAVASCRIPT: Handles clicking emojis and saving entries -->
-    <script>
-        let chosenMood = "";
-
-        function selectMood(emoji) {
-            chosenMood = emoji;
-            alert("Mood set to: " + emoji);
+        .journal-history {
+            margin-top: 30px;
+            text-align: left;
+            font-family: 'Outfit', sans-serif;
         }
 
-        function saveEntry() {
-            const text = document.getElementById('journalInput').value;
-            
-            if (!text && !chosenMood) {
-                alert("Please select a mood or write a thought first!");
-                return;
+        .journal-history h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+        }
+
+        .journal-entry {
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 18px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+
+        .entry-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .entry-mood {
+            font-size: 1.6rem;
+        }
+
+        .entry-date {
+            font-size: 0.72rem;
+            color: rgba(255, 255, 255, 0.65);
+            text-align: right;
+        }
+
+        .entry-text {
+            color: white;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .delete-btn {
+            margin-top: 12px;
+            padding: 7px 14px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.12);
+            color: white;
+            cursor: pointer;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .delete-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .empty-journal {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.65);
+            padding: 20px;
+            font-size: 0.95rem;
+        }
+
+        @keyframes geminiWave {
+            0% {
+                background-position: 0% 50%;
             }
 
-            alert("Your reflection has been successfully saved to your mind! ✨");
-            
-            // Clear out the input area for next time
-            document.getElementById('journalInput').value = "";
-            chosenMood = "";
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
+
+        @keyframes moveTextGradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="nav-capsule">
+        <div class="nav-inner">
+
+            <a href="page1.html" class="nav-link-item">Home</a>
+            <a href="page2.html" class="nav-link-item">Music</a>
+            <a href="page3.html" class="nav-link-item">Breathing</a>
+            <a href="page4.html" class="nav-link-item active-tab">Journal</a>
+            <a href="page5.html" class="nav-link-item">AI Chat</a>
+            <a href="page6.html" class="nav-link-item">Visualizer</a>
+            <a href="page7.html" class="nav-link-item">Affirmations</a>
+			<a href="page8.html" class="nav-link-item">star catcher</a>
+		<a href="page9.html" class="nav-link-item">Adventure</a>
+
+        </div>
+    </div>
+
+
+    <div class="container">
+
+        <h1>Daily Reflection</h1>
+
+        <p class="subtitle">
+            How are you feeling right now?
+        </p>
+
+
+        <div class="mood-box">
+
+            <button type="button" class="mood-btn" onclick="selectMood(0)">
+                😌
+            </button>
+
+            <button type="button" class="mood-btn" onclick="selectMood(1)">
+                😊
+            </button>
+
+            <button type="button" class="mood-btn" onclick="selectMood(2)">
+                🌿
+            </button>
+
+            <button type="button" class="mood-btn" onclick="selectMood(3)">
+                😴
+            </button>
+
+            <button type="button" class="mood-btn" onclick="selectMood(4)">
+                🤯
+            </button>
+
+        </div>
+
+
+        <textarea
+            id="journalInput"
+            placeholder="Write down a quick thought to clear your mind..."
+        ></textarea>
+
+
+        <div class="btn-group">
+
+            <a href="page3.html" class="back-btn">
+                Go Back
+            </a>
+
+            <button
+                type="button"
+                class="control-btn save-btn"
+                onclick="saveEntry()"
+            >
+                Save Entry
+            </button>
+
+            <a
+                href="page5.html"
+                class="back-btn"
+                style="background: rgba(165, 243, 252, 0.25); border-color: #a5f3fc;"
+            >
+                Talk to AI
+            </a>
+
+        </div>
+
+
+        <div class="journal-history">
+
+            <h2>My Journal</h2>
+
+            <div id="journalList"></div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        var moods = ["😌", "😊", "🌿", "😴", "🤯"];
+
+        var chosenMood = "";
+
+
+        function selectMood(number) {
+
+            chosenMood = moods[number];
+
+            var buttons = document.querySelectorAll(".mood-btn");
+
+            for (var i = 0; i < buttons.length; i++) {
+
+                buttons[i].classList.remove("selected");
+
+            }
+
+            buttons[number].classList.add("selected");
+
+        }
+
+
+        function saveEntry() {
+
+            var text = document
+                .getElementById("journalInput")
+                .value
+                .trim();
+
+
+            if (text === "" && chosenMood === "") {
+
+                alert("Please select a mood or write a thought first!");
+
+                return;
+
+            }
+
+
+            var entries = JSON.parse(
+                localStorage.getItem("hyftedJournal") || "[]"
+            );
+
+
+            var newEntry = {
+
+                text: text,
+
+                mood: chosenMood || "📝",
+
+                date: new Date().toLocaleString()
+
+            };
+
+
+            entries.unshift(newEntry);
+
+
+            localStorage.setItem(
+                "hyftedJournal",
+                JSON.stringify(entries)
+            );
+
+
+            document.getElementById("journalInput").value = "";
+
+            chosenMood = "";
+
+
+            var buttons = document.querySelectorAll(".mood-btn");
+
+            for (var i = 0; i < buttons.length; i++) {
+
+                buttons[i].classList.remove("selected");
+
+            }
+
+
+            displayEntries();
+
+
+            alert("Your journal entry has been saved! ✨");
+
+        }
+
+
+        function displayEntries() {
+
+            var journalList =
+                document.getElementById("journalList");
+
+
+            var entries = JSON.parse(
+                localStorage.getItem("hyftedJournal") || "[]"
+            );
+
+
+            journalList.innerHTML = "";
+
+
+            if (entries.length === 0) {
+
+                journalList.innerHTML =
+                    '<p class="empty-journal">Your saved reflections will appear here. 🌿</p>';
+
+                return;
+
+            }
+
+
+            for (var i = 0; i < entries.length; i++) {
+
+                var entry = entries[i];
+
+                var entryDiv =
+                    document.createElement("div");
+
+                entryDiv.className = "journal-entry";
+
+
+                var top =
+                    document.createElement("div");
+
+                top.className = "entry-top";
+
+
+                var mood =
+                    document.createElement("span");
+
+                mood.className = "entry-mood";
+
+                mood.textContent = entry.mood;
+
+
+                var date =
+                    document.createElement("span");
+
+                date.className = "entry-date";
+
+                date.textContent = entry.date;
+
+
+                top.appendChild(mood);
+
+                top.appendChild(date);
+
+
+                var text =
+                    document.createElement("p");
+
+                text.className = "entry-text";
+
+                text.textContent = entry.text;
+
+
+                var deleteButton =
+                    document.createElement("button");
+
+                deleteButton.type = "button";
+
+                deleteButton.className = "delete-btn";
+
+                deleteButton.textContent = "Delete";
+
+
+                deleteButton.onclick = (function(index) {
+
+                    return function() {
+
+                        deleteEntry(index);
+
+                    };
+
+                })(i);
+
+
+                entryDiv.appendChild(top);
+
+                entryDiv.appendChild(text);
+
+                entryDiv.appendChild(deleteButton);
+
+
+                journalList.appendChild(entryDiv);
+
+            }
+
+        }
+
+
+        function deleteEntry(index) {
+
+            var entries = JSON.parse(
+                localStorage.getItem("hyftedJournal") || "[]"
+            );
+
+
+            entries.splice(index, 1);
+
+
+            localStorage.setItem(
+                "hyftedJournal",
+                JSON.stringify(entries)
+            );
+
+
+            displayEntries();
+
+        }
+
+
+        displayEntries();
+
     </script>
 
 </body>
