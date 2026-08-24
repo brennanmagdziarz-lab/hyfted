@@ -9,22 +9,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1.0">
 
-    <title>Starter Website 2</title>
-
-
-    <!-- FONTS -->
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Outfit:wght@600;900&family=Parisienne&display=swap"
-        rel="stylesheet">
-
+    <title>About Hyfted</title>
 
     <style>
 
@@ -35,28 +20,21 @@
         }
 
 
-        /* ==========================================
-           MAIN PAGE
-        ========================================== */
-
         body {
-
-            display: flex;
-
-            justify-content: center;
-
-            align-items: center;
 
             min-height: 100vh;
 
-            font-family:
-                'Parisienne',
-                cursive;
+            padding: 40px 20px 60px;
+
+            font-family: Arial, sans-serif;
+
+            color: white;
+
+            text-align: center;
 
             background:
                 linear-gradient(
                     135deg,
-
                     #1677ff,
                     #6246ea,
                     #9b36d6,
@@ -68,234 +46,27 @@
                     #1677ff
                 );
 
-            background-size:
-                500% 500%;
+            background-size: 500% 500%;
 
             animation:
                 geminiWave
-                6s ease-in-out infinite;
+                8s ease-in-out infinite;
 
         }
 
 
         /* ==========================================
-           NAVIGATION CONTAINER
+           HYFTED BRAND NAME
         ========================================== */
 
-        .navigation-wrapper {
-
-            width: 100%;
-
-            display: flex;
-
-            justify-content: center;
-
-            position: fixed;
-
-            top: 20px;
-
-            left: 0;
-
-            z-index: 1000;
+        .brand {
 
             font-family:
-                'Outfit',
-                sans-serif;
-
-            padding:
-                0 15px;
-
-        }
-
-
-        /* ==========================================
-           NAVIGATION BAR
-        ========================================== */
-
-        .navigation {
-
-            display: flex;
-
-            flex-wrap: wrap;
-
-            justify-content: center;
-
-            align-items: center;
-
-            gap: 6px;
-
-            width: fit-content;
-
-            max-width: 100%;
-
-            padding: 8px;
-
-            background:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.45
-                );
-
-            backdrop-filter:
-                blur(25px);
-
-            -webkit-backdrop-filter:
-                blur(25px);
-
-            border:
-                1px solid
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.4
-                );
-
-            border-radius:
-                28px;
-
-            box-shadow:
-                0 10px 30px
-                rgba(
-                    0,
-                    0,
-                    0,
-                    0.15
-                );
-
-        }
-
-
-        /* ==========================================
-           NAVIGATION BUTTONS
-        ========================================== */
-
-        .nav-link-item {
-
-            color:
-                #000000 !important;
-
-            text-decoration:
-                none;
-
-            padding:
-                9px 15px;
-
-            font-size:
-                0.82rem;
-
-            font-weight:
-                700;
-
-            border-radius:
-                50px;
-
-            transition:
-                all 0.2s ease;
-
-            display:
-                inline-flex;
-
-            justify-content:
-                center;
-
-            align-items:
-                center;
-
-            white-space:
-                nowrap;
-
-            flex:
-                0 0 auto;
-
-        }
-
-
-        .nav-link-item:hover {
-
-            background:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.55
-                );
-
-            transform:
-                translateY(-1px);
-
-        }
-
-
-        .nav-link-item:active {
-
-            transform:
-                scale(0.96);
-
-        }
-
-
-        .nav-link-item.active-tab {
-
-            background:
-                #ffffff !important;
-
-            box-shadow:
-                0 4px 12px
-                rgba(
-                    0,
-                    0,
-                    0,
-                    0.1
-                );
-
-        }
-
-
-        /* ==========================================
-           MAIN CONTENT
-        ========================================== */
-
-        .container {
-
-            text-align:
-                center;
-
-            padding:
-                0 15px;
-
-            max-width:
-                500px;
-
-            width:
-                100%;
-
-            display:
-                flex;
-
-            flex-direction:
-                column;
-
-            align-items:
-                center;
-
-        }
-
-
-        /* ==========================================
-           HYFTED LOGO
-        ========================================== */
-
-        .logo-title {
-
-            font-family:
-                'Outfit',
+                Arial,
                 sans-serif;
 
             font-size:
-                4.5rem;
+                4rem;
 
             font-weight:
                 900;
@@ -303,65 +74,15 @@
             letter-spacing:
                 -2px;
 
-            text-transform:
-                lowercase;
-
-            margin-bottom:
+            margin-top:
                 30px;
 
-            background:
-                linear-gradient(
-                    270deg,
-
-                    #ffffff,
-                    #a5f3fc,
-                    #fbcfe8,
-                    #ffffff
-                );
-
-            background-size:
-                400% 400%;
-
-            -webkit-background-clip:
-                text;
-
-            -webkit-text-fill-color:
-                transparent;
-
-            animation:
-
-                moveTextGradient
-                4s ease infinite,
-
-                floatLogo
-                3s ease-in-out infinite;
-
-        }
-
-
-        /* ==========================================
-           WELCOME
-        ========================================== */
-
-        h1 {
-
-            font-family:
-                'Parisienne',
-                cursive;
-
-            font-size:
-                4.2rem;
-
-            font-weight:
-                400;
-
             margin-bottom:
-                5px;
+                8px;
 
             background:
                 linear-gradient(
                     270deg,
-
                     #ffffff,
                     #a5f3fc,
                     #fbcfe8,
@@ -385,90 +106,65 @@
 
 
         /* ==========================================
-           CHILL SOUNDS
+           PAGE TITLE
         ========================================== */
 
-        p {
+        h1 {
 
             font-family:
-                'Kalam',
-                cursive;
+                Arial,
+                sans-serif;
 
             font-size:
                 2.5rem;
 
+            margin-bottom:
+                15px;
+
+        }
+
+
+        .tagline {
+
+            font-size:
+                1.25rem;
+
             font-weight:
-                400;
-
-            letter-spacing:
-                0.5px;
-
-            line-height:
-                1.2;
+                bold;
 
             margin-bottom:
                 35px;
-
-            background:
-                linear-gradient(
-                    270deg,
-
-                    #ffffff,
-                    #a5f3fc,
-                    #fbcfe8,
-                    #ffffff
-                );
-
-            background-size:
-                400% 400%;
-
-            -webkit-background-clip:
-                text;
-
-            -webkit-text-fill-color:
-                transparent;
-
-            animation:
-                moveTextGradient
-                6s ease infinite;
 
         }
 
 
         /* ==========================================
-           CONTINUE BUTTON
+           MAIN CONTENT CARD
         ========================================== */
 
-        .next-btn {
+        .about-card {
 
-            font-family:
-                'Outfit',
-                sans-serif;
+            width:
+                100%;
 
-            font-weight:
-                600;
+            max-width:
+                750px;
 
-            font-size:
-                1.1rem;
-
-            color:
-                #ffffff;
-
-            text-decoration:
-                none;
+            margin:
+                0 auto;
 
             padding:
-                12px 35px;
+                35px;
 
             border-radius:
-                50px;
+                28px;
 
             background:
                 rgba(
                     255,
                     255,
                     255,
-                    0.15
+                    0.18
                 );
 
             border:
@@ -481,41 +177,93 @@
                 );
 
             backdrop-filter:
-                blur(10px);
+                blur(20px);
 
             -webkit-backdrop-filter:
-                blur(10px);
-
-            transition:
-                all 0.3s ease;
+                blur(20px);
 
             box-shadow:
-                0 4px 15px
+                0 15px 40px
                 rgba(
                     0,
                     0,
                     0,
-                    0.1
+                    0.18
                 );
 
         }
 
 
-        .next-btn:hover {
+        .about-card h2 {
+
+            font-size:
+                1.6rem;
+
+            margin-bottom:
+                12px;
+
+        }
+
+
+        .about-card p {
+
+            font-size:
+                1.05rem;
+
+            line-height:
+                1.7;
+
+            margin-bottom:
+                28px;
+
+        }
+
+
+        /* ==========================================
+           FEATURES
+        ========================================== */
+
+        .features {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(
+                    2,
+                    1fr
+                );
+
+            gap:
+                15px;
+
+            margin-top:
+                10px;
+
+            margin-bottom:
+                30px;
+
+        }
+
+
+        .feature {
+
+            padding:
+                20px;
+
+            border-radius:
+                20px;
 
             background:
                 rgba(
                     255,
                     255,
                     255,
-                    0.25
+                    0.13
                 );
 
-            transform:
-                scale(1.05);
-
-            box-shadow:
-                0 6px 20px
+            border:
+                1px solid
                 rgba(
                     255,
                     255,
@@ -526,62 +274,117 @@
         }
 
 
-        /* ==========================================
-           ABOUT + OWNER + COPYRIGHT LINKS
-        ========================================== */
+        .feature h3 {
 
-        .bottom-links {
+            font-size:
+                1.1rem;
 
-            position:
-                fixed;
-
-            bottom:
-                22px;
-
-            left:
-                0;
-
-            width:
-                100%;
-
-            display:
-                flex;
-
-            justify-content:
-                center;
-
-            align-items:
-                center;
-
-            gap:
-                22px;
-
-            z-index:
-                2000;
+            margin-bottom:
+                8px;
 
         }
 
 
-        .bottom-link {
+        .feature p {
 
-            font-family:
-                Arial,
-                sans-serif;
+            font-size:
+                0.92rem;
+
+            line-height:
+                1.5;
+
+            margin:
+                0;
+
+        }
+
+
+        /* ==========================================
+           BETA MESSAGE
+        ========================================== */
+
+        .beta {
+
+            margin-top:
+                10px;
+
+            padding:
+                22px;
+
+            border-radius:
+                20px;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.2
+                );
+
+        }
+
+
+        .beta h2 {
+
+            margin-bottom:
+                10px;
+
+        }
+
+
+        .beta p {
+
+            margin:
+                0;
+
+        }
+
+
+        /* ==========================================
+           CLOSING MESSAGE
+        ========================================== */
+
+        .closing {
+
+            margin-top:
+                30px;
+
+            font-size:
+                1.25rem;
+
+            font-weight:
+                bold;
+
+            line-height:
+                1.6;
+
+        }
+
+
+        /* ==========================================
+           BACK LINK
+        ========================================== */
+
+        .back-link {
+
+            display:
+                inline-block;
+
+            margin-top:
+                30px;
 
             color:
                 white;
 
             font-size:
-                0.9rem;
+                1rem;
 
             font-weight:
                 bold;
 
             text-decoration:
                 underline;
-
-            cursor:
-                pointer;
 
             transition:
                 opacity
@@ -590,7 +393,7 @@
         }
 
 
-        .bottom-link:hover {
+        .back-link:hover {
 
             opacity:
                 0.7;
@@ -598,198 +401,83 @@
         }
 
 
-        .bottom-link:active {
-
-            opacity:
-                0.5;
-
-        }
-
-
         /* ==========================================
-           COLORFUL GEMINI WAVE
+           BACKGROUND ANIMATION
         ========================================== */
 
         @keyframes geminiWave {
 
             0% {
-
                 background-position:
                     0% 50%;
-
             }
 
             20% {
-
                 background-position:
                     35% 30%;
-
             }
 
             40% {
-
                 background-position:
                     70% 50%;
-
             }
 
             60% {
-
                 background-position:
                     100% 70%;
-
             }
 
             80% {
-
                 background-position:
                     55% 50%;
-
             }
 
             100% {
-
                 background-position:
                     0% 50%;
-
             }
 
         }
 
-
-        /* ==========================================
-           TEXT GRADIENT
-        ========================================== */
 
         @keyframes moveTextGradient {
 
             0% {
-
                 background-position:
                     0% 50%;
-
             }
 
             50% {
-
                 background-position:
                     100% 50%;
-
             }
 
             100% {
-
                 background-position:
                     0% 50%;
-
             }
 
         }
 
 
         /* ==========================================
-           LOGO FLOAT
-        ========================================== */
-
-        @keyframes floatLogo {
-
-            0% {
-
-                transform:
-                    translateY(0px);
-
-            }
-
-            50% {
-
-                transform:
-                    translateY(-10px);
-
-            }
-
-            100% {
-
-                transform:
-                    translateY(0px);
-
-            }
-
-        }
-
-
-        /* ==========================================
-           TABLET
-        ========================================== */
-
-        @media (max-width: 900px) {
-
-            .navigation {
-
-                max-width:
-                    700px;
-
-                gap:
-                    5px;
-
-            }
-
-
-            .nav-link-item {
-
-                font-size:
-                    0.78rem;
-
-                padding:
-                    9px 13px;
-
-            }
-
-        }
-
-
-        /* ==========================================
-           PHONE / SMALL IPAD
+           MOBILE
         ========================================== */
 
         @media (max-width: 600px) {
 
-            .navigation-wrapper {
+            body {
 
                 padding:
-                    0 10px;
+                    25px 15px 50px;
 
             }
 
 
-            .navigation {
-
-                max-width:
-                    100%;
-
-                gap:
-                    4px;
-
-                padding:
-                    7px;
-
-            }
-
-
-            .nav-link-item {
+            .brand {
 
                 font-size:
-                    0.68rem;
-
-                padding:
-                    8px 10px;
-
-            }
-
-
-            .logo-title {
-
-                font-size:
-                    3.8rem;
+                    3.3rem;
 
             }
 
@@ -797,77 +485,31 @@
             h1 {
 
                 font-size:
-                    3.5rem;
+                    2rem;
 
             }
 
 
-            p {
+            .tagline {
 
                 font-size:
-                    2.1rem;
+                    1.05rem;
 
             }
 
 
-            .bottom-links {
-
-                bottom:
-                    15px;
-
-                gap:
-                    16px;
-
-            }
-
-
-            .bottom-link {
-
-                font-size:
-                    0.78rem;
-
-            }
-
-        }
-
-
-        /* ==========================================
-           VERY SMALL PHONES
-        ========================================== */
-
-        @media (max-width: 400px) {
-
-            .navigation {
-
-                gap:
-                    3px;
-
-            }
-
-
-            .nav-link-item {
-
-                font-size:
-                    0.6rem;
+            .about-card {
 
                 padding:
-                    7px 8px;
+                    25px 20px;
 
             }
 
 
-            .bottom-links {
+            .features {
 
-                gap:
-                    12px;
-
-            }
-
-
-            .bottom-link {
-
-                font-size:
-                    0.72rem;
+                grid-template-columns:
+                    1fr;
 
             }
 
@@ -882,184 +524,239 @@
 
 
     <!-- ==========================================
-         TOP MENU
+         HYFTED
     ========================================== -->
 
-    <div class="navigation-wrapper">
-
-        <div class="navigation">
-
-
-            <a
-                href="index.html"
-                class="nav-link-item active-tab">
-
-                Home
-
-            </a>
-
-
-            <a
-                href="page2.html"
-                class="nav-link-item">
-
-                Music
-
-            </a>
-
-
-            <a
-                href="page3.html"
-                class="nav-link-item">
-
-                Breathing
-
-            </a>
-
-
-            <a
-                href="page4.html"
-                class="nav-link-item">
-
-                Journal
-
-            </a>
-
-
-            <a
-                href="page5.html"
-                class="nav-link-item">
-
-                AI Chat
-
-            </a>
-
-
-            <a
-                href="page6.html"
-                class="nav-link-item">
-
-                Visualizer
-
-            </a>
-
-
-            <a
-                href="page7.html"
-                class="nav-link-item">
-
-                Affirmations
-
-            </a>
-
-
-            <a
-                href="page8.html"
-                class="nav-link-item">
-
-                Wind down stars
-
-            </a>
-
-
-            <a
-                href="page9.html"
-                class="nav-link-item">
-
-                Adventure
-
-            </a>
-
-
-        </div>
-
+    <div class="brand">
+        hyfted
     </div>
 
 
-    <!-- SPACE BELOW MENU -->
+    <h1>
+        About Hyfted
+    </h1>
 
-    <div
-        style="
-            margin-top: 110px;
-        ">
+
+    <div class="tagline">
+        A calmer space for a busy world.
     </div>
 
 
     <!-- ==========================================
-         MAIN CONTENT
+         ABOUT CONTENT
     ========================================== -->
 
-    <div class="container">
+    <div class="about-card">
 
 
-        <div class="logo-title">
-
-            hyfted
-
-        </div>
-
-
-        <h1>
-
-            Welcome
-
-        </h1>
+        <h2>
+            What is Hyfted?
+        </h2>
 
 
         <p>
-
-            Chill sounds
-
+            Hyfted is a digital space designed to help you
+            slow down, clear your mind, and create moments
+            of calm throughout your day.
         </p>
 
 
-        <a
-            href="page2.html"
-            class="next-btn">
+        <p>
+            Whether you want relaxing music, guided breathing,
+            a quiet place to journal, calming visual experiences,
+            positive affirmations, or simply a moment away from
+            everything, Hyfted brings these experiences together
+            in one peaceful environment.
+        </p>
 
-            Continue
 
-        </a>
+        <h2>
+            Our Goal
+        </h2>
+
+
+        <p>
+            Our goal is simple: make it easier to pause.
+            Life can move quickly, and everyday responsibilities
+            can make it difficult to find a quiet moment.
+            Hyfted was created as a place where you can step
+            away for a little while and focus on yourself.
+        </p>
+
+
+        <!-- ==========================================
+             FEATURES
+        ========================================== -->
+
+        <div class="features">
+
+
+            <div class="feature">
+
+                <h3>
+                    🎵 Calming Music
+                </h3>
+
+                <p>
+                    Relax with peaceful sounds and music
+                    for quiet moments, studying, relaxing,
+                    or winding down.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <h3>
+                    🌬️ Breathing
+                </h3>
+
+                <p>
+                    Slow down and follow simple breathing
+                    experiences designed to help you pause.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <h3>
+                    📖 Journal
+                </h3>
+
+                <p>
+                    Give your thoughts somewhere to go
+                    with a simple space for reflection
+                    and writing.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <h3>
+                    🤖 AI Chat
+                </h3>
+
+                <p>
+                    Explore ideas, have conversations,
+                    and interact with an AI-powered experience.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <h3>
+                    ✨ Visualizer
+                </h3>
+
+                <p>
+                    Explore relaxing visual experiences
+                    designed to create a peaceful atmosphere.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <h3>
+                    💭 Affirmations
+                </h3>
+
+                <p>
+                    Discover positive reminders and
+                    encouraging thoughts for your day.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <h3>
+                    🌌 Wind Down
+                </h3>
+
+                <p>
+                    Create a peaceful transition into your
+                    evening with relaxing experiences.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <h3>
+                    🗺️ Adventure
+                </h3>
+
+                <p>
+                    Explore something different when you
+                    want to take your mind somewhere new.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- ==========================================
+             BETA
+        ========================================== -->
+
+        <div class="beta">
+
+            <h2>
+                🚧 Hyfted is in BETA
+            </h2>
+
+            <p>
+                Hyfted is still being developed.
+                We're continuing to experiment, improve
+                existing features, fix issues, and create
+                new experiences.
+            </p>
+
+        </div>
+
+
+        <!-- ==========================================
+             CLOSING
+        ========================================== -->
+
+        <div class="closing">
+
+            You deserve a place to pause.
+
+            <br>
+
+            Welcome to Hyfted.
+
+        </div>
 
 
     </div>
 
 
     <!-- ==========================================
-         ABOUT + OWNER + COPYRIGHT LINKS
+         BACK TO HOME
     ========================================== -->
 
-    <div class="bottom-links">
+    <a
+        href="index.html"
+        class="back-link">
 
+        ← Back to Home
 
-        <a
-            href="about.html"
-            class="bottom-link">
-
-            About
-
-        </a>
-
-
-        <a
-            href="owner.html"
-            class="bottom-link">
-
-            Owner
-
-        </a>
-
-
-        <a
-            href="copyright.html"
-            class="bottom-link">
-
-            Copyright License
-
-        </a>
-
-
-    </div>
+    </a>
 
 
 </body>
