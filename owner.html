@@ -3,255 +3,342 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-<title>Owner - Hyfted</title>
+    <title>Owner — Hyfted</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- BRAND FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin>
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
 
-<link
-    href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Outfit:wght@600;900&family=Parisienne&display=swap"
-    rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;900&display=swap"
+        rel="stylesheet">
 
 
-<style>
+    <style>
 
-* {
-    box-sizing: border-box;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
 
-    margin: 0;
+        body {
 
-    min-height: 100vh;
+            min-height: 100vh;
 
-    padding: 40px 20px;
+            font-family: Arial, sans-serif;
 
-    font-family:
-        'Outfit',
-        sans-serif;
+            color: white;
 
-    color: white;
+            display: flex;
 
-    text-align: center;
+            justify-content: center;
 
-    background:
-        linear-gradient(
-            135deg,
-            #1677ff,
-            #6246ea,
-            #9b36d6,
-            #e33cff,
-            #ff5fcf,
-            #ff72b6,
-            #7c5cff,
-            #29c6ff,
-            #1677ff
-        );
+            align-items: center;
 
-    background-size:
-        500% 500%;
+            padding: 40px 20px;
 
-    animation:
-        geminiWave
-        6s ease-in-out infinite;
+            background:
+                linear-gradient(
+                    135deg,
+                    #1677ff,
+                    #6246ea,
+                    #9b36d6,
+                    #e33cff,
+                    #ff5fcf,
+                    #ff72b6,
+                    #7c5cff,
+                    #29c6ff,
+                    #1677ff
+                );
 
-}
+            background-size: 500% 500%;
 
+            animation:
+                geminiWave
+                6s ease-in-out infinite;
 
-.container {
+        }
 
-    max-width:
-        650px;
 
-    margin:
-        70px auto 0;
+        /* ==========================================
+           OWNER CARD
+        ========================================== */
 
-    padding:
-        40px 30px;
+        .owner-container {
 
-    border-radius:
-        30px;
+            width: 100%;
 
-    background:
-        rgba(
-            255,
-            255,
-            255,
-            0.16
-        );
+            max-width: 700px;
 
-    backdrop-filter:
-        blur(20px);
+            text-align: center;
 
-    -webkit-backdrop-filter:
-        blur(20px);
+            padding: 45px 30px;
 
-    border:
-        1px solid
-        rgba(
-            255,
-            255,
-            255,
-            0.3
-        );
+            border-radius: 30px;
 
-    box-shadow:
-        0 15px 40px
-        rgba(
-            0,
-            0,
-            0,
-            0.18
-        );
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.18
+                );
 
-}
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.35
+                );
 
+            backdrop-filter:
+                blur(20px);
 
-.logo {
+            -webkit-backdrop-filter:
+                blur(20px);
 
-    font-size:
-        3.5rem;
+            box-shadow:
+                0 15px 40px
+                rgba(
+                    0,
+                    0,
+                    0,
+                    0.15
+                );
 
-    font-weight:
-        900;
+        }
 
-    margin-bottom:
-        20px;
 
-}
+        /* ==========================================
+           HYFTED BRAND NAME
+           KEEPING BRAND FONT
+        ========================================== */
 
+        .brand {
 
-h1 {
+            font-family:
+                'Outfit',
+                sans-serif;
 
-    font-family:
-        'Parisienne',
-        cursive;
+            font-size:
+                4.5rem;
 
-    font-size:
-        4rem;
+            font-weight:
+                900;
 
-    font-weight:
-        400;
+            letter-spacing:
+                -2px;
 
-    margin:
-        10px 0 30px;
+            margin-bottom:
+                20px;
 
-}
+            background:
+                linear-gradient(
+                    270deg,
+                    #ffffff,
+                    #a5f3fc,
+                    #fbcfe8,
+                    #ffffff
+                );
 
+            background-size:
+                400% 400%;
 
-.info {
+            -webkit-background-clip:
+                text;
 
-    font-family:
-        'Kalam',
-        cursive;
+            -webkit-text-fill-color:
+                transparent;
 
-    font-size:
-        1.5rem;
+            animation:
+                moveTextGradient
+                4s ease infinite;
 
-    line-height:
-        1.7;
+        }
 
-}
 
+        /* ==========================================
+           ALL OTHER TEXT — ARIAL
+        ========================================== */
 
-.info strong {
+        h1 {
 
-    font-family:
-        'Outfit',
-        sans-serif;
+            font-family:
+                Arial,
+                sans-serif;
 
-}
+            font-size:
+                2.5rem;
 
+            margin-bottom:
+                25px;
 
-.beta {
+        }
 
-    margin-top:
-        25px;
 
-    padding:
-        20px;
+        p {
 
-    border-radius:
-        20px;
+            font-family:
+                Arial,
+                sans-serif;
 
-    background:
-        rgba(
-            0,
-            0,
-            0,
-            0.15
-        );
+            font-size:
+                1.1rem;
 
-    font-size:
-        1.1rem;
+            line-height:
+                1.7;
 
-}
+            margin-bottom:
+                18px;
 
+        }
 
-.back {
 
-    display:
-        inline-block;
+        .label {
 
-    margin-top:
-        30px;
+            font-family:
+                Arial,
+                sans-serif;
 
-    color:
-        white;
+            font-weight:
+                bold;
 
-    text-decoration:
-        underline;
+        }
 
-    font-weight:
-        700;
 
-}
+        .about {
 
+            margin-top:
+                25px;
 
-@keyframes geminiWave {
+        }
 
-    0% {
-        background-position:
-            0% 50%;
-    }
 
-    20% {
-        background-position:
-            35% 30%;
-    }
+        .back-link {
 
-    40% {
-        background-position:
-            70% 50%;
-    }
+            display:
+                inline-block;
 
-    60% {
-        background-position:
-            100% 70%;
-    }
+            margin-top:
+                20px;
 
-    80% {
-        background-position:
-            55% 50%;
-    }
+            font-family:
+                Arial,
+                sans-serif;
 
-    100% {
-        background-position:
-            0% 50%;
-    }
+            color:
+                white;
 
-}
+            text-decoration:
+                underline;
 
-</style>
+            font-weight:
+                bold;
+
+        }
+
+
+        .back-link:hover {
+
+            opacity:
+                0.75;
+
+        }
+
+
+        /* ==========================================
+           BACKGROUND ANIMATION
+        ========================================== */
+
+        @keyframes geminiWave {
+
+            0% {
+                background-position: 0% 50%;
+            }
+
+            20% {
+                background-position: 35% 30%;
+            }
+
+            40% {
+                background-position: 70% 50%;
+            }
+
+            60% {
+                background-position: 100% 70%;
+            }
+
+            80% {
+                background-position: 55% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+
+        }
+
+
+        @keyframes moveTextGradient {
+
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+
+        }
+
+
+        /* ==========================================
+           IPAD / PHONE
+        ========================================== */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 25px 15px;
+            }
+
+            .owner-container {
+                padding: 35px 20px;
+            }
+
+            .brand {
+                font-size: 3.8rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+        }
+
+    </style>
 
 </head>
 
@@ -259,60 +346,49 @@ h1 {
 <body>
 
 
-<div class="container">
+    <div class="owner-container">
 
 
-    <div class="logo">
+        <!-- HYFTED BRAND -->
 
-        hyfted
-
-    </div>
-
-
-    <h1>
-
-        Owner
-
-    </h1>
+        <div class="brand">
+            hyfted
+        </div>
 
 
-    <div class="info">
+        <h1>
+            Owner
+        </h1>
+
 
         <p>
-            <strong>Owner:</strong>
+            <span class="label">Owner:</span>
             Brennan Magdziarz
         </p>
 
 
         <p>
-            <strong>Website:</strong>
+            <span class="label">Website:</span>
             Hyfted.com
         </p>
 
 
-        <div class="beta">
-
-            <strong>About:</strong>
-
-            <br>
-
+        <p class="about">
+            <span class="label">About:</span>
             App is still in BETA and will continue to improve.
+        </p>
 
-        </div>
+
+        <a
+            href="index.html"
+            class="back-link">
+
+            Back to Hyfted
+
+        </a>
+
 
     </div>
-
-
-    <a
-        href="page1.html"
-        class="back">
-
-        ← Back to Home
-
-    </a>
-
-
-</div>
 
 
 </body>
