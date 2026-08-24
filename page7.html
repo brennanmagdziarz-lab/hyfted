@@ -1,182 +1,1065 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page 7 - Daily Wellness Affirmations</title>
-    
-    <!-- LOADING FONTS -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@400;600;900&display=swap" rel="stylesheet">
-    
-    <style>
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-        }
 
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            font-family: 'Great Vibes', cursive;
-            
-            /* SIGNATURE GEMINI MOVING RAINBOW BACKGROUND */
-            background: linear-gradient(135deg, #1a73e8, #7c4dff, #9c27b0, #e040fb, #1a73e8);
-            background-size: 300% 300%;
-            animation: geminiWave 6s ease-in-out infinite;
-            padding: 80px 15px 20px 15px; 
-            overflow: hidden;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        /* LUXURY FLOATING GLASS CONTAINER BLOCK */
-        .container { 
-            text-align: center; 
-            padding: 40px 30px; 
-            max-width: 500px; 
-            width: 100%; 
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 24px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        }
+<title>Page 7 - Daily Wellness Affirmations</title>
 
-        /* DYNAMIC GEMINI ANIMATED GRADIENT HEADER */
-        h1 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 2.8rem;
-            font-weight: 900;
-            letter-spacing: -1px;
-            margin-bottom: 25px;
-            
-            background: linear-gradient(270deg, #ffffff, #a5f3fc, #fbcfe8, #ffffff);
-            background-size: 400% 400%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: moveTextGradient 5s ease infinite;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        /* 🎴 HIGH LUXURY TRANSITION CARD DECK CONTAINER */
-        .affirmation-display-card {
-            width: 100%;
-            min-height: 200px;
-            background: rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 18px;
-            padding: 30px 20px;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
+<link
+href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@400;600;900&display=swap"
+rel="stylesheet"
+>
 
-        /* THE TEXT LINES SCALING GENERATORS USING COMPLEX KEYFRAMES */
-        .quote-phrase {
-            position: absolute;
-            left: 20px;
-            right: 20px;
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.3rem;
-            line-height: 1.5;
-            font-weight: 600;
-            text-transform: capitalize;
-            opacity: 0; 
-            
-            /* Enhanced 24s infinite cycle animation loop */
-            animation: ultimateQuoteTransition 24s infinite ease-in-out;
-        }
+<style>
 
-        /* Stagger text segments into clean parallel 6-second window block slots */
-        .q1 { animation-delay: 0s; }
-        .q2 { animation-delay: 6s; }
-        .q3 { animation-delay: 12s; }
-        .q4 { animation-delay: 18s; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        /* BACK NAV FOOTER LINKS */
-        .nav-links {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-        }
+body {
 
-        .nav-btn {
-            font-family: 'Outfit', sans-serif;
-            font-weight: 600;
-            font-size: 1rem;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 12px 30px;
-            border-radius: 50px;
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
+    display: flex;
+    flex-direction: column;
 
-        .nav-btn:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: scale(1.05);
-        }
+    justify-content: center;
+    align-items: center;
 
-        /* 🎬 PERFORMANCE KEYFRAMES PROCESSED ENTIRELY ON CHIP HARDWARE */
-        @keyframes geminiWave { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-        @keyframes moveTextGradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+    min-height: 100vh;
 
-        /* 👑 NEW: HIGH-END DISAPPEARING AND MORPHING TRANSITION TIMELINE MAP */
-        @keyframes ultimateQuoteTransition {
-            /* 0% to 3%: Wavy entrance -> Drops down from above, scaling up slightly while fading in */
-            0% { opacity: 0; transform: translateY(-15px) scale(0.95); filter: blur(5px); }
-            3% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0px); background: linear-gradient(270deg, #ffffff, #a5f3fc, #ffffff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-            
-            /* 3% to 22%: Stationary visibility state -> Colors wave inside typography */
-            22% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0px); background: linear-gradient(270deg, #ffffff, #a5f3fc, #ffffff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-            
-            /* 22% to 25%: DISAPPEARING BLOWOUT -> Dissolves out rapidly, sliding upwards and shrinking out */
-            24.5% { opacity: 0; transform: translateY(-20px) scale(0.9); filter: blur(4px); }
-            25%, 100% { opacity: 0; transform: translateY(20px) scale(0.9); }
-        }
-    </style>
+    font-family: 'Great Vibes', cursive;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1a73e8,
+            #7c4dff,
+            #9c27b0,
+            #e040fb,
+            #1a73e8
+        );
+
+    background-size: 300% 300%;
+
+    animation:
+        geminiWave 6s ease-in-out infinite;
+
+    padding:
+        110px
+        15px
+        30px;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navigation-wrapper {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    position: fixed;
+
+    top: 20px;
+    left: 0;
+
+    z-index: 1000;
+
+    padding: 0 15px;
+
+    font-family: 'Outfit', sans-serif;
+}
+
+
+.navigation {
+
+    display: flex;
+
+    gap: 6px;
+
+    background:
+        rgba(255,255,255,0.4);
+
+    backdrop-filter:
+        blur(25px);
+
+    -webkit-backdrop-filter:
+        blur(25px);
+
+    border:
+        1px solid rgba(255,255,255,0.3);
+
+    padding: 6px;
+
+    border-radius: 50px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.15);
+
+    overflow-x: auto;
+
+    max-width: 100%;
+
+    white-space: nowrap;
+
+    -webkit-overflow-scrolling:
+        touch;
+
+    scrollbar-width: none;
+}
+
+
+.navigation::-webkit-scrollbar {
+    display: none;
+}
+
+
+.nav-link-item {
+
+    color: #000000 !important;
+
+    text-decoration: none;
+
+    padding: 8px 16px;
+
+    font-size: 0.85rem;
+
+    font-weight: 700;
+
+    border-radius: 50px;
+
+    transition:
+        all 0.2s;
+
+    display: inline-block;
+}
+
+
+.nav-link-item:hover {
+
+    background:
+        rgba(255,255,255,0.4);
+
+}
+
+
+.nav-link-item.active-tab {
+
+    background:
+        #ffffff !important;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,0.1);
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+
+    text-align: center;
+
+    padding:
+        40px 30px;
+
+    max-width: 520px;
+
+    width: 100%;
+
+    background:
+        rgba(255,255,255,0.1);
+
+    backdrop-filter:
+        blur(15px);
+
+    -webkit-backdrop-filter:
+        blur(15px);
+
+    border:
+        1px solid rgba(255,255,255,0.2);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.15);
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+h1 {
+
+    font-family:
+        'Outfit',
+        sans-serif;
+
+    font-size:
+        2.8rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        -1px;
+
+    margin-bottom:
+        25px;
+
+    background:
+        linear-gradient(
+            270deg,
+            #ffffff,
+            #a5f3fc,
+            #fbcfe8,
+            #ffffff
+        );
+
+    background-size:
+        400% 400%;
+
+    -webkit-background-clip:
+        text;
+
+    -webkit-text-fill-color:
+        transparent;
+
+    animation:
+        moveTextGradient 5s ease infinite;
+}
+
+
+/* =========================
+   AFFIRMATION CARD
+========================= */
+
+.affirmation-display-card {
+
+    width: 100%;
+
+    min-height: 220px;
+
+    background:
+        rgba(0,0,0,0.2);
+
+    border:
+        1px solid rgba(255,255,255,0.15);
+
+    border-radius:
+        18px;
+
+    padding:
+        30px 22px;
+
+    margin-bottom:
+        25px;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    box-shadow:
+        inset 0 0 30px rgba(255,255,255,0.03);
+}
+
+
+/* =========================
+   RANDOM AFFIRMATION
+========================= */
+
+.quote-phrase {
+
+    font-family:
+        'Outfit',
+        sans-serif;
+
+    font-size:
+        1.3rem;
+
+    line-height:
+        1.5;
+
+    font-weight:
+        600;
+
+    color:
+        #ffffff;
+
+    max-width:
+        95%;
+
+    text-align:
+        center;
+
+    opacity:
+        0;
+
+    transform:
+        translateY(15px)
+        scale(0.96);
+
+    filter:
+        blur(5px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease,
+        filter 0.7s ease;
+
+}
+
+
+/* ACTIVE AFFIRMATION */
+
+.quote-phrase.show {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    filter:
+        blur(0);
+
+}
+
+
+/* =========================
+   RANDOMIZER STATUS
+========================= */
+
+.randomizer-label {
+
+    font-family:
+        'Outfit',
+        sans-serif;
+
+    font-size:
+        0.72rem;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        1.5px;
+
+    text-transform:
+        uppercase;
+
+    color:
+        rgba(255,255,255,0.55);
+
+    margin-top:
+        4px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.nav-links {
+
+    display:
+        flex;
+
+    gap:
+        12px;
+
+    justify-content:
+        center;
+
+    flex-wrap:
+        wrap;
+}
+
+
+.nav-btn {
+
+    font-family:
+        'Outfit',
+        sans-serif;
+
+    font-weight:
+        600;
+
+    font-size:
+        1rem;
+
+    color:
+        #ffffff;
+
+    text-decoration:
+        none;
+
+    padding:
+        12px 25px;
+
+    border-radius:
+        50px;
+
+    background:
+        rgba(255,255,255,0.15);
+
+    border:
+        1px solid rgba(255,255,255,0.3);
+
+    transition:
+        all 0.3s ease;
+
+    cursor:
+        pointer;
+}
+
+
+.nav-btn:hover {
+
+    background:
+        rgba(255,255,255,0.25);
+
+    transform:
+        scale(1.05);
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes geminiWave {
+
+    0% {
+        background-position:
+            0% 50%;
+    }
+
+    50% {
+        background-position:
+            100% 50%;
+    }
+
+    100% {
+        background-position:
+            0% 50%;
+    }
+
+}
+
+
+@keyframes moveTextGradient {
+
+    0% {
+        background-position:
+            0% 50%;
+    }
+
+    50% {
+        background-position:
+            100% 50%;
+    }
+
+    100% {
+        background-position:
+            0% 50%;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+
+        padding:
+            105px
+            10px
+            25px;
+    }
+
+    .navigation-wrapper {
+
+        padding:
+            0 10px;
+    }
+
+    .navigation {
+
+        gap:
+            4px;
+
+        padding:
+            7px;
+    }
+
+    .nav-link-item {
+
+        font-size:
+            0.68rem;
+
+        padding:
+            8px 10px;
+    }
+
+    .container {
+
+        padding:
+            32px 18px;
+    }
+
+    h1 {
+
+        font-size:
+            2.4rem;
+    }
+
+    .affirmation-display-card {
+
+        min-height:
+            230px;
+
+        padding:
+            28px 18px;
+    }
+
+    .quote-phrase {
+
+        font-size:
+            1.15rem;
+    }
+
+}
+
+</style>
+
 </head>
-<body>
-     <!-- 🌐 UNIVERSAL HYFTED SCROLL NAVIGATION CAPSULE (BLACK TEXT EDITION) -->
-<div style="width: 100%; display: flex; justify-content: center; position: fixed; top: 20px; left: 0; z-index: 1000; font-family: 'Outfit', sans-serif; padding: 0 15px;">
-    <div style="display: flex; gap: 6px; background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(255, 255, 255, 0.3); padding: 6px; border-radius: 50px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); overflow-x: auto; max-width: 100%; white-space: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none;">
-        <style>
-            div::-webkit-scrollbar { display: none; }
-            .nav-link-item { color: #000000 !important; text-decoration: none; padding: 8px 16px; font-size: 0.85rem; font-weight: 700; border-radius: 50px; transition: all 0.2s; display: inline-block; }
-            .nav-link-item:hover { background: rgba(255, 255, 255, 0.4); }
-            .nav-link-item.active-tab { background: #ffffff !important; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        </style>
-        <a href="index.html" class="nav-link-item">Home</a>
-        <a href="page2.html" class="nav-link-item">Music</a>
-        <a href="page3.html" class="nav-link-item">Breathing</a>
-        <a href="page5.html" class="nav-link-item">AI Chat</a>
-        <a href="page6.html" class="nav-link-item">Visualizer</a>
-        <a href="page7.html" class="nav-link-item">Affirmations</a>
-    </div>
-</div>
-<div style="margin-top: 75px;"></div>
 
-    <div class="container">
-        <h1>Daily Calm</h1>
-        
-        <!-- Luxury Floating Affirmation Deck Frame -->
-        <div class="affirmation-display-card">
-            <!-- Plain HTML text lines fading out natively via graphic hardware processors -->
-            <div class="quote-phrase q1">"Your mind is a calm ocean. Let the temporary thoughts pass by like floating clouds."</div>
-            <div class="quote-phrase q2">"Drop your shoulders down. Take one full breath. You are doing a fantastic job today."</div>
-            <div class="quote-phrase q3">"You have survived 100% of your hardest days. Trust your trajectory and protect your peace."</div>
-            <div class="quote-phrase q4">"Slow down your rushing. Give your mind a physical micro reset right this second."</div>
-        </div>
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<div class="navigation-wrapper">
+
+    <div class="navigation">
+
+        <a
+            href="index.html"
+            class="nav-link-item">
+            Home
+        </a>
+
+        <a
+            href="page2.html"
+            class="nav-link-item">
+            Music
+        </a>
+
+        <a
+            href="page3.html"
+            class="nav-link-item">
+            Breathing
+        </a>
+
+        <a
+            href="page5.html"
+            class="nav-link-item">
+            AI Chat
+        </a>
+
+        <a
+            href="page6.html"
+            class="nav-link-item">
+            Visualizer
+        </a>
+
+        <a
+            href="page7.html"
+            class="nav-link-item active-tab">
+            Affirmations
+        </a>
+
     </div>
+
+</div>
+
+
+<!-- =========================
+     MAIN CONTENT
+========================= -->
+
+<div class="container">
+
+
+    <h1>
+        Daily Calm
+    </h1>
+
+
+    <div class="affirmation-display-card">
+
+        <div
+            id="affirmation"
+            class="quote-phrase">
+        </div>
+
+    </div>
+
+
+    <div class="randomizer-label">
+        RANDOMIZED DAILY AFFIRMATION
+    </div>
+
+
+    <br>
+
+
+    <div class="nav-links">
+
+        <a
+            href="page6.html"
+            class="nav-btn">
+            Go Back
+        </a>
+
+        <a
+            href="index.html"
+            class="nav-btn"
+            style="
+                background:
+                rgba(255,255,255,0.25);
+            ">
+            Home
+        </a>
+
+    </div>
+
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   HYFTED RANDOM AFFIRMATION ENGINE
+
+   Instead of cycling through 4 sentences, this system
+   randomly combines multiple sentence sections.
+
+   20 openings
+   × 20 middle sections
+   × 20 endings
+
+   = 8,000 possible combinations.
+
+   The system also remembers recent combinations so the
+   same affirmation doesn't immediately come back.
+========================================================= */
+
+
+/* =========================
+   OPENINGS
+========================= */
+
+const openings = [
+
+    "You are allowed to",
+
+    "Today, give yourself permission to",
+
+    "Remember that you can",
+
+    "Take a moment to",
+
+    "You deserve to",
+
+    "It is okay to",
+
+    "Give yourself space to",
+
+    "Let yourself",
+
+    "You have the strength to",
+
+    "You are capable of",
+
+    "Choose to",
+
+    "Allow yourself to",
+
+    "There is nothing wrong with",
+
+    "Be gentle enough to",
+
+    "Make room today to",
+
+    "Trust yourself enough to",
+
+    "Give your mind permission to",
+
+    "Take the time to",
+
+    "Remember to",
+
+    "You can always"
+];
+
+
+/* =========================
+   MIDDLE SECTIONS
+========================= */
+
+const middles = [
+
+    "slow down",
+
+    "take one peaceful breath",
+
+    "let your thoughts settle",
+
+    "release what you cannot control",
+
+    "move at your own pace",
+
+    "put down the pressure you are carrying",
+
+    "give yourself a fresh start",
+
+    "step away from unnecessary stress",
+
+    "focus on what is in front of you",
+
+    "let today be a little lighter",
+
+    "trust the process",
+
+    "protect your peace",
+
+    "listen to what your mind needs",
+
+    "give yourself a quiet moment",
+
+    "stop comparing your journey to someone else's",
+
+    "appreciate how far you have already come",
+
+    "let yourself rest without guilt",
+
+    "choose progress instead of perfection",
+
+    "breathe through the difficult moment",
+
+    "remember that you do not have to solve everything at once"
+];
+
+
+/* =========================
+   ENDINGS
+========================= */
+
+const endings = [
+
+    "and remember that you are doing better than you think.",
+
+    "because you deserve moments that feel peaceful.",
+
+    "because one small step is still progress.",
+
+    "and let yourself enjoy this moment.",
+
+    "because your peace matters.",
+
+    "and give yourself credit for making it this far.",
+
+    "because you do not have to have everything figured out.",
+
+    "and trust that things can change.",
+
+    "because your journey does not need to look like anyone else's.",
+
+    "and remember that difficult moments do not define you.",
+
+    "because tomorrow gives you another opportunity.",
+
+    "and allow yourself to simply be present.",
+
+    "because you are allowed to grow at your own pace.",
+
+    "and remember that rest is part of moving forward.",
+
+    "because your effort is meaningful even when nobody sees it.",
+
+    "and keep going one moment at a time.",
+
+    "because you deserve kindness from yourself too.",
+
+    "and notice one thing around you that makes you feel calm.",
+
+    "because there is always room for a fresh beginning.",
+
+    "and remember to be patient with yourself."
+];
+
+
+/* =========================================================
+   EXTRA COMPLETE AFFIRMATIONS
+
+   These are mixed in with the generated combinations to
+   make the results feel more natural and less repetitive.
+========================================================= */
+
+const completeAffirmations = [
+
+    "Your mind does not have to be perfectly quiet for you to feel peaceful.",
+
+    "You are allowed to have a slow day.",
+
+    "You do not need to earn the right to rest.",
+
+    "Small progress is still progress.",
+
+    "Your current moment deserves your attention.",
+
+    "You are more capable than your doubts make you believe.",
+
+    "A difficult moment is not a difficult life.",
+
+    "You can begin again at any moment.",
+
+    "You do not have to carry everything at once.",
+
+    "Your pace is allowed to be different.",
+
+    "You are doing enough for today.",
+
+    "Give yourself the same patience you give to other people.",
+
+    "You can let go of something without knowing what comes next.",
+
+    "Peace can begin with one simple breath.",
+
+    "You have already made it through moments you once thought you couldn't.",
+
+    "You are allowed to be proud of yourself.",
+
+    "Not every thought deserves your attention.",
+
+    "You can pause without falling behind.",
+
+    "You are still growing, even when you cannot see it.",
+
+    "Your future does not have to be decided today.",
+
+    "Take the pressure off for a moment and simply breathe.",
+
+    "You deserve a moment where nothing is expected of you.",
+
+    "Your worth is not measured by how productive you are.",
+
+    "You can choose peace even when everything around you feels busy.",
+
+    "One calm moment can change the direction of an entire day."
+];
+
+
+/* =========================
+   RECENT HISTORY
+========================= */
+
+let recentAffirmations = [];
+
+const MAX_RECENT = 12;
+
+
+/* =========================
+   RANDOM NUMBER
+========================= */
+
+function randomItem(array) {
+
+    return array[
+        Math.floor(
+            Math.random() * array.length
+        )
+    ];
+
+}
+
+
+/* =========================
+   CREATE RANDOM AFFIRMATION
+========================= */
+
+function createRandomAffirmation() {
+
+    let result;
+
+    let attempts = 0;
+
+    do {
+
+        /*
+         * About 35% of the time, use a complete
+         * affirmation.
+         *
+         * Otherwise generate a brand-new
+         * combination.
+         */
+
+        if (Math.random() < 0.35) {
+
+            result =
+                randomItem(
+                    completeAffirmations
+                );
+
+        }
+
+        else {
+
+            const opening =
+                randomItem(openings);
+
+            const middle =
+                randomItem(middles);
+
+            const ending =
+                randomItem(endings);
+
+            result =
+                opening +
+                " " +
+                middle +
+                " " +
+                ending;
+
+        }
+
+        attempts++;
+
+    }
+
+    while (
+        recentAffirmations.includes(result) &&
+        attempts < 100
+    );
+
+
+    /* Remember this affirmation */
+
+    recentAffirmations.push(result);
+
+
+    /* Keep only the latest 12 */
+
+    if (
+        recentAffirmations.length >
+        MAX_RECENT
+    ) {
+
+        recentAffirmations.shift();
+
+    }
+
+
+    return result;
+}
+
+
+/* =========================
+   DISPLAY NEW AFFIRMATION
+========================= */
+
+const affirmation =
+    document.getElementById(
+        "affirmation"
+    );
+
+
+function showNewAffirmation() {
+
+    /* Fade current sentence away */
+
+    affirmation.classList.remove(
+        "show"
+    );
+
+
+    setTimeout(() => {
+
+        /* Generate a completely new one */
+
+        affirmation.textContent =
+            createRandomAffirmation();
+
+
+        /* Bring it back */
+
+        affirmation.classList.add(
+            "show"
+        );
+
+    }, 650);
+
+}
+
+
+/* =========================
+   START
+========================= */
+
+showNewAffirmation();
+
+
+/* =========================
+   NEW RANDOM AFFIRMATION
+   EVERY 6 SECONDS
+========================= */
+
+setInterval(() => {
+
+    showNewAffirmation();
+
+}, 6000);
+
+
+</script>
+
 
 </body>
 </html>
