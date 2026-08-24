@@ -53,9 +53,6 @@
                 'Parisienne',
                 cursive;
 
-
-            /* COLORFUL GEMINI WAVE */
-
             background:
                 linear-gradient(
                     135deg,
@@ -73,8 +70,6 @@
 
             background-size:
                 500% 500%;
-
-            /* FASTER BACKGROUND */
 
             animation:
                 geminiWave
@@ -291,8 +286,6 @@
 
         /* ==========================================
            HYFTED LOGO
-           
-           ORIGINAL OUTFIT FONT
         ========================================== */
 
         .logo-title {
@@ -316,7 +309,6 @@
             margin-bottom:
                 30px;
 
-
             background:
                 linear-gradient(
                     270deg,
@@ -336,7 +328,6 @@
             -webkit-text-fill-color:
                 transparent;
 
-
             animation:
 
                 moveTextGradient
@@ -350,8 +341,6 @@
 
         /* ==========================================
            WELCOME
-           
-           FANCY CURSIVE FONT
         ========================================== */
 
         h1 {
@@ -369,7 +358,6 @@
             margin-bottom:
                 5px;
 
-
             background:
                 linear-gradient(
                     270deg,
@@ -389,7 +377,6 @@
             -webkit-text-fill-color:
                 transparent;
 
-
             animation:
                 moveTextGradient
                 5s ease infinite;
@@ -399,8 +386,6 @@
 
         /* ==========================================
            CHILL SOUNDS
-           
-           HANDWRITTEN BUT NOT SUPER CURSIVE
         ========================================== */
 
         p {
@@ -424,7 +409,6 @@
             margin-bottom:
                 35px;
 
-
             background:
                 linear-gradient(
                     270deg,
@@ -444,7 +428,6 @@
             -webkit-text-fill-color:
                 transparent;
 
-
             animation:
                 moveTextGradient
                 6s ease infinite;
@@ -454,8 +437,6 @@
 
         /* ==========================================
            CONTINUE BUTTON
-           
-           ORIGINAL OUTFIT FONT
         ========================================== */
 
         .next-btn {
@@ -500,8 +481,7 @@
                 );
 
             backdrop-filter:
-                blur(10px
-            );
+                blur(10px);
 
             -webkit-backdrop-filter:
                 blur(10px);
@@ -547,7 +527,87 @@
 
 
         /* ==========================================
-           COLORFUL GEMINI WAVE ANIMATION
+           OWNER + COPYRIGHT LINKS
+        ========================================== */
+
+        .bottom-links {
+
+            position:
+                fixed;
+
+            bottom:
+                22px;
+
+            left:
+                0;
+
+            width:
+                100%;
+
+            display:
+                flex;
+
+            justify-content:
+                center;
+
+            align-items:
+                center;
+
+            gap:
+                22px;
+
+            z-index:
+                2000;
+
+        }
+
+
+        .bottom-link {
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            color:
+                white;
+
+            font-size:
+                0.9rem;
+
+            font-weight:
+                bold;
+
+            text-decoration:
+                underline;
+
+            cursor:
+                pointer;
+
+            transition:
+                opacity
+                0.2s ease;
+
+        }
+
+
+        .bottom-link:hover {
+
+            opacity:
+                0.7;
+
+        }
+
+
+        .bottom-link:active {
+
+            opacity:
+                0.5;
+
+        }
+
+
+        /* ==========================================
+           COLORFUL GEMINI WAVE
         ========================================== */
 
         @keyframes geminiWave {
@@ -598,7 +658,7 @@
 
 
         /* ==========================================
-           TEXT GRADIENT ANIMATION
+           TEXT GRADIENT
         ========================================== */
 
         @keyframes moveTextGradient {
@@ -658,7 +718,7 @@
 
 
         /* ==========================================
-           TABLET / IPAD
+           TABLET
         ========================================== */
 
         @media (max-width: 900px) {
@@ -688,7 +748,7 @@
 
 
         /* ==========================================
-           SMALLER IPADS / PHONES
+           PHONE / SMALL IPAD
         ========================================== */
 
         @media (max-width: 600px) {
@@ -749,6 +809,25 @@
 
             }
 
+
+            .bottom-links {
+
+                bottom:
+                    15px;
+
+                gap:
+                    16px;
+
+            }
+
+
+            .bottom-link {
+
+                font-size:
+                    0.78rem;
+
+            }
+
         }
 
 
@@ -773,6 +852,22 @@
 
                 padding:
                     7px 8px;
+
+            }
+
+
+            .bottom-links {
+
+                gap:
+                    12px;
+
+            }
+
+
+            .bottom-link {
+
+                font-size:
+                    0.72rem;
 
             }
 
@@ -923,6 +1018,34 @@
             class="next-btn">
 
             Continue
+
+        </a>
+
+
+    </div>
+
+
+    <!-- ==========================================
+         OWNER + COPYRIGHT LINKS
+    ========================================== -->
+
+    <div class="bottom-links">
+
+
+        <a
+            href="owner.html"
+            class="bottom-link">
+
+            Owner
+
+        </a>
+
+
+        <a
+            href="copyright.html"
+            class="bottom-link">
+
+            Copyright License
 
         </a>
 
