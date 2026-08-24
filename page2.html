@@ -130,6 +130,24 @@ body {
 }
 
 
+/* BETA */
+
+.beta-label {
+    font-family: 'Outfit', sans-serif;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    color: rgba(255,255,255,0.75);
+
+    margin-bottom: 6px;
+
+    text-transform: uppercase;
+}
+
+
 /* TITLE */
 
 h1 {
@@ -490,6 +508,10 @@ h1 {
         padding: 25px 18px;
     }
 
+    .beta-label {
+        font-size: 0.68rem;
+    }
+
     h1 {
         font-size: 3.2rem;
     }
@@ -557,6 +579,10 @@ h1 {
 
 <div class="container">
 
+    <div class="beta-label">
+        (BETA)
+    </div>
+
     <h1>
         Calm Down Music
     </h1>
@@ -577,9 +603,10 @@ h1 {
 
         <!-- YOUR REAL MP3 FILE -->
 
-  <audio id="calmAudio" preload="metadata">
-     <source src="./calm-music.mp3.mp3" type="audio/mpeg">
-  </audio>
+        <audio id="calmAudio" preload="metadata">
+            <source src="./calm-music.mp3.mp3" type="audio/mpeg">
+        </audio>
+
 
         <!-- PLAY BUTTON -->
 
@@ -598,13 +625,17 @@ h1 {
             </span>
 
         </button>
-	<!-- FULL SONGS BUTTON -->
-<button
-    class="sound-button"
-    onclick="window.location.href='page10.html'">
-    Full-songs
-</button>	
-		
+
+
+        <!-- FULL SONGS BUTTON -->
+
+        <button
+            class="sound-button"
+            onclick="window.location.href='page10.html'">
+
+            Full-songs
+
+        </button>
 
 
         <!-- PROGRESS BAR -->
@@ -700,14 +731,17 @@ h1 {
 
 
 <script>
+
 console.log("SCRIPT IS RUNNING");
+
 
 /* GET THE AUDIO */
 
 const audio =
     document.getElementById("calmAudio");
+
 const upBeatAudio =
-    document.getElementById("upbeatAudio");	
+    document.getElementById("upbeatAudio");
 
 const playIcon =
     document.getElementById("playIcon");
@@ -921,10 +955,11 @@ audio.addEventListener("timeupdate", function() {
 /* ERROR CHECK */
 
 audio.addEventListener("error", function() {
-    status.textContent = "Calm.mp3 could not be found.";
+
+    status.textContent =
+        "Calm.mp3 could not be found.";
+
 });
-
-
 
 </script>
 
