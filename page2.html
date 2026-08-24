@@ -24,7 +24,7 @@ body {
 
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 
     font-family: 'Great Vibes', cursive;
 
@@ -190,15 +190,6 @@ h1 {
 }
 
 
-/* MUSIC LIST */
-
-.music-list {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-}
-
-
 /* MUSIC CARD */
 
 .music-item {
@@ -217,6 +208,8 @@ h1 {
     gap: 15px;
 
     transition: all 0.3s ease;
+
+    margin-bottom: 18px;
 }
 
 .music-item:hover {
@@ -589,201 +582,262 @@ h1 {
     </p>
 
 
-    <!-- ALL MUSIC -->
+    <!-- ================================================= -->
+    <!-- SAMPLE 1 -->
+    <!-- ================================================= -->
 
-    <div class="music-list">
+    <div class="music-item">
 
+        <span class="music-title">
+            Calm Music
+        </span>
 
-        <!-- ========================= -->
-        <!-- SAMPLE 1 -->
-        <!-- ========================= -->
+        <audio id="audio1" preload="metadata">
+            <source src="./calm-music.mp3.mp3" type="audio/mpeg">
+        </audio>
 
-        <div class="music-item">
+        <button
+            id="button1"
+            class="sound-button"
+            onclick="toggleMusic(1)">
 
-            <span class="music-title">
-                Calm Music
+            <span id="icon1" class="play-icon"></span>
+
+            <span id="text1">
+                Play Music
             </span>
 
-            <audio id="calmAudio" preload="metadata">
-                <source src="./calm-music.mp3.mp3" type="audio/mpeg">
-            </audio>
+        </button>
 
-            <button
-                id="playButton1"
-                class="sound-button"
-                onclick="toggleMusic('calm')">
+        <div class="progress-container">
 
-                <span
-                    id="playIcon1"
-                    class="play-icon">
-                </span>
-
-                <span id="buttonText1">
-                    Play Music
-                </span>
-
-            </button>
-
-
-            <!-- FULL SONGS -->
-
-            <button
-                class="sound-button"
-                onclick="window.location.href='page10.html'">
-
-                Full-songs
-
-            </button>
-
-
-            <div class="progress-container">
-
-                <input
-                    id="progress1"
-                    class="progress-bar"
-                    type="range"
-                    min="0"
-                    max="100"
-                    value="0"
-                    step="0.1"
-                    oninput="seekMusic('calm', this.value)"
-                >
-
-            </div>
-
-
-            <div class="time">
-
-                <span id="currentTime1">
-                    0:00
-                </span>
-
-                <span id="duration1">
-                    0:00
-                </span>
-
-            </div>
-
-
-            <div class="volume-row">
-
-                <span class="volume-label">
-                    Volume
-                </span>
-
-                <input
-                    id="volume1"
-                    class="volume-slider"
-                    type="range"
-                    min="0"
-                    max="1"
-                    step="0.01"
-                    value="0.5"
-                    oninput="changeVolume('calm', this.value)"
-                >
-
-            </div>
-
-
-            <div id="status1" class="status">
-                Ready
-            </div>
+            <input
+                id="progress1"
+                class="progress-bar"
+                type="range"
+                min="0"
+                max="100"
+                value="0"
+                step="0.1"
+                oninput="seekMusic(1, this.value)"
+            >
 
         </div>
 
+        <div class="time">
 
-
-        <!-- ========================= -->
-        <!-- SAMPLE 2 -->
-        <!-- ========================= -->
-
-        <div class="music-item">
-
-            <span class="music-title">
-                Pulsebox Lofi Smooth
+            <span id="current1">
+                0:00
             </span>
 
-            <audio id="pulseAudio" preload="metadata">
-                <source src="./pulsebox-lofi-smooth-522876.mp3" type="audio/mpeg">
-            </audio>
+            <span id="duration1">
+                0:00
+            </span>
 
+        </div>
 
-            <button
-                id="playButton2"
-                class="sound-button"
-                onclick="toggleMusic('pulse')">
+        <div class="volume-row">
 
-                <span
-                    id="playIcon2"
-                    class="play-icon">
-                </span>
+            <span class="volume-label">
+                Volume
+            </span>
 
-                <span id="buttonText2">
-                    Play Music
-                </span>
+            <input
+                id="volume1"
+                class="volume-slider"
+                type="range"
+                min="0"
+                max="1"
+                step="0.01"
+                value="0.5"
+                oninput="changeVolume(1, this.value)"
+            >
 
-            </button>
+        </div>
 
-
-            <div class="progress-container">
-
-                <input
-                    id="progress2"
-                    class="progress-bar"
-                    type="range"
-                    min="0"
-                    max="100"
-                    value="0"
-                    step="0.1"
-                    oninput="seekMusic('pulse', this.value)"
-                >
-
-            </div>
-
-
-            <div class="time">
-
-                <span id="currentTime2">
-                    0:00
-                </span>
-
-                <span id="duration2">
-                    0:00
-                </span>
-
-            </div>
-
-
-            <div class="volume-row">
-
-                <span class="volume-label">
-                    Volume
-                </span>
-
-                <input
-                    id="volume2"
-                    class="volume-slider"
-                    type="range"
-                    min="0"
-                    max="1"
-                    step="0.01"
-                    value="0.5"
-                    oninput="changeVolume('pulse', this.value)"
-                >
-
-            </div>
-
-
-            <div id="status2" class="status">
-                Ready
-            </div>
-
+        <div id="status1" class="status">
+            Ready
         </div>
 
     </div>
 
 
-    <!-- BUTTONS -->
+    <!-- ================================================= -->
+    <!-- SAMPLE 2 -->
+    <!-- ================================================= -->
+
+    <div class="music-item">
+
+        <span class="music-title">
+            PrettyJohn Lofi
+        </span>
+
+        <audio id="audio2" preload="metadata">
+            <source
+                src="./prettyjohn1-lofi-lofi-music_61sec-587180 2.mp3"
+                type="audio/mpeg">
+        </audio>
+
+        <button
+            id="button2"
+            class="sound-button"
+            onclick="toggleMusic(2)">
+
+            <span id="icon2" class="play-icon"></span>
+
+            <span id="text2">
+                Play Music
+            </span>
+
+        </button>
+
+        <div class="progress-container">
+
+            <input
+                id="progress2"
+                class="progress-bar"
+                type="range"
+                min="0"
+                max="100"
+                value="0"
+                step="0.1"
+                oninput="seekMusic(2, this.value)"
+            >
+
+        </div>
+
+        <div class="time">
+
+            <span id="current2">
+                0:00
+            </span>
+
+            <span id="duration2">
+                0:00
+            </span>
+
+        </div>
+
+        <div class="volume-row">
+
+            <span class="volume-label">
+                Volume
+            </span>
+
+            <input
+                id="volume2"
+                class="volume-slider"
+                type="range"
+                min="0"
+                max="1"
+                step="0.01"
+                value="0.5"
+                oninput="changeVolume(2, this.value)"
+            >
+
+        </div>
+
+        <div id="status2" class="status">
+            Ready
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- SAMPLE 3 -->
+    <!-- ================================================= -->
+
+    <div class="music-item">
+
+        <span class="music-title">
+            Pulsebox Lofi Smooth
+        </span>
+
+        <audio id="audio3" preload="metadata">
+            <source
+                src="./pulsebox-lofi-smooth-522876.mp3"
+                type="audio/mpeg">
+        </audio>
+
+        <button
+            id="button3"
+            class="sound-button"
+            onclick="toggleMusic(3)">
+
+            <span id="icon3" class="play-icon"></span>
+
+            <span id="text3">
+                Play Music
+            </span>
+
+        </button>
+
+        <div class="progress-container">
+
+            <input
+                id="progress3"
+                class="progress-bar"
+                type="range"
+                min="0"
+                max="100"
+                value="0"
+                step="0.1"
+                oninput="seekMusic(3, this.value)"
+            >
+
+        </div>
+
+        <div class="time">
+
+            <span id="current3">
+                0:00
+            </span>
+
+            <span id="duration3">
+                0:00
+            </span>
+
+        </div>
+
+        <div class="volume-row">
+
+            <span class="volume-label">
+                Volume
+            </span>
+
+            <input
+                id="volume3"
+                class="volume-slider"
+                type="range"
+                min="0"
+                max="1"
+                step="0.01"
+                value="0.5"
+                oninput="changeVolume(3, this.value)"
+            >
+
+        </div>
+
+        <div id="status3" class="status">
+            Ready
+        </div>
+
+    </div>
+
+
+    <!-- FULL SONGS BUTTON -->
+
+    <button
+        class="sound-button"
+        onclick="window.location.href='page10.html'">
+
+        Full-songs
+
+    </button>
+
+
+    <!-- BOTTOM BUTTONS -->
 
     <div class="button-row">
 
@@ -809,309 +863,27 @@ h1 {
 </div>
 
 
-
 <script>
 
+/* ================================================= */
+/* AUDIO SYSTEM */
+/* ================================================= */
 
-/* ========================================= */
-/* AUDIO PLAYERS */
-/* ========================================= */
-
-const calmAudio =
-    document.getElementById("calmAudio");
-
-const pulseAudio =
-    document.getElementById("pulseAudio");
-
-
-const players = {
-
-    calm: {
-        audio: calmAudio,
-        icon: document.getElementById("playIcon1"),
-        text: document.getElementById("buttonText1"),
-        progress: document.getElementById("progress1"),
-        current: document.getElementById("currentTime1"),
-        duration: document.getElementById("duration1"),
-        volume: document.getElementById("volume1"),
-        status: document.getElementById("status1")
-    },
-
-    pulse: {
-        audio: pulseAudio,
-        icon: document.getElementById("playIcon2"),
-        text: document.getElementById("buttonText2"),
-        progress: document.getElementById("progress2"),
-        current: document.getElementById("currentTime2"),
-        duration: document.getElementById("duration2"),
-        volume: document.getElementById("volume2"),
-        status: document.getElementById("status2")
-    }
-
-};
+const audios = [
+    document.getElementById("audio1"),
+    document.getElementById("audio2"),
+    document.getElementById("audio3")
+];
 
 
 /* DEFAULT VOLUME */
 
-calmAudio.volume = 0.5;
-pulseAudio.volume = 0.5;
-
-
-/* ========================================= */
-/* PLAY / PAUSE */
-/* ========================================= */
-
-function toggleMusic(name) {
-
-    const player = players[name];
-
-    /*
-       Stop the other sample when
-       a new one starts.
-    */
-
-    Object.keys(players).forEach(function(otherName) {
-
-        if (otherName !== name) {
-
-            const other = players[otherName];
-
-            if (!other.audio.paused) {
-
-                other.audio.pause();
-
-                other.icon.className =
-                    "play-icon";
-
-                other.text.textContent =
-                    "Play Music";
-
-                other.status.textContent =
-                    "Paused";
-
-            }
-
-        }
-
-    });
-
-
-    if (player.audio.paused) {
-
-        player.audio.play()
-
-        .then(function() {
-
-            player.icon.className =
-                "pause-icon";
-
-            player.text.textContent =
-                "Pause Music";
-
-            player.status.textContent =
-                "Playing...";
-
-        })
-
-        .catch(function(error) {
-
-            player.status.textContent =
-                "Could not play audio";
-
-            console.log(error);
-
-        });
-
-    } else {
-
-        player.audio.pause();
-
-        player.icon.className =
-            "play-icon";
-
-        player.text.textContent =
-            "Play Music";
-
-        player.status.textContent =
-            "Paused";
-
-    }
-
-}
-
-
-/* ========================================= */
-/* AUDIO EVENTS */
-/* ========================================= */
-
-Object.keys(players).forEach(function(name) {
-
-    const player = players[name];
-
-
-    /* PLAY */
-
-    player.audio.addEventListener("play", function() {
-
-        player.icon.className =
-            "pause-icon";
-
-        player.text.textContent =
-            "Pause Music";
-
-        player.status.textContent =
-            "Playing...";
-
-    });
-
-
-    /* PAUSE */
-
-    player.audio.addEventListener("pause", function() {
-
-        if (!player.audio.ended) {
-
-            player.icon.className =
-                "play-icon";
-
-            player.text.textContent =
-                "Play Music";
-
-        }
-
-    });
-
-
-    /* END */
-
-    player.audio.addEventListener("ended", function() {
-
-        player.icon.className =
-            "play-icon";
-
-        player.text.textContent =
-            "Play Music";
-
-        player.progress.value = 0;
-
-        player.current.textContent =
-            "0:00";
-
-        player.status.textContent =
-            "Finished";
-
-    });
-
-
-    /* LENGTH */
-
-    player.audio.addEventListener("loadedmetadata", function() {
-
-        player.duration.textContent =
-            formatTime(player.audio.duration);
-
-    });
-
-
-    /* PROGRESS */
-
-    player.audio.addEventListener("timeupdate", function() {
-
-        if (!player.audio.duration) {
-            return;
-        }
-
-
-        const percent =
-            (player.audio.currentTime /
-            player.audio.duration) * 100;
-
-
-        player.progress.value =
-            percent;
-
-
-        player.current.textContent =
-            formatTime(player.audio.currentTime);
-
-
-        /*
-           1-MINUTE PREVIEW
-        */
-
-        if (player.audio.currentTime >= 60) {
-
-            player.audio.pause();
-
-            player.audio.currentTime = 0;
-
-            player.progress.value = 0;
-
-            player.current.textContent =
-                "0:00";
-
-            player.icon.className =
-                "play-icon";
-
-            player.text.textContent =
-                "Play Music";
-
-            player.status.textContent =
-                "1-minute preview finished";
-
-        }
-
-    });
-
-
-    /* ERROR */
-
-    player.audio.addEventListener("error", function() {
-
-        player.status.textContent =
-            "Audio file could not be found.";
-
-    });
-
+audios.forEach(function(audio) {
+    audio.volume = 0.5;
 });
 
 
-/* ========================================= */
-/* SEEK */
-/* ========================================= */
-
-function seekMusic(name, value) {
-
-    const player = players[name];
-
-    if (!player.audio.duration) {
-        return;
-    }
-
-    player.audio.currentTime =
-        (value / 100) *
-        player.audio.duration;
-
-}
-
-
-/* ========================================= */
-/* VOLUME */
-/* ========================================= */
-
-function changeVolume(name, value) {
-
-    const player = players[name];
-
-    player.audio.volume =
-        parseFloat(value);
-
-}
-
-
-/* ========================================= */
-/* TIME FORMAT */
-/* ========================================= */
+/* FORMAT TIME */
 
 function formatTime(seconds) {
 
@@ -1132,6 +904,255 @@ function formatTime(seconds) {
 
 }
 
+
+/* RESET OTHER AUDIO */
+
+function stopOtherMusic(currentIndex) {
+
+    audios.forEach(function(audio, index) {
+
+        if (index !== currentIndex - 1) {
+
+            audio.pause();
+            audio.currentTime = 0;
+
+            updateButton(index + 1, false);
+
+        }
+
+    });
+
+}
+
+
+/* PLAY / PAUSE */
+
+function toggleMusic(number) {
+
+    const audio =
+        audios[number - 1];
+
+    if (audio.paused) {
+
+        stopOtherMusic(number);
+
+        audio.play()
+        .then(function() {
+
+            updateButton(number, true);
+
+        })
+        .catch(function(error) {
+
+            document.getElementById("status" + number).textContent =
+                "Could not play this audio.";
+
+            console.log(error);
+
+        });
+
+    } else {
+
+        audio.pause();
+
+        updateButton(number, false);
+
+        document.getElementById("status" + number).textContent =
+            "Paused";
+
+    }
+
+}
+
+
+/* UPDATE BUTTON */
+
+function updateButton(number, playing) {
+
+    const icon =
+        document.getElementById("icon" + number);
+
+    const text =
+        document.getElementById("text" + number);
+
+    const status =
+        document.getElementById("status" + number);
+
+    if (playing) {
+
+        icon.className = "pause-icon";
+
+        text.textContent = "Pause Music";
+
+        status.textContent = "Playing...";
+
+    } else {
+
+        icon.className = "play-icon";
+
+        text.textContent = "Play Music";
+
+    }
+
+}
+
+
+/* SETUP EACH AUDIO */
+
+audios.forEach(function(audio, index) {
+
+    const number = index + 1;
+
+    const progress =
+        document.getElementById("progress" + number);
+
+    const currentTime =
+        document.getElementById("current" + number);
+
+    const duration =
+        document.getElementById("duration" + number);
+
+    const status =
+        document.getElementById("status" + number);
+
+
+    /* PLAY */
+
+    audio.addEventListener("play", function() {
+
+        updateButton(number, true);
+
+    });
+
+
+    /* PAUSE */
+
+    audio.addEventListener("pause", function() {
+
+        if (!audio.ended) {
+
+            updateButton(number, false);
+
+        }
+
+    });
+
+
+    /* LOADED */
+
+    audio.addEventListener("loadedmetadata", function() {
+
+        duration.textContent =
+            formatTime(audio.duration);
+
+    });
+
+
+    /* PROGRESS */
+
+    audio.addEventListener("timeupdate", function() {
+
+        if (!audio.duration) {
+            return;
+        }
+
+        const percent =
+            (audio.currentTime / audio.duration) * 100;
+
+        progress.value = percent;
+
+        currentTime.textContent =
+            formatTime(audio.currentTime);
+
+    });
+
+
+    /* ENDED */
+
+    audio.addEventListener("ended", function() {
+
+        updateButton(number, false);
+
+        progress.value = 0;
+
+        currentTime.textContent = "0:00";
+
+        status.textContent = "Finished";
+
+    });
+
+
+    /* ERROR */
+
+    audio.addEventListener("error", function() {
+
+        status.textContent =
+            "Audio file could not be found.";
+
+    });
+
+});
+
+
+/* SEEK */
+
+function seekMusic(number, value) {
+
+    const audio =
+        audios[number - 1];
+
+    if (!audio.duration) {
+        return;
+    }
+
+    audio.currentTime =
+        (value / 100) * audio.duration;
+
+}
+
+
+/* VOLUME */
+
+function changeVolume(number, value) {
+
+    const audio =
+        audios[number - 1];
+
+    audio.volume =
+        parseFloat(value);
+
+}
+
+
+/* 1-MINUTE PREVIEW LIMIT */
+
+audios.forEach(function(audio, index) {
+
+    const number = index + 1;
+
+    audio.addEventListener("timeupdate", function() {
+
+        if (audio.currentTime >= 60) {
+
+            audio.pause();
+
+            audio.currentTime = 0;
+
+            document.getElementById("progress" + number).value = 0;
+
+            document.getElementById("current" + number).textContent =
+                "0:00";
+
+            updateButton(number, false);
+
+            document.getElementById("status" + number).textContent =
+                "1-minute preview finished";
+
+        }
+
+    });
+
+});
 
 </script>
 
