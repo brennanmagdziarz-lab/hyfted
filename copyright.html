@@ -9,11 +9,9 @@
         name="viewport"
         content="width=device-width, initial-scale=1.0">
 
-    <title>Copyright License - Hyfted</title>
-
+    <title>Copyright License — Hyfted</title>
 
     <!-- FONTS -->
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link
@@ -22,7 +20,7 @@
         crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Outfit:wght@600;900&family=Parisienne&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;900&display=swap"
         rel="stylesheet">
 
 
@@ -39,6 +37,10 @@
 
             min-height: 100vh;
 
+            font-family: Arial, sans-serif;
+
+            color: white;
+
             display: flex;
 
             justify-content: center;
@@ -46,11 +48,6 @@
             align-items: center;
 
             padding: 40px 20px;
-
-            font-family:
-                'Outfit',
-                sans-serif;
-
 
             background:
                 linear-gradient(
@@ -66,8 +63,7 @@
                     #1677ff
                 );
 
-            background-size:
-                500% 500%;
+            background-size: 500% 500%;
 
             animation:
                 geminiWave
@@ -76,72 +72,22 @@
         }
 
 
-        /* ==========================================
-           LICENSE CARD
-        ========================================== */
+        /* BRAND NAME — KEEPS BRAND FONT */
 
-        .license-card {
-
-            width: 100%;
-
-            max-width: 700px;
-
-            padding: 45px 35px;
-
-            text-align: center;
-
-            border-radius: 30px;
-
-            background:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.22
-                );
-
-            border:
-                1px solid
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.4
-                );
-
-            backdrop-filter:
-                blur(25px);
-
-            -webkit-backdrop-filter:
-                blur(25px);
-
-            box-shadow:
-                0 20px 60px
-                rgba(
-                    0,
-                    0,
-                    0,
-                    0.2
-                );
-
-        }
-
-
-        /* ==========================================
-           TITLE
-        ========================================== */
-
-        .title {
+        .brand {
 
             font-family:
                 'Outfit',
                 sans-serif;
 
             font-size:
-                3.2rem;
+                4.5rem;
 
             font-weight:
                 900;
+
+            letter-spacing:
+                -2px;
 
             margin-bottom:
                 10px;
@@ -166,106 +112,50 @@
 
             animation:
                 moveTextGradient
-                5s ease infinite;
+                4s ease infinite;
 
         }
 
 
-        /* ==========================================
-           HYFTED
-        ========================================== */
+        /* COPYRIGHT PAGE CONTENT — ARIAL */
 
-        .hyfted {
+        .copyright-container {
 
-            font-size:
-                1.3rem;
+            width: 100%;
 
-            font-weight:
-                700;
+            max-width: 850px;
 
-            color:
-                white;
+            text-align: center;
 
-            margin-bottom:
-                30px;
+            padding: 45px 30px;
 
-        }
-
-
-        /* ==========================================
-           SECTIONS
-        ========================================== */
-
-        .section {
-
-            margin:
-                22px 0;
-
-            padding:
-                20px;
-
-            border-radius:
-                20px;
+            border-radius: 30px;
 
             background:
                 rgba(
                     255,
                     255,
                     255,
-                    0.12
+                    0.18
                 );
 
-        }
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.35
+                );
 
+            backdrop-filter:
+                blur(20px);
 
-        .section h2 {
+            -webkit-backdrop-filter:
+                blur(20px);
 
-            color:
-                white;
-
-            font-size:
-                1.35rem;
-
-            margin-bottom:
-                10px;
-
-        }
-
-
-        .section p {
-
-            color:
-                white;
-
-            font-family:
-                'Kalam',
-                cursive;
-
-            font-size:
-                1.25rem;
-
-            line-height:
-                1.5;
-
-        }
-
-
-        /* ==========================================
-           COPYRIGHT NOTICE
-        ========================================== */
-
-        .copyright {
-
-            margin-top:
-                30px;
-
-            padding:
-                20px;
-
-            border-radius:
-                20px;
-
-            background:
+            box-shadow:
+                0 15px 40px
                 rgba(
                     0,
                     0,
@@ -273,21 +163,77 @@
                     0.15
                 );
 
-            color:
-                white;
+        }
 
-            font-weight:
-                700;
 
-            line-height:
-                1.6;
+        h1 {
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size:
+                2.5rem;
+
+            margin-bottom:
+                25px;
 
         }
 
 
-        /* ==========================================
-           BACK LINK
-        ========================================== */
+        h2 {
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size:
+                1.4rem;
+
+            margin-top:
+                28px;
+
+            margin-bottom:
+                10px;
+
+        }
+
+
+        p {
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-size:
+                1rem;
+
+            line-height:
+                1.7;
+
+            margin-bottom:
+                15px;
+
+        }
+
+
+        .copyright {
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            font-weight:
+                bold;
+
+            font-size:
+                1.05rem;
+
+            margin-top:
+                25px;
+
+        }
+
 
         .back-link {
 
@@ -297,20 +243,18 @@
             margin-top:
                 30px;
 
+            font-family:
+                Arial,
+                sans-serif;
+
             color:
                 white;
-
-            font-size:
-                1rem;
-
-            font-weight:
-                700;
 
             text-decoration:
                 underline;
 
-            transition:
-                all 0.2s ease;
+            font-weight:
+                bold;
 
         }
 
@@ -320,66 +264,35 @@
             opacity:
                 0.75;
 
-            transform:
-                translateY(-1px);
-
         }
 
 
-        .back-link:active {
-
-            transform:
-                scale(0.96);
-
-        }
-
-
-        /* ==========================================
-           ANIMATIONS
-        ========================================== */
+        /* BACKGROUND ANIMATION */
 
         @keyframes geminiWave {
 
             0% {
-
-                background-position:
-                    0% 50%;
-
+                background-position: 0% 50%;
             }
 
             20% {
-
-                background-position:
-                    35% 30%;
-
+                background-position: 35% 30%;
             }
 
             40% {
-
-                background-position:
-                    70% 50%;
-
+                background-position: 70% 50%;
             }
 
             60% {
-
-                background-position:
-                    100% 70%;
-
+                background-position: 100% 70%;
             }
 
             80% {
-
-                background-position:
-                    55% 50%;
-
+                background-position: 55% 50%;
             }
 
             100% {
-
-                background-position:
-                    0% 50%;
-
+                background-position: 0% 50%;
             }
 
         }
@@ -388,75 +301,46 @@
         @keyframes moveTextGradient {
 
             0% {
-
-                background-position:
-                    0% 50%;
-
+                background-position: 0% 50%;
             }
 
             50% {
-
-                background-position:
-                    100% 50%;
-
+                background-position: 100% 50%;
             }
 
             100% {
-
-                background-position:
-                    0% 50%;
-
+                background-position: 0% 50%;
             }
 
         }
 
 
-        /* ==========================================
-           MOBILE
-        ========================================== */
+        /* IPAD / PHONE */
 
         @media (max-width: 600px) {
 
             body {
-
-                padding:
-                    25px 15px;
-
+                padding: 25px 15px;
             }
 
-
-            .license-card {
-
-                padding:
-                    35px 20px;
-
-                border-radius:
-                    25px;
-
+            .copyright-container {
+                padding: 35px 20px;
             }
 
-
-            .title {
-
-                font-size:
-                    2.5rem;
-
+            .brand {
+                font-size: 3.8rem;
             }
 
-
-            .hyfted {
-
-                font-size:
-                    1.1rem;
-
+            h1 {
+                font-size: 2rem;
             }
 
+            h2 {
+                font-size: 1.2rem;
+            }
 
-            .section p {
-
-                font-size:
-                    1.1rem;
-
+            p {
+                font-size: 0.95rem;
             }
 
         }
@@ -469,123 +353,77 @@
 <body>
 
 
-    <div class="license-card">
+    <div class="copyright-container">
 
 
-        <div class="title">
+        <!-- BRAND NAME -->
 
+        <div class="brand">
+            hyfted
+        </div>
+
+
+        <h1>
             Copyright License
-
-        </div>
-
-
-        <div class="hyfted">
-
-            Hyfted.com
-
-        </div>
+        </h1>
 
 
-        <div class="section">
-
-            <h2>
-
-                © Copyright
-
-            </h2>
-
-            <p>
-
-                © 2026 Brennan Magdziarz.
-                All rights reserved.
-
-            </p>
-
-        </div>
+        <p class="copyright">
+            © 2026 Brennan Magdziarz. All Rights Reserved.
+        </p>
 
 
-        <div class="section">
+        <h2>
+            Ownership
+        </h2>
 
-            <h2>
-
-                Ownership
-
-            </h2>
-
-            <p>
-
-                Hyfted, including its website,
-                original designs, original written
-                content, graphics, branding,
-                features, and original concepts,
-                is owned by Brennan Magdziarz
-                unless otherwise stated.
-
-            </p>
-
-        </div>
+        <p>
+            Hyfted.com and its original content, design,
+            features, concepts, graphics, software, and
+            other original materials are owned by
+            Brennan Magdziarz unless otherwise stated.
+        </p>
 
 
-        <div class="section">
+        <h2>
+            License
+        </h2>
 
-            <h2>
-
-                Permission
-
-            </h2>
-
-            <p>
-
-                No permission is granted to copy,
-                reproduce, modify, redistribute,
-                republish, sell, or commercially
-                use original Hyfted content,
-                designs, branding, or website
-                materials without prior written
-                permission from the owner.
-
-            </p>
-
-        </div>
+        <p>
+            No part of Hyfted may be copied, reproduced,
+            modified, distributed, republished, or used
+            commercially without prior written permission
+            from the owner.
+        </p>
 
 
-        <div class="section">
+        <h2>
+            Protection of Original Work
+        </h2>
 
-            <h2>
-
-                Website Status
-
-            </h2>
-
-            <p>
-
-                Hyfted is currently in BETA
-                and will continue to improve.
-                Features, designs, and content
-                may change over time.
-
-            </p>
-
-        </div>
+        <p>
+            This notice is intended to clearly state the
+            ownership of the original work contained on
+            Hyfted.com. Unauthorized use of protected
+            material may violate applicable copyright laws.
+        </p>
 
 
-        <div class="copyright">
+        <h2>
+            Website Status
+        </h2>
 
-            Owner: Brennan Magdziarz<br>
-
-            Website: Hyfted.com<br><br>
-
-            © 2026 Brennan Magdziarz.
-            All rights reserved.
-
-        </div>
+        <p>
+            Hyfted is currently in BETA and will continue
+            to improve and develop over time.
+        </p>
 
 
         <a
             href="index.html"
             class="back-link">
 
-            ← Back to Hyfted
+            Back to Hyfted
 
         </a>
 
