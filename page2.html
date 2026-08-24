@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -8,7 +9,10 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@400;600;900&display=swap" rel="stylesheet">
+
+<link
+href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@400;600;900&display=swap"
+rel="stylesheet">
 
 <style>
 
@@ -19,11 +23,15 @@
 }
 
 body {
+
     min-height: 100vh;
+
     padding: 125px 15px 40px;
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
     font-family: 'Great Vibes', cursive;
@@ -41,19 +49,29 @@ body {
     );
 
     background-size: 500% 500%;
+
     animation: geminiWave 5s ease-in-out infinite;
 }
 
-/* NAVIGATION */
+
+/* =========================
+   NAVIGATION
+========================= */
 
 .navigation-wrapper {
+
     width: 100%;
+
     display: flex;
+
     justify-content: center;
 
     position: fixed;
+
     top: 20px;
+
     left: 0;
+
     z-index: 1000;
 
     padding: 0 15px;
@@ -61,55 +79,81 @@ body {
     font-family: 'Outfit', sans-serif;
 }
 
+
 .navigation {
+
     display: flex;
+
     flex-wrap: wrap;
+
     justify-content: center;
+
     gap: 6px;
 
     padding: 8px;
+
     max-width: 100%;
 
     background: rgba(255,255,255,0.45);
 
     backdrop-filter: blur(25px);
+
     -webkit-backdrop-filter: blur(25px);
 
     border: 1px solid rgba(255,255,255,0.4);
+
     border-radius: 28px;
 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.15);
 }
 
+
 .nav-link-item {
+
     color: #000000 !important;
+
     text-decoration: none;
 
     padding: 9px 15px;
 
     font-size: 0.82rem;
+
     font-weight: 700;
 
     border-radius: 50px;
 
     transition: all 0.2s ease;
+
     white-space: nowrap;
 }
 
+
 .nav-link-item:hover {
+
     background: rgba(255,255,255,0.55);
+
     transform: translateY(-1px);
 }
 
+
 .nav-link-item.active-tab {
+
     background: #ffffff !important;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* MAIN CONTAINER */
+
+/* =========================
+   MAIN CONTAINER
+========================= */
 
 .container {
+
     width: 100%;
+
     max-width: 560px;
 
     padding: 30px;
@@ -119,20 +163,28 @@ body {
     background: rgba(255,255,255,0.12);
 
     backdrop-filter: blur(18px);
+
     -webkit-backdrop-filter: blur(18px);
 
     border: 1px solid rgba(255,255,255,0.25);
+
     border-radius: 26px;
 
-    box-shadow: 0 10px 35px rgba(0,0,0,0.18);
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.18);
 }
 
-/* BETA */
+
+/* =========================
+   BETA
+========================= */
 
 .beta-label {
+
     font-family: 'Outfit', sans-serif;
 
     font-size: 0.75rem;
+
     font-weight: 600;
 
     letter-spacing: 1.5px;
@@ -144,12 +196,17 @@ body {
     text-transform: uppercase;
 }
 
-/* TITLE */
+
+/* =========================
+   TITLE
+========================= */
 
 h1 {
+
     font-family: 'Great Vibes', cursive;
 
     font-size: 3.8rem;
+
     font-weight: 400;
 
     margin-bottom: 5px;
@@ -165,14 +222,20 @@ h1 {
     background-size: 400% 400%;
 
     -webkit-background-clip: text;
+
     -webkit-text-fill-color: transparent;
 
-    animation: moveTextGradient 5s ease infinite;
+    animation:
+        moveTextGradient 5s ease infinite;
 }
 
-/* SUBTITLE */
+
+/* =========================
+   SUBTITLE
+========================= */
 
 .subtitle {
+
     font-family: 'Outfit', sans-serif;
 
     font-size: 1rem;
@@ -184,9 +247,13 @@ h1 {
     letter-spacing: 1px;
 }
 
-/* MUSIC CARD */
+
+/* =========================
+   MUSIC CARD
+========================= */
 
 .music-item {
+
     padding: 22px;
 
     border-radius: 20px;
@@ -196,7 +263,9 @@ h1 {
     border: 1px solid rgba(255,255,255,0.2);
 
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
 
     gap: 15px;
@@ -204,31 +273,45 @@ h1 {
     transition: all 0.3s ease;
 }
 
+
 .music-item:hover {
+
     background: rgba(255,255,255,0.18);
+
     transform: translateY(-2px);
 }
 
-/* MUSIC TITLE */
+
+/* =========================
+   MUSIC TITLE
+========================= */
 
 .music-title {
+
     font-family: 'Outfit', sans-serif;
 
     font-weight: 600;
+
     font-size: 1.15rem;
 
     color: #ffffff;
 }
 
-/* PLAY BUTTON */
+
+/* =========================
+   PLAY BUTTON
+========================= */
 
 .sound-button {
+
     width: 100%;
+
     min-height: 54px;
 
     padding: 12px 20px;
 
     border: 1px solid rgba(255,255,255,0.4);
+
     border-radius: 50px;
 
     background: rgba(255,255,255,0.20);
@@ -236,57 +319,83 @@ h1 {
     color: #ffffff;
 
     font-family: 'Outfit', sans-serif;
+
     font-size: 1rem;
+
     font-weight: 600;
 
     cursor: pointer;
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
     gap: 12px;
 
     transition: all 0.25s ease;
 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.08);
 }
 
+
 .sound-button:hover {
+
     background: rgba(255,255,255,0.32);
+
     transform: scale(1.025);
 }
 
+
 .sound-button:active {
+
     transform: scale(0.97);
 }
 
-/* PLAY ICON */
+
+/* =========================
+   PLAY ICON
+========================= */
 
 .play-icon {
+
     width: 0;
+
     height: 0;
 
     border-top: 9px solid transparent;
+
     border-bottom: 9px solid transparent;
+
     border-left: 14px solid #ffffff;
 }
 
-/* PAUSE ICON */
+
+/* =========================
+   PAUSE ICON
+========================= */
 
 .pause-icon {
+
     width: 15px;
+
     height: 18px;
 
     display: inline-flex;
+
     gap: 4px;
 }
 
+
 .pause-icon::before,
 .pause-icon::after {
+
     content: "";
 
     width: 5px;
+
     height: 18px;
 
     background: #ffffff;
@@ -294,17 +403,25 @@ h1 {
     border-radius: 2px;
 }
 
-/* PROGRESS */
+
+/* =========================
+   PROGRESS
+========================= */
 
 .progress-container {
+
     width: 100%;
 }
 
+
 .progress-bar {
+
     width: 100%;
+
     height: 5px;
 
     appearance: none;
+
     -webkit-appearance: none;
 
     border-radius: 20px;
@@ -314,11 +431,15 @@ h1 {
     cursor: pointer;
 }
 
+
 .progress-bar::-webkit-slider-thumb {
+
     appearance: none;
+
     -webkit-appearance: none;
 
     width: 14px;
+
     height: 14px;
 
     border-radius: 50%;
@@ -328,8 +449,11 @@ h1 {
     cursor: pointer;
 }
 
+
 .progress-bar::-moz-range-thumb {
+
     width: 14px;
+
     height: 14px;
 
     border-radius: 50%;
@@ -341,10 +465,15 @@ h1 {
     cursor: pointer;
 }
 
-/* TIME */
+
+/* =========================
+   TIME
+========================= */
 
 .time {
+
     display: flex;
+
     justify-content: space-between;
 
     width: 100%;
@@ -352,21 +481,29 @@ h1 {
     color: rgba(255,255,255,0.7);
 
     font-family: 'Outfit', sans-serif;
+
     font-size: 0.72rem;
 }
 
-/* VOLUME */
+
+/* =========================
+   VOLUME
+========================= */
 
 .volume-row {
+
     width: 100%;
 
     display: flex;
+
     align-items: center;
 
     gap: 10px;
 }
 
+
 .volume-label {
+
     color: white;
 
     font-family: 'Outfit', sans-serif;
@@ -374,15 +511,23 @@ h1 {
     font-size: 0.8rem;
 }
 
+
 .volume-slider {
+
     flex: 1;
+
     accent-color: white;
+
     cursor: pointer;
 }
 
-/* STATUS */
+
+/* =========================
+   STATUS
+========================= */
 
 .status {
+
     min-height: 18px;
 
     color: rgba(255,255,255,0.7);
@@ -392,12 +537,17 @@ h1 {
     font-size: 0.75rem;
 }
 
-/* BOTTOM BUTTONS */
+
+/* =========================
+   BOTTOM BUTTONS
+========================= */
 
 .button-row {
+
     margin-top: 30px;
 
     display: flex;
+
     justify-content: center;
 
     gap: 15px;
@@ -405,10 +555,13 @@ h1 {
     flex-wrap: wrap;
 }
 
+
 .back-btn {
+
     font-family: 'Outfit', sans-serif;
 
     font-weight: 600;
+
     font-size: 1rem;
 
     color: white;
@@ -426,12 +579,18 @@ h1 {
     transition: all 0.3s ease;
 }
 
+
 .back-btn:hover {
+
     background: rgba(255,255,255,0.28);
+
     transform: scale(1.05);
 }
 
-/* ANIMATIONS */
+
+/* =========================
+   ANIMATIONS
+========================= */
 
 @keyframes geminiWave {
 
@@ -449,6 +608,7 @@ h1 {
 
 }
 
+
 @keyframes moveTextGradient {
 
     0% {
@@ -465,126 +625,198 @@ h1 {
 
 }
 
-/* MOBILE */
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 600px) {
 
     body {
-        padding: 125px 10px 30px;
+
+        padding:
+            125px
+            10px
+            30px;
     }
 
+
     .navigation-wrapper {
+
         padding: 0 10px;
     }
 
+
     .navigation {
+
         gap: 4px;
+
         padding: 7px;
     }
 
+
     .nav-link-item {
+
         font-size: 0.68rem;
+
         padding: 8px 10px;
     }
 
+
     .container {
+
         padding: 25px 18px;
     }
 
+
     .beta-label {
+
         font-size: 0.68rem;
     }
 
+
     h1 {
+
         font-size: 3.2rem;
     }
 
+
     .music-title {
+
         font-size: 1rem;
     }
 
 }
 
 </style>
+
 </head>
+
 
 <body>
 
-<!-- NAVIGATION -->
+
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <div class="navigation-wrapper">
 
     <div class="navigation">
 
-        <a href="index.html" class="nav-link-item">
+        <a
+            href="index.html"
+            class="nav-link-item">
+
             Home
+
         </a>
 
-        <a href="page2.html" class="nav-link-item active-tab">
+
+        <a
+            href="page2.html"
+            class="nav-link-item active-tab">
+
             Music
+
         </a>
 
-        <a href="page3.html" class="nav-link-item">
+
+        <a
+            href="page3.html"
+            class="nav-link-item">
+
             Breathing
+
         </a>
 
-        <a href="page5.html" class="nav-link-item">
+
+        <a
+            href="page5.html"
+            class="nav-link-item">
+
             AI Chat
+
         </a>
 
-        <a href="page6.html" class="nav-link-item">
+
+        <a
+            href="page6.html"
+            class="nav-link-item">
+
             Visualizer
+
         </a>
 
-        <a href="page7.html" class="nav-link-item">
+
+        <a
+            href="page7.html"
+            class="nav-link-item">
+
             Affirmations
+
         </a>
 
     </div>
 
 </div>
 
-<!-- MAIN PAGE -->
+
+<!-- =========================
+     MAIN PAGE
+========================= -->
 
 <div class="container">
+
 
     <div class="beta-label">
         (BETA)
     </div>
 
+
     <h1>
         Calm Down Music
     </h1>
+
 
     <p class="subtitle">
         Take a moment to slow down
     </p>
 
-    <!-- MUSIC -->
+
+    <!-- =========================
+         CALM MUSIC
+    ========================= -->
 
     <div class="music-item">
+
 
         <span class="music-title">
             Calm Music
         </span>
 
-        <!-- YOUR REAL MP3 FILE -->
 
-        <audio id="calmAudio" preload="metadata">
-            <source src="./calm-music.mp3.mp3" type="audio/mpeg">
+        <audio
+            id="calmAudio"
+            preload="metadata">
+
+            <source
+                src="./calm-music.mp3.mp3"
+                type="audio/mpeg">
+
         </audio>
 
-        <!-- PLAY BUTTON -->
 
         <button
             id="playButton"
             class="sound-button"
-            onclick="toggleMusic()">
+            onclick="toggleCalmMusic()">
 
             <span
                 id="playIcon"
                 class="play-icon">
             </span>
+
 
             <span id="buttonText">
                 Play Music
@@ -592,7 +824,52 @@ h1 {
 
         </button>
 
-        <!-- FULL SONGS BUTTON -->
+
+        <!-- =========================
+             LOFI SAMPLE
+        ========================= -->
+
+        <span
+            class="music-title"
+            style="margin-top: 10px;">
+
+            Lofi Music Sample
+
+        </span>
+
+
+        <audio
+            id="lofiAudio"
+            preload="metadata">
+
+            <source
+                src="./prettyjohn1-lofi-lofi-music_61sec-587180 2.mp3"
+                type="audio/mpeg">
+
+        </audio>
+
+
+        <button
+            id="lofiPlayButton"
+            class="sound-button"
+            onclick="toggleLofiMusic()">
+
+            <span
+                id="lofiPlayIcon"
+                class="play-icon">
+            </span>
+
+
+            <span id="lofiButtonText">
+                Play Lofi Sample
+            </span>
+
+        </button>
+
+
+        <!-- =========================
+             FULL SONGS
+        ========================= -->
 
         <button
             class="sound-button"
@@ -602,7 +879,10 @@ h1 {
 
         </button>
 
-        <!-- PROGRESS BAR -->
+
+        <!-- =========================
+             PROGRESS
+        ========================= -->
 
         <div class="progress-container">
 
@@ -619,7 +899,10 @@ h1 {
 
         </div>
 
-        <!-- TIME -->
+
+        <!-- =========================
+             TIME
+        ========================= -->
 
         <div class="time">
 
@@ -627,19 +910,24 @@ h1 {
                 0:00
             </span>
 
+
             <span id="duration">
                 0:00
             </span>
 
         </div>
 
-        <!-- VOLUME -->
+
+        <!-- =========================
+             VOLUME
+        ========================= -->
 
         <div class="volume-row">
 
             <span class="volume-label">
                 Volume
             </span>
+
 
             <input
                 id="volume"
@@ -654,6 +942,7 @@ h1 {
 
         </div>
 
+
         <div
             id="status"
             class="status">
@@ -664,9 +953,13 @@ h1 {
 
     </div>
 
-    <!-- BUTTONS -->
+
+    <!-- =========================
+         BOTTOM BUTTONS
+    ========================= -->
 
     <div class="button-row">
+
 
         <a
             href="index.html"
@@ -675,6 +968,7 @@ h1 {
             Go Back
 
         </a>
+
 
         <a
             href="page3.html"
@@ -689,184 +983,524 @@ h1 {
 
 </div>
 
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
 <script>
 
-console.log("SCRIPT IS RUNNING");
 
-/* GET THE AUDIO */
+/* =========================
+   AUDIO
+========================= */
 
 const audio =
     document.getElementById("calmAudio");
 
-const upBeatAudio =
-    document.getElementById("upbeatAudio");
+
+const lofiAudio =
+    document.getElementById("lofiAudio");
+
+
+/* =========================
+   CALM CONTROLS
+========================= */
 
 const playIcon =
     document.getElementById("playIcon");
 
+
 const buttonText =
     document.getElementById("buttonText");
+
+
+/* =========================
+   LOFI CONTROLS
+========================= */
+
+const lofiPlayIcon =
+    document.getElementById("lofiPlayIcon");
+
+
+const lofiButtonText =
+    document.getElementById("lofiButtonText");
+
+
+/* =========================
+   SHARED CONTROLS
+========================= */
 
 const progress =
     document.getElementById("progress");
 
+
 const currentTimeText =
     document.getElementById("currentTime");
+
 
 const durationText =
     document.getElementById("duration");
 
+
 const volume =
     document.getElementById("volume");
+
 
 const status =
     document.getElementById("status");
 
-/* DEFAULT VOLUME */
+
+/* =========================
+   DEFAULT VOLUME
+========================= */
 
 audio.volume = 0.5;
 
-/* PLAY / PAUSE */
+lofiAudio.volume = 0.5;
 
-function toggleMusic() {
+
+/* =========================
+   CALM MUSIC
+========================= */
+
+function toggleCalmMusic() {
+
+
+    /* Stop Lofi */
+
+    if (!lofiAudio.paused) {
+
+        lofiAudio.pause();
+
+        lofiAudio.currentTime = 0;
+
+        lofiPlayIcon.className =
+            "play-icon";
+
+        lofiButtonText.textContent =
+            "Play Lofi Sample";
+
+    }
+
 
     if (audio.paused) {
 
+
         audio.play()
+
         .then(function() {
 
-            playIcon.className = "pause-icon";
 
-            buttonText.textContent = "Pause Music";
+            playIcon.className =
+                "pause-icon";
 
-            status.textContent = "Playing...";
+
+            buttonText.textContent =
+                "Pause Music";
+
+
+            status.textContent =
+                "Playing...";
+
 
         })
+
+
         .catch(function(error) {
+
 
             status.textContent =
                 "Could not play Calm.mp3";
+
 
             console.log(error);
 
         });
 
-    } else {
+
+    }
+
+    else {
+
 
         audio.pause();
 
-        playIcon.className = "play-icon";
 
-        buttonText.textContent = "Play Music";
+        playIcon.className =
+            "play-icon";
 
-        status.textContent = "Paused";
+
+        buttonText.textContent =
+            "Play Music";
+
+
+        status.textContent =
+            "Paused";
 
     }
 
 }
 
-/* WHEN MUSIC PLAYS */
+
+/* =========================
+   LOFI MUSIC
+========================= */
+
+function toggleLofiMusic() {
+
+
+    /* Stop Calm Music */
+
+    if (!audio.paused) {
+
+        audio.pause();
+
+        audio.currentTime = 0;
+
+        playIcon.className =
+            "play-icon";
+
+        buttonText.textContent =
+            "Play Music";
+
+    }
+
+
+    if (lofiAudio.paused) {
+
+
+        lofiAudio.play()
+
+        .then(function() {
+
+
+            lofiPlayIcon.className =
+                "pause-icon";
+
+
+            lofiButtonText.textContent =
+                "Pause Lofi Sample";
+
+
+            status.textContent =
+                "Playing Lofi Sample...";
+
+
+        })
+
+
+        .catch(function(error) {
+
+
+            status.textContent =
+                "Could not play Lofi Sample";
+
+
+            console.log(error);
+
+        });
+
+
+    }
+
+    else {
+
+
+        lofiAudio.pause();
+
+
+        lofiPlayIcon.className =
+            "play-icon";
+
+
+        lofiButtonText.textContent =
+            "Play Lofi Sample";
+
+
+        status.textContent =
+            "Paused";
+
+    }
+
+}
+
+
+/* =========================
+   CALM EVENTS
+========================= */
 
 audio.addEventListener("play", function() {
 
-    playIcon.className = "pause-icon";
+    playIcon.className =
+        "pause-icon";
 
-    buttonText.textContent = "Pause Music";
+    buttonText.textContent =
+        "Pause Music";
 
-    status.textContent = "Playing...";
+    status.textContent =
+        "Playing...";
 
 });
 
-/* WHEN MUSIC PAUSES */
 
 audio.addEventListener("pause", function() {
 
     if (!audio.ended) {
 
-        playIcon.className = "play-icon";
+        playIcon.className =
+            "play-icon";
 
-        buttonText.textContent = "Play Music";
+        buttonText.textContent =
+            "Play Music";
 
     }
 
 });
 
-/* WHEN MUSIC ENDS */
 
 audio.addEventListener("ended", function() {
 
-    playIcon.className = "play-icon";
+    playIcon.className =
+        "play-icon";
 
-    buttonText.textContent = "Play Music";
+    buttonText.textContent =
+        "Play Music";
 
     progress.value = 0;
 
-    status.textContent = "Finished";
+    currentTimeText.textContent =
+        "0:00";
+
+    status.textContent =
+        "Finished";
 
 });
 
-/* LOAD SONG LENGTH */
 
-audio.addEventListener("loadedmetadata", function() {
+/* =========================
+   LOFI EVENTS
+========================= */
 
-    durationText.textContent =
-        formatTime(audio.duration);
+lofiAudio.addEventListener("play", function() {
+
+    lofiPlayIcon.className =
+        "pause-icon";
+
+    lofiButtonText.textContent =
+        "Pause Lofi Sample";
+
+    status.textContent =
+        "Playing Lofi Sample...";
 
 });
 
-/* UPDATE PROGRESS */
 
-audio.addEventListener("timeupdate", function() {
+lofiAudio.addEventListener("pause", function() {
 
-    if (!audio.duration) {
-        return;
+    if (!lofiAudio.ended) {
+
+        lofiPlayIcon.className =
+            "play-icon";
+
+        lofiButtonText.textContent =
+            "Play Lofi Sample";
+
     }
 
-    const percent =
-        (audio.currentTime / audio.duration) * 100;
+});
 
-    progress.value = percent;
+
+lofiAudio.addEventListener("ended", function() {
+
+    lofiPlayIcon.className =
+        "play-icon";
+
+    lofiButtonText.textContent =
+        "Play Lofi Sample";
+
+    progress.value = 0;
 
     currentTimeText.textContent =
-        formatTime(audio.currentTime);
+        "0:00";
+
+    status.textContent =
+        "Lofi sample finished";
 
 });
 
-/* MOVE THROUGH SONG */
+
+/* =========================
+   CALM LENGTH
+========================= */
+
+audio.addEventListener(
+    "loadedmetadata",
+    function() {
+
+        durationText.textContent =
+            formatTime(audio.duration);
+
+    }
+);
+
+
+/* =========================
+   LOFI LENGTH
+========================= */
+
+lofiAudio.addEventListener(
+    "loadedmetadata",
+    function() {
+
+        durationText.textContent =
+            formatTime(lofiAudio.duration);
+
+    }
+);
+
+
+/* =========================
+   PROGRESS
+========================= */
+
+audio.addEventListener(
+    "timeupdate",
+    function() {
+
+        if (!audio.duration) {
+            return;
+        }
+
+
+        const percent =
+            (audio.currentTime /
+            audio.duration) * 100;
+
+
+        progress.value =
+            percent;
+
+
+        currentTimeText.textContent =
+            formatTime(
+                audio.currentTime
+            );
+
+    }
+);
+
+
+lofiAudio.addEventListener(
+    "timeupdate",
+    function() {
+
+        if (!lofiAudio.duration) {
+            return;
+        }
+
+
+        const percent =
+            (lofiAudio.currentTime /
+            lofiAudio.duration) * 100;
+
+
+        progress.value =
+            percent;
+
+
+        currentTimeText.textContent =
+            formatTime(
+                lofiAudio.currentTime
+            );
+
+    }
+);
+
+
+/* =========================
+   SEEK
+========================= */
 
 function seekMusic(value) {
 
-    if (!audio.duration) {
+
+    let activeAudio;
+
+
+    if (!audio.paused) {
+
+        activeAudio = audio;
+
+    }
+
+    else if (!lofiAudio.paused) {
+
+        activeAudio = lofiAudio;
+
+    }
+
+    else {
+
+        activeAudio = audio;
+
+    }
+
+
+    if (!activeAudio.duration) {
         return;
     }
 
-    audio.currentTime =
-        (value / 100) * audio.duration;
+
+    activeAudio.currentTime =
+        (value / 100) *
+        activeAudio.duration;
 
 }
 
-/* CHANGE VOLUME */
+
+/* =========================
+   VOLUME
+========================= */
 
 function changeVolume(value) {
 
-    audio.volume =
+
+    const newVolume =
         parseFloat(value);
+
+
+    audio.volume =
+        newVolume;
+
+
+    lofiAudio.volume =
+        newVolume;
 
 }
 
-/* FORMAT TIME */
+
+/* =========================
+   FORMAT TIME
+========================= */
 
 function formatTime(seconds) {
 
+
     if (!Number.isFinite(seconds)) {
+
         return "0:00";
+
     }
+
 
     const minutes =
         Math.floor(seconds / 60);
 
+
     const remainingSeconds =
         Math.floor(seconds % 60);
+
 
     return minutes + ":" +
         remainingSeconds
@@ -875,39 +1509,108 @@ function formatTime(seconds) {
 
 }
 
-/* 1-MINUTE PREVIEW */
 
-audio.addEventListener("timeupdate", function() {
+/* =========================
+   CALM 1-MINUTE PREVIEW
+========================= */
 
-    if (audio.currentTime >= 60) {
+audio.addEventListener(
+    "timeupdate",
+    function() {
 
-        audio.pause();
+        if (audio.currentTime >= 60) {
 
-        audio.currentTime = 0;
 
-        progress.value = 0;
+            audio.pause();
 
-        playIcon.className = "play-icon";
 
-        buttonText.textContent = "Play Music";
+            audio.currentTime = 0;
 
-        status.textContent =
-            "1-minute preview finished";
+
+            progress.value = 0;
+
+
+            playIcon.className =
+                "play-icon";
+
+
+            buttonText.textContent =
+                "Play Music";
+
+
+            status.textContent =
+                "1-minute preview finished";
+
+        }
 
     }
+);
 
-});
 
-/* ERROR CHECK */
+/* =========================
+   LOFI 1-MINUTE PREVIEW
+========================= */
 
-audio.addEventListener("error", function() {
+lofiAudio.addEventListener(
+    "timeupdate",
+    function() {
 
-    status.textContent =
-        "Calm.mp3 could not be found.";
+        if (lofiAudio.currentTime >= 60) {
 
-});
+
+            lofiAudio.pause();
+
+
+            lofiAudio.currentTime = 0;
+
+
+            progress.value = 0;
+
+
+            lofiPlayIcon.className =
+                "play-icon";
+
+
+            lofiButtonText.textContent =
+                "Play Lofi Sample";
+
+
+            status.textContent =
+                "1-minute preview finished";
+
+        }
+
+    }
+);
+
+
+/* =========================
+   ERROR CHECKING
+========================= */
+
+audio.addEventListener(
+    "error",
+    function() {
+
+        status.textContent =
+            "Calm.mp3 could not be found.";
+
+    }
+);
+
+
+lofiAudio.addEventListener(
+    "error",
+    function() {
+
+        status.textContent =
+            "Lofi sample could not be found.";
+
+    }
+);
 
 </script>
+
 
 </body>
 </html>
