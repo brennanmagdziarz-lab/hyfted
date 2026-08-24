@@ -4,284 +4,814 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page 5 - Hyfted AI</title>
-    
-    <!-- LOADING FONTS -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@400;600;900&display=swap" rel="stylesheet">
-    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@400;600;900&display=swap" rel="stylesheet">
+
     <style>
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
             display: flex;
             justify-content: center;
             align-items: center;
+
             min-height: 100vh;
+
             font-family: 'Great Vibes', cursive;
-            
-            /* MATCHING GEMINI BACKGROUND FROM THE OTHER PAGES */
-            background: linear-gradient(135deg, #1a73e8, #7c4dff, #9c27b0, #e040fb, #1a73e8);
+
+            background: linear-gradient(
+                135deg,
+                #1a73e8,
+                #7c4dff,
+                #9c27b0,
+                #e040fb,
+                #1a73e8
+            );
+
             background-size: 300% 300%;
             animation: geminiWave 6s ease-in-out infinite;
-            padding: 20px 15px;
+
+            padding: 110px 15px 30px;
         }
 
-        .container { 
-            text-align: center; 
-            padding: 25px; 
-            max-width: 550px; 
-            width: 100%; 
-            background: rgba(255, 255, 255, 0.1);
+
+        /* NAVIGATION */
+
+        .navigation-wrapper {
+            width: 100%;
+
+            display: flex;
+            justify-content: center;
+
+            position: fixed;
+
+            top: 20px;
+            left: 0;
+
+            z-index: 1000;
+
+            padding: 0 15px;
+
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .navigation {
+            display: flex;
+
+            gap: 6px;
+
+            background: rgba(255,255,255,0.4);
+
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+
+            border: 1px solid rgba(255,255,255,0.3);
+
+            padding: 6px;
+
+            border-radius: 50px;
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,0.15);
+
+            overflow-x: auto;
+
+            max-width: 100%;
+
+            white-space: nowrap;
+
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .navigation::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-link-item {
+            color: #000000 !important;
+
+            text-decoration: none;
+
+            padding: 8px 16px;
+
+            font-size: 0.85rem;
+
+            font-weight: 700;
+
+            border-radius: 50px;
+
+            transition: all 0.2s;
+
+            display: inline-block;
+        }
+
+        .nav-link-item:hover {
+            background: rgba(255,255,255,0.4);
+        }
+
+        .nav-link-item.active-tab {
+            background: #ffffff !important;
+
+            box-shadow:
+                0 4px 12px rgba(0,0,0,0.1);
+        }
+
+
+        /* MAIN CONTAINER */
+
+        .container {
+            text-align: center;
+
+            padding: 25px;
+
+            max-width: 550px;
+
+            width: 100%;
+
+            background: rgba(255,255,255,0.1);
+
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+
+            border: 1px solid rgba(255,255,255,0.2);
+
             border-radius: 24px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,0.15);
+
             display: flex;
+
             flex-direction: column;
-            height: 85vh; 
+
+            height: 85vh;
         }
 
-        /* ULTRA-READABLE TITLE STYLE FOR HYFTED AI */
+
+        /* TITLE */
+
         h1 {
             font-family: 'Outfit', sans-serif;
+
             font-size: 2.8rem;
+
             font-weight: 900;
+
             letter-spacing: -1px;
-            margin-bottom: 15px;
-            
-            /* GLOWING TEXT GRADIENT */
-            background: linear-gradient(270deg, #ffffff, #a5f3fc, #fbcfe8, #ffffff);
+
+            margin-bottom: 4px;
+
+            background: linear-gradient(
+                270deg,
+                #ffffff,
+                #a5f3fc,
+                #fbcfe8,
+                #ffffff
+            );
+
             background-size: 400% 400%;
+
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+
             animation: moveTextGradient 5s ease infinite;
         }
 
-        /* CHAT INTERFACE WINDOW */
+
+        /* AI STATUS MESSAGE */
+
+        .ai-status {
+            font-family: 'Outfit', sans-serif;
+
+            font-size: 1.05rem;
+
+            font-weight: 600;
+
+            color: rgba(255,255,255,0.9);
+
+            margin-bottom: 15px;
+
+            letter-spacing: 0.2px;
+        }
+
+
+        /* CHAT */
+
         .chat-window {
             flex: 1;
-            background: rgba(0, 0, 0, 0.15);
+
+            background: rgba(0,0,0,0.15);
+
             border-radius: 18px;
+
             padding: 20px;
-            overflow-y: auto; 
+
+            overflow-y: auto;
+
             margin-bottom: 15px;
+
             display: flex;
+
             flex-direction: column;
-            gap: 14px; /* Increased slightly to handle oversized bounce expansion safely */
+
+            gap: 14px;
+
             text-align: left;
+
             font-family: 'Outfit', sans-serif;
         }
 
-        /* APPLE IMESSAGE STYLE BUBBLES */
+
+        /* MESSAGE */
+
         .message {
-            max-width: 70%; 
+            max-width: 70%;
+
             padding: 12px 18px;
+
             font-size: 1rem;
+
             line-height: 1.4;
+
             color: #ffffff;
+
             word-wrap: break-word;
-            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+
+            box-shadow:
+                0 1px 2px rgba(0,0,0,0.1);
         }
 
-        /* 💥 USER BUBBLE: Exaggerated elastic pop-up springing up from 0% to 115% scale */
+
+        /* USER MESSAGE */
+
         .user-msg {
-            background: #007aff; 
-            align-self: flex-end; 
-            border-radius: 20px 20px 4px 20px; 
-            transform-origin: bottom right; 
-            animation: extraPopUser 0.35s cubic-bezier(0.34, 1.8, 0.64, 1) forwards;
+            background: #007aff;
+
+            align-self: flex-end;
+
+            border-radius:
+                20px 20px 4px 20px;
+
+            transform-origin: bottom right;
+
+            animation:
+                extraPopUser
+                0.35s
+                cubic-bezier(
+                    0.34,
+                    1.8,
+                    0.64,
+                    1
+                )
+                forwards;
         }
 
-        /* 💥 AI BUBBLE: Exaggerated long-distance slide up coupled with a dramatic fade-in lift */
+
+        /* AI MESSAGE */
+
         .ai-msg {
-            background: rgba(255, 255, 255, 0.2); 
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            align-self: flex-start; 
-            border-radius: 20px 20px 20px 4px; 
+            background:
+                rgba(255,255,255,0.2);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.05);
+
+            align-self: flex-start;
+
+            border-radius:
+                20px 20px 20px 4px;
+
             color: #ffffff;
-            opacity: 0; 
+
+            opacity: 0;
+
             transform-origin: bottom left;
-            animation: extraSlideAI 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.4) forwards;
+
+            animation:
+                extraSlideAI
+                0.5s
+                cubic-bezier(
+                    0.175,
+                    0.885,
+                    0.32,
+                    1.4
+                )
+                forwards;
         }
 
-        /* INPUT CONTROL BAR */
+
+        /* INPUT */
+
         .input-bar {
             display: flex;
+
             gap: 10px;
+
             margin-bottom: 15px;
         }
 
         input[type="text"] {
             flex: 1;
+
             font-family: 'Outfit', sans-serif;
+
             font-size: 1rem;
+
             padding: 12px 20px;
-            border-radius: 25px; 
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            background: rgba(255, 255, 255, 0.15);
+
+            border-radius: 25px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.3);
+
+            background:
+                rgba(255,255,255,0.15);
+
             color: #ffffff;
+
             outline: none;
         }
 
         input[type="text"]::placeholder {
-            color: rgba(255, 255, 255, 0.6);
+            color:
+                rgba(255,255,255,0.6);
         }
 
+
         /* BUTTONS */
-        .send-btn, .nav-btn {
+
+        .send-btn,
+        .nav-btn {
             font-family: 'Outfit', sans-serif;
+
             font-weight: 600;
+
             font-size: 1rem;
+
             color: #ffffff;
+
             text-decoration: none;
+
             padding: 10px 25px;
+
             border-radius: 50px;
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+
+            background:
+                rgba(255,255,255,0.15);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.3);
+
             transition: all 0.3s ease;
+
             cursor: pointer;
         }
 
-        .send-btn:hover, .nav-btn:hover {
-            background: rgba(255, 255, 255, 0.25);
+        .send-btn:hover,
+        .nav-btn:hover {
+            background:
+                rgba(255,255,255,0.25);
+
             transform: scale(1.03);
         }
 
         .send-btn {
             background: #ffffff;
+
             color: #007aff;
+
             border: none;
         }
 
+
+        /* BOTTOM NAV */
+
         .nav-links {
             display: flex;
+
             gap: 10px;
+
             justify-content: center;
+
+            flex-wrap: wrap;
         }
 
-        /* 🎬 EXAGGERATED SPRING TIMELINES */
+
+        /* ANIMATIONS */
+
         @keyframes extraPopUser {
-            0% { transform: scale(0.2); opacity: 0; }
-            65% { transform: scale(1.12); } /* Overshoots normal size with a big expansion stretch */
-            85% { transform: scale(0.96); } /* Bounces back lower slightly */
-            100% { transform: scale(1); opacity: 1; }
+
+            0% {
+                transform: scale(0.2);
+                opacity: 0;
+            }
+
+            65% {
+                transform: scale(1.12);
+            }
+
+            85% {
+                transform: scale(0.96);
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
+
 
         @keyframes extraSlideAI {
-            0% { transform: translateY(50px) scale(0.7); opacity: 0; } /* Starts way lower and smaller */
-            70% { transform: translateY(-5px) scale(1.05); opacity: 0.85; } /* Rockets up past its target anchor */
-            100% { transform: translateY(0) scale(1); opacity: 1; }
+
+            0% {
+                transform:
+                    translateY(50px)
+                    scale(0.7);
+
+                opacity: 0;
+            }
+
+            70% {
+                transform:
+                    translateY(-5px)
+                    scale(1.05);
+
+                opacity: 0.85;
+            }
+
+            100% {
+                transform:
+                    translateY(0)
+                    scale(1);
+
+                opacity: 1;
+            }
         }
 
-        /* GLOBAL SCREEN ANIMATIONS */
-        @keyframes geminiWave { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-        @keyframes moveTextGradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+
+        @keyframes geminiWave {
+
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+
+        @keyframes moveTextGradient {
+
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding:
+                    110px 10px 25px;
+            }
+
+            .navigation-wrapper {
+                padding: 0 10px;
+            }
+
+            .nav-link-item {
+                font-size: 0.68rem;
+
+                padding:
+                    8px 10px;
+            }
+
+            .container {
+                padding:
+                    22px 18px;
+
+                height: 84vh;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .ai-status {
+                font-size: 0.95rem;
+            }
+
+            .message {
+                max-width: 82%;
+            }
+
+            .nav-links {
+                gap: 7px;
+            }
+
+            .nav-btn {
+                padding:
+                    9px 17px;
+
+                font-size: 0.9rem;
+            }
+        }
+
     </style>
 </head>
+
 <body>
-	</head>
-<body>
-      <!-- 🌐 UNIVERSAL HYFTED SCROLL NAVIGATION CAPSULE (BLACK TEXT EDITION) -->
-<div style="width: 100%; display: flex; justify-content: center; position: fixed; top: 20px; left: 0; z-index: 1000; font-family: 'Outfit', sans-serif; padding: 0 15px;">
-    <div style="display: flex; gap: 6px; background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(255, 255, 255, 0.3); padding: 6px; border-radius: 50px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); overflow-x: auto; max-width: 100%; white-space: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none;">
-        <style>
-            div::-webkit-scrollbar { display: none; }
-            .nav-link-item { color: #000000 !important; text-decoration: none; padding: 8px 16px; font-size: 0.85rem; font-weight: 700; border-radius: 50px; transition: all 0.2s; display: inline-block; }
-            .nav-link-item:hover { background: rgba(255, 255, 255, 0.4); }
-            .nav-link-item.active-tab { background: #ffffff !important; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        </style>
-        <a href="page1.html" class="nav-link-item">Home</a>
-        <a href="page2.html" class="nav-link-item">Music</a>
-        <a href="page3.html" class="nav-link-item">Breathing</a>
-        <a href="page4.html" class="nav-link-item">Journal</a>
-        <a href="page5.html" class="nav-link-item">AI Chat</a>
-        <a href="page6.html" class="nav-link-item">Visualizer</a>
-        <a href="page7.html" class="nav-link-item">Affirmations</a>
-		<a href="page8.html" class="nav-link-item">star catcher</a>
-		<a href="page9.html" class="nav-link-item">Adventure</a>
+
+
+<!-- NAVIGATION -->
+
+<div class="navigation-wrapper">
+
+    <div class="navigation">
+
+        <a href="index.html"
+           class="nav-link-item">
+            Home
+        </a>
+
+        <a href="page2.html"
+           class="nav-link-item">
+            Music
+        </a>
+
+        <a href="page3.html"
+           class="nav-link-item">
+            Breathing
+        </a>
+
+        <a href="page4.html"
+           class="nav-link-item">
+            Journal
+        </a>
+
+        <a href="page5.html"
+           class="nav-link-item active-tab">
+            AI Chat
+        </a>
+
+        <a href="page6.html"
+           class="nav-link-item">
+            Visualizer
+        </a>
+
+        <a href="page7.html"
+           class="nav-link-item">
+            Affirmations
+        </a>
+
+        <a href="page8.html"
+           class="nav-link-item">
+            star catcher
+        </a>
+
+        <a href="page9.html"
+           class="nav-link-item">
+            Adventure
+        </a>
+
     </div>
+
 </div>
-<div style="margin-top: 75px;"></div>
 
 
-    <div class="container">
-        <!-- The rest of your normal page code continues down here -->
+<!-- MAIN -->
+
+<div class="container">
+
+    <h1>
+        Hyfted AI
+    </h1>
 
 
-    <div class="container">
-        <h1>Hyfted AI</h1>
-        
-        <div class="chat-window" id="chatBox">
-            <div class="message ai-msg">Hello! I am your calming AI assistant. How are you feeling today? 🌿</div>
+    <!-- CLEAR AI STATUS -->
+
+    <div class="ai-status">
+        (is currently not working)
+    </div>
+
+
+    <div class="chat-window"
+         id="chatBox">
+
+        <div class="message ai-msg">
+            Hello! I am your calming AI assistant.
+            How are you feeling today? 🌿
         </div>
 
-        <div class="input-bar">
-            <input type="text" id="userInput" placeholder="iMessage..." onkeypress="handleKeyPress(event)">
-            <button class="send-btn" onclick="sendMessage()">Send</button>
-        </div>
+    </div>
 
-        <!-- PASTE THIS INSTEAD -->
-<div class="nav-links">
-    <a href="page4.html" class="nav-btn">Go Back</a>
-    <a href="page6.html" class="nav-btn" style="background: rgba(165, 243, 252, 0.25); border-color: #a5f3fc;">Visualizer</a>
-    <a href="index.html" class="nav-btn" style="background: rgba(255, 255, 255, 0.3);">Home</a>
-</div>
+
+    <!-- INPUT -->
+
+    <div class="input-bar">
+
+        <input
+            type="text"
+            id="userInput"
+            placeholder="iMessage..."
+            onkeypress="handleKeyPress(event)"
+        >
+
+        <button
+            class="send-btn"
+            onclick="sendMessage()">
+
+            Send
+
+        </button>
 
     </div>
 
-    <script>
-        const chatBox = document.getElementById('chatBox');
-        const userInput = document.getElementById('userInput');
 
-        function handleKeyPress(event) {
-            if (event.key === 'Enter') {
-                sendMessage();
-            }
+    <!-- BOTTOM BUTTONS -->
+
+    <div class="nav-links">
+
+        <a
+            href="page4.html"
+            class="nav-btn">
+
+            Go Back
+
+        </a>
+
+        <a
+            href="page6.html"
+            class="nav-btn"
+            style="
+                background: rgba(165,243,252,0.25);
+                border-color: #a5f3fc;
+            ">
+
+            Visualizer
+
+        </a>
+
+        <a
+            href="index.html"
+            class="nav-btn"
+            style="
+                background: rgba(255,255,255,0.3);
+            ">
+
+            Home
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    const chatBox =
+        document.getElementById('chatBox');
+
+    const userInput =
+        document.getElementById('userInput');
+
+
+    function handleKeyPress(event) {
+
+        if (event.key === 'Enter') {
+
+            sendMessage();
+
         }
 
-        function sendMessage() {
-            const text = userInput.value.trim();
-            if (!text) return; 
+    }
 
-            appendMessage(text, 'user-msg');
-            userInput.value = ""; 
 
-            setTimeout(() => {
-                const aiResponse = getAIResponse(text);
-                appendMessage(aiResponse, 'ai-msg');
-            }, 1000); 
+    function sendMessage() {
+
+        const text =
+            userInput.value.trim();
+
+        if (!text) return;
+
+
+        appendMessage(
+            text,
+            'user-msg'
+        );
+
+        userInput.value = "";
+
+
+        setTimeout(() => {
+
+            const aiResponse =
+                getAIResponse(text);
+
+            appendMessage(
+                aiResponse,
+                'ai-msg'
+            );
+
+        }, 1000);
+
+    }
+
+
+    function appendMessage(
+        text,
+        className
+    ) {
+
+        const msgDiv =
+            document.createElement('div');
+
+        msgDiv.classList.add(
+            'message',
+            className
+        );
+
+        msgDiv.textContent = text;
+
+        chatBox.appendChild(msgDiv);
+
+        chatBox.scrollTop =
+            chatBox.scrollHeight;
+
+    }
+
+
+    function getAIResponse(input) {
+
+        const lowerInput =
+            input.toLowerCase();
+
+
+        if (
+            lowerInput.includes('sad') ||
+            lowerInput.includes('bad') ||
+            lowerInput.includes('stressed')
+        ) {
+
+            return "I'm sorry you're feeling that way. Try opening our Breathing Timer on Page 3 for a quick mental reset. You've got this! 💙";
+
         }
 
-        function appendMessage(text, className) {
-            const msgDiv = document.createElement('div');
-            msgDiv.classList.add('message', className);
-            msgDiv.textContent = text;
-            chatBox.appendChild(msgDiv);
-            chatBox.scrollTop = chatBox.scrollHeight;
+
+        if (
+            lowerInput.includes('happy') ||
+            lowerInput.includes('good') ||
+            lowerInput.includes('great')
+        ) {
+
+            return "That's wonderful to hear! Remember to log this positive energy inside your Journal on Page 4! ✨";
+
         }
 
-        function getAIResponse(input) {
-            const lowerInput = input.toLowerCase();
-            
-            if (lowerInput.includes('sad') || lowerInput.includes('bad') || lowerInput.includes('stressed')) {
-                return "I'm sorry you're feeling that way. Try opening our Breathing Timer on Page 3 for a quick mental reset. You've got this! 💙";
-            }
-            if (lowerInput.includes('happy') || lowerInput.includes('good') || lowerInput.includes('great')) {
-                return "That's wonderful to hear! Remember to log this positive energy inside your Journal on Page 4! ✨";
-            }
-            if (lowerInput.includes('hello') || lowerInput.includes('hi') || lowerInput.includes('hey')) {
-                return "Hello there! I'm here to listen. Tell me about your day or how your mindset is tracking.";
-            }
-            
-            return "Thank you for sharing that with me. Take a deep breath, listen to some ambient tracks on Page 2, and remember to look after yourself today. 🧘";
+
+        if (
+            lowerInput.includes('hello') ||
+            lowerInput.includes('hi') ||
+            lowerInput.includes('hey')
+        ) {
+
+            return "Hello there! I'm here to listen. Tell me about your day or how your mindset is tracking.";
+
         }
-    </script>
+
+
+        return "Thank you for sharing that with me. Take a deep breath, listen to some ambient tracks on Page 2, and remember to look after yourself today. 🧘";
+
+    }
+
+</script>
 
 </body>
 </html>
