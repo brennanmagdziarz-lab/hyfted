@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Starter Website 2</title>
+
+
+    <!-- FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Outfit:wght@600;900&family=Parisienne&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* ==========================================
+           MAIN PAGE
+        ========================================== */
+
+        body {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            min-height: 100vh;
+
+            font-family:
+                'Parisienne',
+                cursive;
+
+            background:
+                linear-gradient(
+                    135deg,
+
+                    #1677ff,
+                    #6246ea,
+                    #9b36d6,
+                    #e33cff,
+                    #ff5fcf,
+                    #ff72b6,
+                    #7c5cff,
+                    #29c6ff,
+                    #1677ff
+                );
+
+            background-size:
+                500% 500%;
+
+            animation:
+                geminiWave
+                6s ease-in-out infinite;
+
+        }
+
+
+        /* ==========================================
+           NAVIGATION CONTAINER
+        ========================================== */
+
+        .navigation-wrapper {
+
+            width: 100%;
+
+            display: flex;
+
+            justify-content: center;
+
+            position: fixed;
+
+            top: 20px;
+
+            left: 0;
+
+            z-index: 1000;
+
+            font-family:
+                'Outfit',
+                sans-serif;
+
+            padding:
+                0 15px;
+
+        }
+
+
+        /* ==========================================
+           NAVIGATION BAR
+        ========================================== */
+
+        .navigation {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 6px;
+
+            width: fit-content;
+
+            max-width: 100%;
+
+            padding: 8px;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.45
+                );
+
+            backdrop-filter:
+                blur(25px);
+
+            -webkit-backdrop-filter:
+                blur(25px);
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.4
+                );
+
+            border-radius:
+                28px;
+
+            box-shadow:
+                0 10px 30px
+                rgba(
+                    0,
+                    0,
+                    0,
+                    0.15
+                );
+
+        }
+
+
+        /* ==========================================
+           NAVIGATION BUTTONS
+        ========================================== */
+
+        .nav-link-item {
+
+            color:
+                #000000 !important;
+
+            text-decoration:
+                none;
+
+            padding:
+                9px 15px;
+
+            font-size:
+                0.82rem;
+
+            font-weight:
+                700;
+
+            border-radius:
+                50px;
+
+            transition:
+                all 0.2s ease;
+
+            display:
+                inline-flex;
+
+            justify-content:
+                center;
+
+            align-items:
+                center;
+
+            white-space:
+                nowrap;
+
+            flex:
+                0 0 auto;
+
+        }
+
+
+        .nav-link-item:hover {
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.55
+                );
+
+            transform:
+                translateY(-1px);
+
+        }
+
+
+        .nav-link-item:active {
+
+            transform:
+                scale(0.96);
+
+        }
+
+
+        .nav-link-item.active-tab {
+
+            background:
+                #ffffff !important;
+
+            box-shadow:
+                0 4px 12px
+                rgba(
+                    0,
+                    0,
+                    0,
+                    0.1
+                );
+
+        }
+
+
+        /* ==========================================
+           MAIN CONTENT
+        ========================================== */
+
+        .container {
+
+            text-align:
+                center;
+
+            padding:
+                0 15px;
+
+            max-width:
+                500px;
+
+            width:
+                100%;
+
+            display:
+                flex;
+
+            flex-direction:
+                column;
+
+            align-items:
+                center;
+
+        }
+
+
+        /* ==========================================
+           HYFTED LOGO
+        ========================================== */
+
+        .logo-title {
+
+            font-family:
+                'Outfit',
+                sans-serif;
+
+            font-size:
+                4.5rem;
+
+            font-weight:
+                900;
+
+            letter-spacing:
+                -2px;
+
+            text-transform:
+                lowercase;
+
+            margin-bottom:
+                30px;
+
+            background:
+                linear-gradient(
+                    270deg,
+
+                    #ffffff,
+                    #a5f3fc,
+                    #fbcfe8,
+                    #ffffff
+                );
+
+            background-size:
+                400% 400%;
+
+            -webkit-background-clip:
+                text;
+
+            -webkit-text-fill-color:
+                transparent;
+
+            animation:
+
+                moveTextGradient
+                4s ease infinite,
+
+                floatLogo
+                3s ease-in-out infinite;
+
+        }
+
+
+        /* ==========================================
+           WELCOME
+        ========================================== */
+
+        h1 {
+
+            font-family:
+                'Parisienne',
+                cursive;
+
+            font-size:
+                4.2rem;
+
+            font-weight:
+                400;
+
+            margin-bottom:
+                5px;
+
+            background:
+                linear-gradient(
+                    270deg,
+
+                    #ffffff,
+                    #a5f3fc,
+                    #fbcfe8,
+                    #ffffff
+                );
+
+            background-size:
+                400% 400%;
+
+            -webkit-background-clip:
+                text;
+
+            -webkit-text-fill-color:
+                transparent;
+
+            animation:
+                moveTextGradient
+                5s ease infinite;
+
+        }
+
+
+        /* ==========================================
+           CHILL SOUNDS
+        ========================================== */
+
+        p {
+
+            font-family:
+                'Kalam',
+                cursive;
+
+            font-size:
+                2.5rem;
+
+            font-weight:
+                400;
+
+            letter-spacing:
+                0.5px;
+
+            line-height:
+                1.2;
+
+            margin-bottom:
+                35px;
+
+            background:
+                linear-gradient(
+                    270deg,
+
+                    #ffffff,
+                    #a5f3fc,
+                    #fbcfe8,
+                    #ffffff
+                );
+
+            background-size:
+                400% 400%;
+
+            -webkit-background-clip:
+                text;
+
+            -webkit-text-fill-color:
+                transparent;
+
+            animation:
+                moveTextGradient
+                6s ease infinite;
+
+        }
+
+
+        /* ==========================================
+           CONTINUE BUTTON
+        ========================================== */
+
+        .next-btn {
+
+            font-family:
+                'Outfit',
+                sans-serif;
+
+            font-weight:
+                600;
+
+            font-size:
+                1.1rem;
+
+            color:
+                #ffffff;
+
+            text-decoration:
+                none;
+
+            padding:
+                12px 35px;
+
+            border-radius:
+                50px;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.15
+                );
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.3
+                );
+
+            backdrop-filter:
+                blur(10px);
+
+            -webkit-backdrop-filter:
+                blur(10px);
+
+            transition:
+                all 0.3s ease;
+
+            box-shadow:
+                0 4px 15px
+                rgba(
+                    0,
+                    0,
+                    0,
+                    0.1
+                );
+
+        }
+
+
+        .next-btn:hover {
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.25
+                );
+
+            transform:
+                scale(1.05);
+
+            box-shadow:
+                0 6px 20px
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.2
+                );
+
+        }
+
+
+        /* ==========================================
+           ABOUT + OWNER + COPYRIGHT LINKS
+        ========================================== */
+
+        .bottom-links {
+
+            position:
+                fixed;
+
+            bottom:
+                22px;
+
+            left:
+                0;
+
+            width:
+                100%;
+
+            display:
+                flex;
+
+            justify-content:
+                center;
+
+            align-items:
+                center;
+
+            gap:
+                22px;
+
+            z-index:
+                2000;
+
+        }
+
+
+        .bottom-link {
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            color:
+                white;
+
+            font-size:
+                0.9rem;
+
+            font-weight:
+                bold;
+
+            text-decoration:
+                underline;
+
+            cursor:
+                pointer;
+
+            transition:
+                opacity
+                0.2s ease;
+
+        }
+
+
+        .bottom-link:hover {
+
+            opacity:
+                0.7;
+
+        }
+
+
+        .bottom-link:active {
+
+            opacity:
+                0.5;
+
+        }
+
+
+        /* ==========================================
+           COLORFUL GEMINI WAVE
+        ========================================== */
+
+        @keyframes geminiWave {
+
+            0% {
+
+                background-position:
+                    0% 50%;
+
+            }
+
+            20% {
+
+                background-position:
+                    35% 30%;
+
+            }
+
+            40% {
+
+                background-position:
+                    70% 50%;
+
+            }
+
+            60% {
+
+                background-position:
+                    100% 70%;
+
+            }
+
+            80% {
+
+                background-position:
+                    55% 50%;
+
+            }
+
+            100% {
+
+                background-position:
+                    0% 50%;
+
+            }
+
+        }
+
+
+        /* ==========================================
+           TEXT GRADIENT
+        ========================================== */
+
+        @keyframes moveTextGradient {
+
+            0% {
+
+                background-position:
+                    0% 50%;
+
+            }
+
+            50% {
+
+                background-position:
+                    100% 50%;
+
+            }
+
+            100% {
+
+                background-position:
+                    0% 50%;
+
+            }
+
+        }
+
+
+        /* ==========================================
+           LOGO FLOAT
+        ========================================== */
+
+        @keyframes floatLogo {
+
+            0% {
+
+                transform:
+                    translateY(0px);
+
+            }
+
+            50% {
+
+                transform:
+                    translateY(-10px);
+
+            }
+
+            100% {
+
+                transform:
+                    translateY(0px);
+
+            }
+
+        }
+
+
+        /* ==========================================
+           TABLET
+        ========================================== */
+
+        @media (max-width: 900px) {
+
+            .navigation {
+
+                max-width:
+                    700px;
+
+                gap:
+                    5px;
+
+            }
+
+
+            .nav-link-item {
+
+                font-size:
+                    0.78rem;
+
+                padding:
+                    9px 13px;
+
+            }
+
+        }
+
+
+        /* ==========================================
+           PHONE / SMALL IPAD
+        ========================================== */
+
+        @media (max-width: 600px) {
+
+            .navigation-wrapper {
+
+                padding:
+                    0 10px;
+
+            }
+
+
+            .navigation {
+
+                max-width:
+                    100%;
+
+                gap:
+                    4px;
+
+                padding:
+                    7px;
+
+            }
+
+
+            .nav-link-item {
+
+                font-size:
+                    0.68rem;
+
+                padding:
+                    8px 10px;
+
+            }
+
+
+            .logo-title {
+
+                font-size:
+                    3.8rem;
+
+            }
+
+
+            h1 {
+
+                font-size:
+                    3.5rem;
+
+            }
+
+
+            p {
+
+                font-size:
+                    2.1rem;
+
+            }
+
+
+            .bottom-links {
+
+                bottom:
+                    15px;
+
+                gap:
+                    16px;
+
+            }
+
+
+            .bottom-link {
+
+                font-size:
+                    0.78rem;
+
+            }
+
+        }
+
+
+        /* ==========================================
+           VERY SMALL PHONES
+        ========================================== */
+
+        @media (max-width: 400px) {
+
+            .navigation {
+
+                gap:
+                    3px;
+
+            }
+
+
+            .nav-link-item {
+
+                font-size:
+                    0.6rem;
+
+                padding:
+                    7px 8px;
+
+            }
+
+
+            .bottom-links {
+
+                gap:
+                    12px;
+
+            }
+
+
+            .bottom-link {
+
+                font-size:
+                    0.72rem;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==========================================
+         TOP MENU
+    ========================================== -->
+
+    <div class="navigation-wrapper">
+
+        <div class="navigation">
+
+
+            <a
+                href="index.html"
+                class="nav-link-item active-tab">
+
+                Home
+
+            </a>
+
+
+            <a
+                href="page2.html"
+                class="nav-link-item">
+
+                Music
+
+            </a>
+
+
+            <a
+                href="page3.html"
+                class="nav-link-item">
+
+                Breathing
+
+            </a>
+
+
+            <a
+                href="page4.html"
+                class="nav-link-item">
+
+                Journal
+
+            </a>
+
+
+            <a
+                href="page5.html"
+                class="nav-link-item">
+
+                AI Chat
+
+            </a>
+
+
+            <a
+                href="page6.html"
+                class="nav-link-item">
+
+                Visualizer
+
+            </a>
+
+
+            <a
+                href="page7.html"
+                class="nav-link-item">
+
+                Affirmations
+
+            </a>
+
+
+            <a
+                href="page8.html"
+                class="nav-link-item">
+
+                Wind down stars
+
+            </a>
+
+
+            <a
+                href="page9.html"
+                class="nav-link-item">
+
+                Adventure
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- SPACE BELOW MENU -->
+
+    <div
+        style="
+            margin-top: 110px;
+        ">
+    </div>
+
+
+    <!-- ==========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <div class="container">
+
+
+        <div class="logo-title">
+
+            hyfted
+
+        </div>
+
+
+        <h1>
+
+            Welcome
+
+        </h1>
+
+
+        <p>
+
+            Chill sounds
+
+        </p>
+
+
+        <a
+            href="page2.html"
+            class="next-btn">
+
+            Continue
+
+        </a>
+
+
+    </div>
+
+
+    <!-- ==========================================
+         ABOUT + OWNER + COPYRIGHT LINKS
+    ========================================== -->
+
+    <div class="bottom-links">
+
+
+        <a
+            href="about.html"
+            class="bottom-link">
+
+            About
+
+        </a>
+
+
+        <a
+            href="owner.html"
+            class="bottom-link">
+
+            Owner
+
+        </a>
+
+
+        <a
+            href="copyright.html"
+            class="bottom-link">
+
+            Copyright License
+
+        </a>
+
+
+    </div>
+
+
+</body>
+
+</html>
