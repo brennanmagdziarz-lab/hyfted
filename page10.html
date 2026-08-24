@@ -92,6 +92,15 @@ audio {
     margin-top: 20px;
 }
 
+/* LOCKED MESSAGE */
+
+.locked-message {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    background: rgba(0,0,0,0.25);
+    font-weight: bold;
+}
 
 /* MONTHLY SUBSCRIPTION PURCHASE BUTTON */
 
@@ -164,7 +173,6 @@ audio {
     transform: scale(1.07);
 }
 
-
 /* BACK BUTTON */
 
 .back-button {
@@ -207,13 +215,15 @@ audio {
         🔒 Monthly subscription required
     </p>
 
-    <audio controls>
-
-        <source
-            src="./calm-music.mp3.mp3"
-            type="audio/mpeg">
-
+    <audio
+        controls
+        preload="none"
+        data-song="relaxing-piano">
     </audio>
+
+    <div class="locked-message">
+        🔒 Subscribe to unlock this song.
+    </div>
 
 </div>
 
@@ -228,13 +238,15 @@ audio {
         🔒 Monthly subscription required
     </p>
 
-    <audio controls>
-
-        <source
-            src="./denis-pavlov-music-relaxing-jazz-podcast-coffee-shop-music-192283%202.mp3"
-            type="audio/mpeg">
-
+    <audio
+        controls
+        preload="none"
+        data-song="coffee-shop-jazz">
     </audio>
+
+    <div class="locked-message">
+        🔒 Subscribe to unlock this song.
+    </div>
 
 </div>
 
@@ -249,13 +261,15 @@ audio {
         🔒 Monthly subscription required
     </p>
 
-    <audio controls>
-
-        <source
-            src="./denis-pavlov-music-jazz-romantic-piano-relax-calm-podcast-instrumental-music-400308%202.mp3"
-            type="audio/mpeg">
-
+    <audio
+        controls
+        preload="none"
+        data-song="jazz-piano">
     </audio>
+
+    <div class="locked-message">
+        🔒 Subscribe to unlock this song.
+    </div>
 
 </div>
 
@@ -270,13 +284,15 @@ audio {
         🔒 Monthly subscription required
     </p>
 
-    <audio controls>
-
-        <source
-            src="./denis-pavlov-music-podcast-lo-fi-music-205515.mp3"
-            type="audio/mpeg">
-
+    <audio
+        controls
+        preload="none"
+        data-song="lofi">
     </audio>
+
+    <div class="locked-message">
+        🔒 Subscribe to unlock this song.
+    </div>
 
 </div>
 
@@ -291,13 +307,15 @@ audio {
         🔒 Monthly subscription required
     </p>
 
-    <audio controls>
-
-        <source
-            src="./denis-pavlov-music-podcast-smooth-jazz-instrumental-music-225674.mp3"
-            type="audio/mpeg">
-
+    <audio
+        controls
+        preload="none"
+        data-song="smooth-jazz">
     </audio>
+
+    <div class="locked-message">
+        🔒 Subscribe to unlock this song.
+    </div>
 
 </div>
 
@@ -326,6 +344,84 @@ audio {
 
 </a>
 
+
+<script>
+
+/*
+    PAID SONG SYSTEM
+
+    The actual song URLs are NOT stored in this HTML.
+
+    The browser will ask our secure Vercel API
+    for access to a song.
+
+    The API will eventually verify the customer's
+    Stripe subscription before returning the audio.
+*/
+
+const audioPlayers = document.querySelectorAll("audio[data-song]");
+
+audioPlayers.forEach(audio => {
+
+    audio.addEventListener("play", async function(event) {
+
+        /*
+            Prevent the normal audio player from
+            attempting to play until authorization
+            has been checked.
+        */
+
+        event.preventDefault();
+
+        audio.pause();
+
+        const song = audio.dataset.song;
+
+        try {
+
+            const response = await fetch(
+                "/api/paid-song?song=" +
+                encodeURIComponent(song)
+            );
+
+            if (!response.ok) {
+
+                throw new Error("Subscription required");
+
+            }
+
+            const data = await response.json();
+
+            if (!data.url) {
+
+                throw new Error("No audio URL returned");
+
+            }
+
+            /*
+                The server supplies the authorized
+                temporary audio URL.
+            */
+
+            audio.src = data.url;
+
+            await audio.play();
+
+        } catch (error) {
+
+            audio.pause();
+
+            alert(
+                "🔒 A monthly subscription is required to listen to the full songs."
+            );
+
+        }
+
+    });
+
+});
+
+</script>
 
 </body>
 </html>
