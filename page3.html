@@ -3,26 +3,17 @@
 <head>
 
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Page 3 - Hyfted Timer</title>
 
-    <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com">
-
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@400;600;900&display=swap"
-        rel="stylesheet">
-
+        rel="stylesheet"
+    >
 
     <style>
 
@@ -35,68 +26,55 @@
 
         body {
 
-            display: flex;
-
-            justify-content: center;
-
-            align-items: center;
-
             min-height: 100vh;
 
-            font-family:
-                'Great Vibes',
-                cursive;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #1a73e8,
-                    #7c4dff,
-                    #9c27b0,
-                    #e040fb,
-                    #1a73e8
-                );
+            padding: 125px 15px 40px;
 
-            background-size:
-                300% 300%;
+            font-family: 'Great Vibes', cursive;
 
-            animation:
-                geminiWave
-                6s ease-in-out infinite;
+            background: linear-gradient(
+                135deg,
+                #1677ff,
+                #6246ea,
+                #9b36d6,
+                #e33cff,
+                #ff5fcf,
+                #7c5cff,
+                #29c6ff,
+                #1677ff
+            );
 
-            padding:
-                40px 15px;
+            background-size: 500% 500%;
 
+            animation: geminiWave 5s ease-in-out infinite;
         }
 
 
-        /* ==========================================
+        /* =========================
            NAVIGATION
-        ========================================== */
+        ========================= */
 
         .navigation-wrapper {
 
             width: 100%;
 
             display: flex;
-
             justify-content: center;
 
             position: fixed;
 
             top: 20px;
-
             left: 0;
 
             z-index: 1000;
 
-            padding:
-                0 15px;
+            padding: 0 15px;
 
-            font-family:
-                'Outfit',
-                sans-serif;
-
+            font-family: 'Outfit', sans-serif;
         }
 
 
@@ -106,62 +84,29 @@
 
             gap: 6px;
 
-            background:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.4
-                );
+            padding: 8px;
 
-            backdrop-filter:
-                blur(25px);
+            max-width: 100%;
 
-            -webkit-backdrop-filter:
-                blur(25px);
+            overflow-x: auto;
 
-            border:
-                1px solid
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.3
-                );
+            white-space: nowrap;
 
-            padding:
-                6px;
+            background: rgba(255,255,255,0.45);
 
-            border-radius:
-                50px;
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+
+            border: 1px solid rgba(255,255,255,0.4);
+
+            border-radius: 28px;
 
             box-shadow:
-                0 10px 30px
-                rgba(
-                    0,
-                    0,
-                    0,
-                    0.15
-                );
+                0 10px 30px rgba(0,0,0,0.15);
 
-            overflow-x:
-                auto;
+            scrollbar-width: none;
 
-            max-width:
-                100%;
-
-            white-space:
-                nowrap;
-
-            -webkit-overflow-scrolling:
-                touch;
-
-            scrollbar-width:
-                none;
-
-            -ms-overflow-style:
-                none;
-
+            -ms-overflow-style: none;
         }
 
 
@@ -172,405 +117,226 @@
 
         .nav-link-item {
 
-            color:
-                #000000 !important;
+            color: #000000 !important;
 
-            text-decoration:
-                none;
+            text-decoration: none;
 
-            padding:
-                8px 16px;
+            padding: 9px 15px;
 
-            font-size:
-                0.85rem;
+            font-size: 0.82rem;
 
-            font-weight:
-                700;
+            font-weight: 700;
 
-            border-radius:
-                50px;
+            border-radius: 50px;
 
-            transition:
-                all 0.2s;
+            transition: all 0.2s ease;
 
-            display:
-                inline-block;
-
+            white-space: nowrap;
         }
 
 
         .nav-link-item:hover {
 
-            background:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.4
-                );
+            background: rgba(255,255,255,0.55);
 
+            transform: translateY(-1px);
         }
 
 
         .nav-link-item.active-tab {
 
-            background:
-                #ffffff !important;
+            background: #ffffff !important;
 
             box-shadow:
-                0 4px 12px
-                rgba(
-                    0,
-                    0,
-                    0,
-                    0.1
-                );
-
+                0 4px 12px rgba(0,0,0,0.1);
         }
 
 
-        /* ==========================================
+        /* =========================
            MAIN CONTAINER
-        ========================================== */
+        ========================= */
 
         .container {
 
-            text-align:
-                center;
+            width: 100%;
 
-            padding:
-                40px 30px;
+            max-width: 500px;
 
-            max-width:
-                500px;
+            padding: 40px 30px;
 
-            width:
-                100%;
+            text-align: center;
 
-            background:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.1
-                );
+            background: rgba(255,255,255,0.12);
 
-            backdrop-filter:
-                blur(15px);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
 
-            -webkit-backdrop-filter:
-                blur(15px);
+            border: 1px solid rgba(255,255,255,0.25);
 
-            border:
-                1px solid
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.2
-                );
-
-            border-radius:
-                24px;
+            border-radius: 26px;
 
             box-shadow:
-                0 10px 30px
-                rgba(
-                    0,
-                    0,
-                    0,
-                    0.15
-                );
-
+                0 10px 35px rgba(0,0,0,0.18);
         }
 
 
-        /* ==========================================
-           BETA LABEL
-        ========================================== */
-
-        .beta-label {
-
-            font-family:
-                'Outfit',
-                sans-serif;
-
-            font-size:
-                0.75rem;
-
-            font-weight:
-                600;
-
-            letter-spacing:
-                1.5px;
-
-            color:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.75
-                );
-
-            margin-bottom:
-                6px;
-
-            text-transform:
-                uppercase;
-
-        }
-
-
-        /* ==========================================
+        /* =========================
            TITLE
-        ========================================== */
+        ========================= */
 
         h1 {
 
-            font-size:
-                3.5rem;
+            font-family: 'Great Vibes', cursive;
 
-            margin-bottom:
-                20px;
+            font-size: 3.8rem;
 
-            background:
-                linear-gradient(
-                    270deg,
-                    #ffffff,
-                    #a5f3fc,
-                    #fbcfe8,
-                    #ffffff
-                );
+            font-weight: 400;
 
-            background-size:
-                400% 400%;
+            margin-bottom: 20px;
 
-            -webkit-background-clip:
-                text;
+            background: linear-gradient(
+                270deg,
+                #ffffff,
+                #a5f3fc,
+                #fbcfe8,
+                #ffffff
+            );
 
-            -webkit-text-fill-color:
-                transparent;
+            background-size: 400% 400%;
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
 
             animation:
-                moveTextGradient
-                5s ease infinite;
-
+                moveTextGradient 5s ease infinite;
         }
 
 
-        /* ==========================================
+        /* =========================
            TIMER
-        ========================================== */
+        ========================= */
 
         .timer-display {
 
-            font-family:
-                'Outfit',
-                sans-serif;
+            font-family: 'Outfit', sans-serif;
 
-            font-weight:
-                900;
+            font-weight: 900;
 
-            font-size:
-                3.5rem;
+            font-size: 3.5rem;
 
-            color:
-                #ffffff;
+            color: #ffffff;
 
-            width:
-                180px;
+            width: 180px;
 
-            height:
-                180px;
+            height: 180px;
 
-            line-height:
-                170px;
+            line-height: 170px;
 
-            border-radius:
-                50%;
+            border-radius: 50%;
 
-            background:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.08
-                );
+            background: rgba(255,255,255,0.08);
 
-            border:
-                4px solid
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.4
-                );
+            border: 4px solid rgba(255,255,255,0.4);
 
-            margin:
-                20px auto 35px auto;
+            margin: 20px auto 35px;
 
             box-shadow:
-                0 0 25px
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.1
-                );
+                0 0 25px rgba(255,255,255,0.1);
 
-            transition:
-                all 0.5s ease;
-
+            transition: all 0.5s ease;
         }
 
 
         .timer-display.pulsing {
 
-            transform:
-                scale(1.05);
+            transform: scale(1.05);
 
-            border-color:
-                #a5f3fc;
+            border-color: #a5f3fc;
 
             box-shadow:
-                0 0 35px
-                rgba(
-                    165,
-                    243,
-                    252,
-                    0.4
-                );
-
+                0 0 35px rgba(165,243,252,0.4);
         }
 
 
-        /* ==========================================
+        /* =========================
            BUTTONS
-        ========================================== */
+        ========================= */
 
         .btn-group {
 
-            display:
-                flex;
+            display: flex;
 
-            gap:
-                15px;
+            gap: 15px;
 
-            justify-content:
-                center;
+            justify-content: center;
 
-            margin-bottom:
-                30px;
-
+            margin-bottom: 30px;
         }
 
 
         .control-btn,
         .back-btn {
 
-            font-family:
-                'Outfit',
-                sans-serif;
+            font-family: 'Outfit', sans-serif;
 
-            font-weight:
-                600;
+            font-weight: 600;
 
-            font-size:
-                1rem;
+            font-size: 1rem;
 
-            color:
-                #ffffff;
+            color: #ffffff;
 
-            text-decoration:
-                none;
+            text-decoration: none;
 
-            padding:
-                12px 30px;
+            padding: 12px 30px;
 
-            border-radius:
-                50px;
+            border-radius: 50px;
 
-            background:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.15
-                );
+            background: rgba(255,255,255,0.15);
 
-            border:
-                1px solid
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.3
-                );
+            border: 1px solid rgba(255,255,255,0.3);
 
-            transition:
-                all 0.3s ease;
+            transition: all 0.3s ease;
 
-            cursor:
-                pointer;
+            cursor: pointer;
 
-            display:
-                inline-block;
-
+            display: inline-block;
         }
 
 
         .control-btn:hover,
         .back-btn:hover {
 
-            background:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    0.25
-                );
+            background: rgba(255,255,255,0.25);
 
-            transform:
-                scale(1.05);
-
+            transform: scale(1.05);
         }
 
 
         .control-btn.start-active {
 
-            background:
-                rgba(
-                    165,
-                    243,
-                    252,
-                    0.3
-                );
+            background: rgba(165,243,252,0.3);
 
-            border-color:
-                #a5f3fc;
-
+            border-color: #a5f3fc;
         }
 
 
-        /* ==========================================
+        /* =========================
            ANIMATIONS
-        ========================================== */
+        ========================= */
 
         @keyframes geminiWave {
 
             0% {
-                background-position:
-                    0% 50%;
+                background-position: 0% 50%;
             }
 
             50% {
-                background-position:
-                    100% 50%;
+                background-position: 100% 50%;
             }
 
             100% {
-                background-position:
-                    0% 50%;
+                background-position: 0% 50%;
             }
 
         }
@@ -579,86 +345,78 @@
         @keyframes moveTextGradient {
 
             0% {
-                background-position:
-                    0% 50%;
+                background-position: 0% 50%;
             }
 
             50% {
-                background-position:
-                    100% 50%;
+                background-position: 100% 50%;
             }
 
             100% {
-                background-position:
-                    0% 50%;
+                background-position: 0% 50%;
             }
 
         }
 
 
-        /* ==========================================
+        /* =========================
            MOBILE
-        ========================================== */
+        ========================= */
 
         @media (max-width: 600px) {
 
-            .navigation-wrapper {
+            body {
 
                 padding:
-                    0 10px;
+                    125px
+                    10px
+                    30px;
+            }
 
+
+            .navigation-wrapper {
+
+                padding: 0 10px;
+            }
+
+
+            .navigation {
+
+                gap: 4px;
+
+                padding: 7px;
             }
 
 
             .nav-link-item {
 
-                font-size:
-                    0.68rem;
+                font-size: 0.68rem;
 
-                padding:
-                    8px 10px;
-
+                padding: 8px 10px;
             }
 
 
             .container {
 
-                padding:
-                    30px 20px;
-
-            }
-
-
-            .beta-label {
-
-                font-size:
-                    0.68rem;
-
+                padding: 30px 18px;
             }
 
 
             h1 {
 
-                font-size:
-                    3rem;
-
+                font-size: 3.2rem;
             }
 
 
             .timer-display {
 
-                width:
-                    160px;
+                width: 165px;
 
-                height:
-                    160px;
+                height: 165px;
 
-                line-height:
-                    150px;
+                line-height: 155px;
 
-                font-size:
-                    3rem;
-
+                font-size: 3.2rem;
             }
 
         }
@@ -671,103 +429,94 @@
 <body>
 
 
-    <!-- ==========================================
+    <!-- =========================
          NAVIGATION
-    ========================================== -->
+    ========================= -->
 
     <div class="navigation-wrapper">
 
         <div class="navigation">
 
-
             <a
                 href="index.html"
                 class="nav-link-item">
-
                 Home
-
             </a>
 
 
             <a
                 href="page2.html"
                 class="nav-link-item">
-
                 Music
-
             </a>
 
 
             <a
                 href="page3.html"
                 class="nav-link-item active-tab">
-
                 Breathing
-
             </a>
 
+
+            <a
+                href="page4.html"
+                class="nav-link-item">
+                Journal
+            </a>
 
 
             <a
                 href="page5.html"
                 class="nav-link-item">
-
                 AI Chat
-
             </a>
 
 
             <a
                 href="page6.html"
                 class="nav-link-item">
-
                 Visualizer
-
             </a>
 
 
             <a
                 href="page7.html"
                 class="nav-link-item">
-
                 Affirmations
-
             </a>
 
 
+            <a
+                href="page8.html"
+                class="nav-link-item">
+                star catcher
+            </a>
 
+
+            <a
+                href="page9.html"
+                class="nav-link-item">
+                Adventure
+            </a>
 
         </div>
 
     </div>
 
 
-    <!-- ==========================================
-         MAIN PAGE
-    ========================================== -->
+    <!-- =========================
+         MAIN CONTENT
+    ========================= -->
 
     <div class="container">
 
 
-        <!-- BETA -->
-
-        <div class="beta-label">
-
-            (BETA)
-
-        </div>
-
-
-        <!-- TITLE -->
-
         <h1>
-
             Breathe & Relax
-
         </h1>
 
 
-        <!-- COUNTDOWN -->
+        <!-- TIMER -->
 
         <div
             class="timer-display"
@@ -778,10 +527,9 @@
         </div>
 
 
-        <!-- TIMER BUTTONS -->
+        <!-- TIMER CONTROLS -->
 
         <div class="btn-group">
-
 
             <button
                 class="control-btn"
@@ -801,21 +549,18 @@
 
             </button>
 
-
         </div>
 
 
-        <!-- BOTTOM LINKS -->
+        <!-- ONLY BACK TO MUSIC BUTTON -->
+        <!-- JOURNAL BUTTON REMOVED -->
 
         <div
             style="
                 margin-top: 30px;
                 display: flex;
-                gap: 15px;
                 justify-content: center;
-                flex-wrap: wrap;
             ">
-
 
             <a
                 href="page2.html"
@@ -825,34 +570,15 @@
 
             </a>
 
-
-            <a
-                href="page4.html"
-                class="back-btn"
-                style="
-                    background:
-                    rgba(
-                        255,
-                        255,
-                        255,
-                        0.3
-                    );
-                ">
-
-                Open Journal
-
-            </a>
-
-
         </div>
 
 
     </div>
 
 
-    <!-- ==========================================
+    <!-- =========================
          JAVASCRIPT
-    ========================================== -->
+    ========================= -->
 
     <script>
 
@@ -864,23 +590,17 @@
 
 
         const timerDisplay =
-            document.getElementById(
-                'timer'
-            );
+            document.getElementById('timer');
 
 
         const startBtn =
-            document.getElementById(
-                'startBtn'
-            );
+            document.getElementById('startBtn');
 
 
         function updateDisplay() {
 
             let minutes =
-                Math.floor(
-                    timeLeft / 60
-                );
+                Math.floor(timeLeft / 60);
 
 
             let seconds =
@@ -909,43 +629,33 @@
 
             if (isRunning) {
 
-
-                clearInterval(
-                    countdown
-                );
-
+                clearInterval(countdown);
 
                 isRunning = false;
 
-
                 startBtn.textContent =
                     "Start Timer";
-
 
                 startBtn.classList.remove(
                     'start-active'
                 );
 
-
                 timerDisplay.classList.remove(
                     'pulsing'
                 );
 
+            }
 
-            } else {
-
+            else {
 
                 isRunning = true;
-
 
                 startBtn.textContent =
                     "Pause";
 
-
                 startBtn.classList.add(
                     'start-active'
                 );
-
 
                 timerDisplay.classList.add(
                     'pulsing'
@@ -953,60 +663,42 @@
 
 
                 countdown =
-                    setInterval(
-                        () => {
+                    setInterval(() => {
+
+                        timeLeft--;
+
+                        updateDisplay();
 
 
-                            timeLeft--;
+                        if (timeLeft <= 0) {
 
+                            clearInterval(countdown);
+
+                            isRunning = false;
+
+                            timeLeft = 60;
 
                             updateDisplay();
 
+                            startBtn.textContent =
+                                "Start Timer";
 
-                            if (
-                                timeLeft <= 0
-                            ) {
+                            startBtn.classList.remove(
+                                'start-active'
+                            );
 
-
-                                clearInterval(
-                                    countdown
-                                );
-
-
-                                isRunning =
-                                    false;
+                            timerDisplay.classList.remove(
+                                'pulsing'
+                            );
 
 
-                                timeLeft =
-                                    60;
+                            alert(
+                                "Great job! Your 1-minute mindfulness window is complete."
+                            );
 
+                        }
 
-                                updateDisplay();
-
-
-                                startBtn.textContent =
-                                    "Start Timer";
-
-
-                                startBtn.classList.remove(
-                                    'start-active'
-                                );
-
-
-                                timerDisplay.classList.remove(
-                                    'pulsing'
-                                );
-
-
-                                alert(
-                                    "Great job! Your 1-minute mindfulness window is complete."
-                                );
-
-                            }
-
-                        },
-                        1000
-                    );
+                    }, 1000);
 
             }
 
@@ -1015,30 +707,20 @@
 
         function resetTimer() {
 
-            clearInterval(
-                countdown
-            );
+            clearInterval(countdown);
 
+            isRunning = false;
 
-            isRunning =
-                false;
-
-
-            timeLeft =
-                60;
-
+            timeLeft = 60;
 
             updateDisplay();
-
 
             startBtn.textContent =
                 "Start Timer";
 
-
             startBtn.classList.remove(
                 'start-active'
             );
-
 
             timerDisplay.classList.remove(
                 'pulsing'
