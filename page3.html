@@ -1,231 +1,1080 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
     <title>Page 3 - Hyfted Timer</title>
-    
-    <!-- LOADING FONTS (Outfit for tech text/buttons, Great Vibes for heading) -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@400;600;900&display=swap" rel="stylesheet">
-    
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@400;600;900&display=swap"
+        rel="stylesheet">
+
+
     <style>
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+
 
         body {
+
             display: flex;
+
             justify-content: center;
+
             align-items: center;
+
             min-height: 100vh;
-            font-family: 'Great Vibes', cursive;
-            
-            /* MATCHING GEMINI BACKGROUND FROM THE OTHER PAGES */
-            background: linear-gradient(135deg, #1a73e8, #7c4dff, #9c27b0, #e040fb, #1a73e8);
-            background-size: 300% 300%;
-            animation: geminiWave 6s ease-in-out infinite;
-            padding: 40px 15px;
+
+            font-family:
+                'Great Vibes',
+                cursive;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #1a73e8,
+                    #7c4dff,
+                    #9c27b0,
+                    #e040fb,
+                    #1a73e8
+                );
+
+            background-size:
+                300% 300%;
+
+            animation:
+                geminiWave
+                6s ease-in-out infinite;
+
+            padding:
+                40px 15px;
+
         }
 
-        .container { 
-            text-align: center; 
-            padding: 40px 30px; 
-            max-width: 500px; 
-            width: 100%; 
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 24px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+        /* ==========================================
+           NAVIGATION
+        ========================================== */
+
+        .navigation-wrapper {
+
+            width: 100%;
+
+            display: flex;
+
+            justify-content: center;
+
+            position: fixed;
+
+            top: 20px;
+
+            left: 0;
+
+            z-index: 1000;
+
+            padding:
+                0 15px;
+
+            font-family:
+                'Outfit',
+                sans-serif;
+
         }
+
+
+        .navigation {
+
+            display: flex;
+
+            gap: 6px;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.4
+                );
+
+            backdrop-filter:
+                blur(25px);
+
+            -webkit-backdrop-filter:
+                blur(25px);
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.3
+                );
+
+            padding:
+                6px;
+
+            border-radius:
+                50px;
+
+            box-shadow:
+                0 10px 30px
+                rgba(
+                    0,
+                    0,
+                    0,
+                    0.15
+                );
+
+            overflow-x:
+                auto;
+
+            max-width:
+                100%;
+
+            white-space:
+                nowrap;
+
+            -webkit-overflow-scrolling:
+                touch;
+
+            scrollbar-width:
+                none;
+
+            -ms-overflow-style:
+                none;
+
+        }
+
+
+        .navigation::-webkit-scrollbar {
+            display: none;
+        }
+
+
+        .nav-link-item {
+
+            color:
+                #000000 !important;
+
+            text-decoration:
+                none;
+
+            padding:
+                8px 16px;
+
+            font-size:
+                0.85rem;
+
+            font-weight:
+                700;
+
+            border-radius:
+                50px;
+
+            transition:
+                all 0.2s;
+
+            display:
+                inline-block;
+
+        }
+
+
+        .nav-link-item:hover {
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.4
+                );
+
+        }
+
+
+        .nav-link-item.active-tab {
+
+            background:
+                #ffffff !important;
+
+            box-shadow:
+                0 4px 12px
+                rgba(
+                    0,
+                    0,
+                    0,
+                    0.1
+                );
+
+        }
+
+
+        /* ==========================================
+           MAIN CONTAINER
+        ========================================== */
+
+        .container {
+
+            text-align:
+                center;
+
+            padding:
+                40px 30px;
+
+            max-width:
+                500px;
+
+            width:
+                100%;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.1
+                );
+
+            backdrop-filter:
+                blur(15px);
+
+            -webkit-backdrop-filter:
+                blur(15px);
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.2
+                );
+
+            border-radius:
+                24px;
+
+            box-shadow:
+                0 10px 30px
+                rgba(
+                    0,
+                    0,
+                    0,
+                    0.15
+                );
+
+        }
+
+
+        /* ==========================================
+           BETA LABEL
+        ========================================== */
+
+        .beta-label {
+
+            font-family:
+                'Outfit',
+                sans-serif;
+
+            font-size:
+                0.75rem;
+
+            font-weight:
+                600;
+
+            letter-spacing:
+                1.5px;
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.75
+                );
+
+            margin-bottom:
+                6px;
+
+            text-transform:
+                uppercase;
+
+        }
+
+
+        /* ==========================================
+           TITLE
+        ========================================== */
 
         h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            background: linear-gradient(270deg, #ffffff, #a5f3fc, #fbcfe8, #ffffff);
-            background-size: 400% 400%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: moveTextGradient 5s ease infinite;
+
+            font-size:
+                3.5rem;
+
+            margin-bottom:
+                20px;
+
+            background:
+                linear-gradient(
+                    270deg,
+                    #ffffff,
+                    #a5f3fc,
+                    #fbcfe8,
+                    #ffffff
+                );
+
+            background-size:
+                400% 400%;
+
+            -webkit-background-clip:
+                text;
+
+            -webkit-text-fill-color:
+                transparent;
+
+            animation:
+                moveTextGradient
+                5s ease infinite;
+
         }
 
-        /* TIMER VISUAL CIRCLE */
+
+        /* ==========================================
+           TIMER
+        ========================================== */
+
         .timer-display {
-            font-family: 'Outfit', sans-serif;
-            font-weight: 900;
-            font-size: 3.5rem;
-            color: #ffffff;
-            width: 180px;
-            height: 180px;
-            line-height: 170px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.08);
-            border: 4px solid rgba(255, 255, 255, 0.4);
-            margin: 20px auto 35px auto;
-            box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
-            transition: all 0.5s ease;
+
+            font-family:
+                'Outfit',
+                sans-serif;
+
+            font-weight:
+                900;
+
+            font-size:
+                3.5rem;
+
+            color:
+                #ffffff;
+
+            width:
+                180px;
+
+            height:
+                180px;
+
+            line-height:
+                170px;
+
+            border-radius:
+                50%;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.08
+                );
+
+            border:
+                4px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.4
+                );
+
+            margin:
+                20px auto 35px auto;
+
+            box-shadow:
+                0 0 25px
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.1
+                );
+
+            transition:
+                all 0.5s ease;
+
         }
 
-        /* When active, the circle will pulse */
+
         .timer-display.pulsing {
-            transform: scale(1.05);
-            border-color: #a5f3fc;
-            box-shadow: 0 0 35px rgba(165, 243, 252, 0.4);
+
+            transform:
+                scale(1.05);
+
+            border-color:
+                #a5f3fc;
+
+            box-shadow:
+                0 0 35px
+                rgba(
+                    165,
+                    243,
+                    252,
+                    0.4
+                );
+
         }
 
-        /* INTERACTIVE BUTTONS */
+
+        /* ==========================================
+           BUTTONS
+        ========================================== */
+
         .btn-group {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-bottom: 30px;
+
+            display:
+                flex;
+
+            gap:
+                15px;
+
+            justify-content:
+                center;
+
+            margin-bottom:
+                30px;
+
         }
 
-        .control-btn, .back-btn {
-            font-family: 'Outfit', sans-serif;
-            font-weight: 600;
-            font-size: 1rem;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 12px 30px;
-            border-radius: 50px;
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            display: inline-block;
+
+        .control-btn,
+        .back-btn {
+
+            font-family:
+                'Outfit',
+                sans-serif;
+
+            font-weight:
+                600;
+
+            font-size:
+                1rem;
+
+            color:
+                #ffffff;
+
+            text-decoration:
+                none;
+
+            padding:
+                12px 30px;
+
+            border-radius:
+                50px;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.15
+                );
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.3
+                );
+
+            transition:
+                all 0.3s ease;
+
+            cursor:
+                pointer;
+
+            display:
+                inline-block;
+
         }
 
-        .control-btn:hover, .back-btn:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: scale(1.05);
+
+        .control-btn:hover,
+        .back-btn:hover {
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.25
+                );
+
+            transform:
+                scale(1.05);
+
         }
+
 
         .control-btn.start-active {
-            background: rgba(165, 243, 252, 0.3);
-            border-color: #a5f3fc;
+
+            background:
+                rgba(
+                    165,
+                    243,
+                    252,
+                    0.3
+                );
+
+            border-color:
+                #a5f3fc;
+
         }
 
-        /* BACKGROUND & TEXT GRADIENT ANIMATIONS */
-        @keyframes geminiWave { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-        @keyframes moveTextGradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+
+        /* ==========================================
+           ANIMATIONS
+        ========================================== */
+
+        @keyframes geminiWave {
+
+            0% {
+                background-position:
+                    0% 50%;
+            }
+
+            50% {
+                background-position:
+                    100% 50%;
+            }
+
+            100% {
+                background-position:
+                    0% 50%;
+            }
+
+        }
+
+
+        @keyframes moveTextGradient {
+
+            0% {
+                background-position:
+                    0% 50%;
+            }
+
+            50% {
+                background-position:
+                    100% 50%;
+            }
+
+            100% {
+                background-position:
+                    0% 50%;
+            }
+
+        }
+
+
+        /* ==========================================
+           MOBILE
+        ========================================== */
+
+        @media (max-width: 600px) {
+
+            .navigation-wrapper {
+
+                padding:
+                    0 10px;
+
+            }
+
+
+            .nav-link-item {
+
+                font-size:
+                    0.68rem;
+
+                padding:
+                    8px 10px;
+
+            }
+
+
+            .container {
+
+                padding:
+                    30px 20px;
+
+            }
+
+
+            .beta-label {
+
+                font-size:
+                    0.68rem;
+
+            }
+
+
+            h1 {
+
+                font-size:
+                    3rem;
+
+            }
+
+
+            .timer-display {
+
+                width:
+                    160px;
+
+                height:
+                    160px;
+
+                line-height:
+                    150px;
+
+                font-size:
+                    3rem;
+
+            }
+
+        }
+
     </style>
+
 </head>
+
+
 <body>
-	</head>
-<body>
-      <!-- 🌐 UNIVERSAL HYFTED SCROLL NAVIGATION CAPSULE (BLACK TEXT EDITION) -->
-<div style="width: 100%; display: flex; justify-content: center; position: fixed; top: 20px; left: 0; z-index: 1000; font-family: 'Outfit', sans-serif; padding: 0 15px;">
-    <div style="display: flex; gap: 6px; background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(255, 255, 255, 0.3); padding: 6px; border-radius: 50px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); overflow-x: auto; max-width: 100%; white-space: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none;">
-        <style>
-            div::-webkit-scrollbar { display: none; }
-            .nav-link-item { color: #000000 !important; text-decoration: none; padding: 8px 16px; font-size: 0.85rem; font-weight: 700; border-radius: 50px; transition: all 0.2s; display: inline-block; }
-            .nav-link-item:hover { background: rgba(255, 255, 255, 0.4); }
-            .nav-link-item.active-tab { background: #ffffff !important; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        </style>
-        <a href="index.html" class="nav-link-item">Home</a>
-        <a href="page2.html" class="nav-link-item">Music</a>
-        <a href="page3.html" class="nav-link-item">Breathing</a>
-        <a href="page4.html" class="nav-link-item">Journal</a>
-        <a href="page5.html" class="nav-link-item">AI Chat</a>
-        <a href="page6.html" class="nav-link-item">Visualizer</a>
-        <a href="page7.html" class="nav-link-item">Affirmations</a>
-		<a href="page8.html" class="nav-link-item">star catcher</a>
-		<a href="page9.html" class="nav-link-item">Adventure</a>
+
+
+    <!-- ==========================================
+         NAVIGATION
+    ========================================== -->
+
+    <div class="navigation-wrapper">
+
+        <div class="navigation">
+
+
+            <a
+                href="index.html"
+                class="nav-link-item">
+
+                Home
+
+            </a>
+
+
+            <a
+                href="page2.html"
+                class="nav-link-item">
+
+                Music
+
+            </a>
+
+
+            <a
+                href="page3.html"
+                class="nav-link-item active-tab">
+
+                Breathing
+
+            </a>
+
+
+            <a
+                href="page4.html"
+                class="nav-link-item">
+
+                Journal
+
+            </a>
+
+
+            <a
+                href="page5.html"
+                class="nav-link-item">
+
+                AI Chat
+
+            </a>
+
+
+            <a
+                href="page6.html"
+                class="nav-link-item">
+
+                Visualizer
+
+            </a>
+
+
+            <a
+                href="page7.html"
+                class="nav-link-item">
+
+                Affirmations
+
+            </a>
+
+
+            <a
+                href="page8.html"
+                class="nav-link-item">
+
+                star catcher
+
+            </a>
+
+
+            <a
+                href="page9.html"
+                class="nav-link-item">
+
+                Adventure
+
+            </a>
+
+
+        </div>
+
     </div>
-</div>
-<div style="margin-top: 75px;"></div>
 
 
-    <div class="container">
-        <!-- The rest of your normal page code continues down here -->
-
+    <!-- ==========================================
+         MAIN PAGE
+    ========================================== -->
 
     <div class="container">
-        <h1>Breathe & Relax</h1>
 
-        <!-- The Countdown Window -->
-        <div class="timer-display" id="timer">01:00</div>
+
+        <!-- BETA -->
+
+        <div class="beta-label">
+
+            (BETA)
+
+        </div>
+
+
+        <!-- TITLE -->
+
+        <h1>
+
+            Breathe & Relax
+
+        </h1>
+
+
+        <!-- COUNTDOWN -->
+
+        <div
+            class="timer-display"
+            id="timer">
+
+            01:00
+
+        </div>
+
+
+        <!-- TIMER BUTTONS -->
 
         <div class="btn-group">
-            <button class="control-btn" id="startBtn" onclick="toggleTimer()">Start Timer</button>
-            <button class="control-btn" onclick="resetTimer()">Reset</button>
+
+
+            <button
+                class="control-btn"
+                id="startBtn"
+                onclick="toggleTimer()">
+
+                Start Timer
+
+            </button>
+
+
+            <button
+                class="control-btn"
+                onclick="resetTimer()">
+
+                Reset
+
+            </button>
+
+
         </div>
 
-        <div>
-            <div style="margin-top: 30px; display: flex; gap: 15px; justify-content: center;">
-    <a href="page2.html" class="back-btn">Back to Music</a>
-    <a href="page4.html" class="back-btn" style="background: rgba(255, 255, 255, 0.3);">Open Journal</a>
-</div>
+
+        <!-- BOTTOM LINKS -->
+
+        <div
+            style="
+                margin-top: 30px;
+                display: flex;
+                gap: 15px;
+                justify-content: center;
+                flex-wrap: wrap;
+            ">
+
+
+            <a
+                href="page2.html"
+                class="back-btn">
+
+                Back to Music
+
+            </a>
+
+
+            <a
+                href="page4.html"
+                class="back-btn"
+                style="
+                    background:
+                    rgba(
+                        255,
+                        255,
+                        255,
+                        0.3
+                    );
+                ">
+
+                Open Journal
+
+            </a>
+
 
         </div>
+
+
     </div>
 
-    <!-- JAVASCRIPT: Handles the functional countdown clock logic -->
+
+    <!-- ==========================================
+         JAVASCRIPT
+    ========================================== -->
+
     <script>
+
         let countdown;
-        let timeLeft = 60; // 1-minute countdown timer
+
+        let timeLeft = 60;
+
         let isRunning = false;
 
-        const timerDisplay = document.getElementById('timer');
-        const startBtn = document.getElementById('startBtn');
+
+        const timerDisplay =
+            document.getElementById(
+                'timer'
+            );
+
+
+        const startBtn =
+            document.getElementById(
+                'startBtn'
+            );
+
 
         function updateDisplay() {
-            let minutes = Math.floor(timeLeft / 60);
-            let seconds = timeLeft % 60;
-            seconds = seconds < 10 ? '0' + seconds : seconds;
-            minutes = minutes < 10 ? '0' + minutes : minutes;
-            timerDisplay.textContent = `${minutes}:${seconds}`;
+
+            let minutes =
+                Math.floor(
+                    timeLeft / 60
+                );
+
+
+            let seconds =
+                timeLeft % 60;
+
+
+            seconds =
+                seconds < 10
+                    ? '0' + seconds
+                    : seconds;
+
+
+            minutes =
+                minutes < 10
+                    ? '0' + minutes
+                    : minutes;
+
+
+            timerDisplay.textContent =
+                `${minutes}:${seconds}`;
+
         }
+
 
         function toggleTimer() {
+
             if (isRunning) {
-                // Pause action
-                clearInterval(countdown);
+
+
+                clearInterval(
+                    countdown
+                );
+
+
                 isRunning = false;
-                startBtn.textContent = "Start Timer";
-                startBtn.classList.remove('start-active');
-                timerDisplay.classList.remove('pulsing');
+
+
+                startBtn.textContent =
+                    "Start Timer";
+
+
+                startBtn.classList.remove(
+                    'start-active'
+                );
+
+
+                timerDisplay.classList.remove(
+                    'pulsing'
+                );
+
+
             } else {
-                // Start action
+
+
                 isRunning = true;
-                startBtn.textContent = "Pause";
-                startBtn.classList.add('start-active');
-                timerDisplay.classList.add('pulsing');
 
-                countdown = setInterval(() => {
-                    timeLeft--;
-                    updateDisplay();
 
-                    if (timeLeft <= 0) {
-                        clearInterval(countdown);
-                        isRunning = false;
-                        timeLeft = 60; // reset back to 1 minute
-                        updateDisplay();
-                        startBtn.textContent = "Start Timer";
-                        startBtn.classList.remove('start-active');
-                        timerDisplay.classList.remove('pulsing');
-                        alert("Great job! Your 1-minute mindfulness window is complete.");
-                    }
-                }, 1000);
+                startBtn.textContent =
+                    "Pause";
+
+
+                startBtn.classList.add(
+                    'start-active'
+                );
+
+
+                timerDisplay.classList.add(
+                    'pulsing'
+                );
+
+
+                countdown =
+                    setInterval(
+                        () => {
+
+
+                            timeLeft--;
+
+
+                            updateDisplay();
+
+
+                            if (
+                                timeLeft <= 0
+                            ) {
+
+
+                                clearInterval(
+                                    countdown
+                                );
+
+
+                                isRunning =
+                                    false;
+
+
+                                timeLeft =
+                                    60;
+
+
+                                updateDisplay();
+
+
+                                startBtn.textContent =
+                                    "Start Timer";
+
+
+                                startBtn.classList.remove(
+                                    'start-active'
+                                );
+
+
+                                timerDisplay.classList.remove(
+                                    'pulsing'
+                                );
+
+
+                                alert(
+                                    "Great job! Your 1-minute mindfulness window is complete."
+                                );
+
+                            }
+
+                        },
+                        1000
+                    );
+
             }
+
         }
+
 
         function resetTimer() {
-            clearInterval(countdown);
-            isRunning = false;
-            timeLeft = 60;
+
+            clearInterval(
+                countdown
+            );
+
+
+            isRunning =
+                false;
+
+
+            timeLeft =
+                60;
+
+
             updateDisplay();
-            startBtn.textContent = "Start Timer";
-            startBtn.classList.remove('start-active');
-            timerDisplay.classList.remove('pulsing');
+
+
+            startBtn.textContent =
+                "Start Timer";
+
+
+            startBtn.classList.remove(
+                'start-active'
+            );
+
+
+            timerDisplay.classList.remove(
+                'pulsing'
+            );
+
         }
+
+
+        updateDisplay();
+
     </script>
+
 
 </body>
 </html>
