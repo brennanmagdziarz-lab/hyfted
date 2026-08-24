@@ -49,7 +49,6 @@
             background:
                 linear-gradient(
                     135deg,
-
                     #1677ff,
                     #6246ea,
                     #9b36d6,
@@ -72,7 +71,7 @@
 
 
         /* ==========================================
-           NAVIGATION CONTAINER
+           NAVIGATION
         ========================================== */
 
         .navigation-wrapper {
@@ -100,10 +99,6 @@
 
         }
 
-
-        /* ==========================================
-           NAVIGATION BAR
-        ========================================== */
 
         .navigation {
 
@@ -160,10 +155,6 @@
 
         }
 
-
-        /* ==========================================
-           NAVIGATION LINKS
-        ========================================== */
 
         .nav-link-item {
 
@@ -283,6 +274,18 @@
 
         .logo-title {
 
+            display:
+                flex;
+
+            flex-direction:
+                column;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
             font-family:
                 'Outfit',
                 sans-serif;
@@ -305,7 +308,6 @@
             background:
                 linear-gradient(
                     270deg,
-
                     #ffffff,
                     #a5f3fc,
                     #fbcfe8,
@@ -343,7 +345,7 @@
                 sans-serif;
 
             font-size:
-                0.9rem;
+                0.75rem;
 
             font-weight:
                 bold;
@@ -356,7 +358,7 @@
                     255,
                     255,
                     255,
-                    0.8
+                    0.85
                 );
 
             -webkit-text-fill-color:
@@ -364,17 +366,39 @@
                     255,
                     255,
                     255,
-                    0.8
+                    0.85
                 );
 
-            vertical-align:
-                middle;
+            margin-bottom:
+                2px;
 
-            margin-left:
-                8px;
+            line-height:
+                1;
 
-            white-space:
-                nowrap;
+        }
+
+
+        /* ==========================================
+           BRAND NAME
+        ========================================== */
+
+        .brand-name {
+
+            font-family:
+                'Outfit',
+                sans-serif;
+
+            font-size:
+                inherit;
+
+            font-weight:
+                900;
+
+            letter-spacing:
+                inherit;
+
+            line-height:
+                1;
 
         }
 
@@ -401,7 +425,6 @@
             background:
                 linear-gradient(
                     270deg,
-
                     #ffffff,
                     #a5f3fc,
                     #fbcfe8,
@@ -452,7 +475,6 @@
             background:
                 linear-gradient(
                     270deg,
-
                     #ffffff,
                     #a5f3fc,
                     #fbcfe8,
@@ -567,7 +589,7 @@
 
 
         /* ==========================================
-           ABOUT + OWNER + COPYRIGHT LINKS
+           BOTTOM LINKS
         ========================================== */
 
         .bottom-links {
@@ -647,51 +669,39 @@
 
 
         /* ==========================================
-           COLORFUL GEMINI WAVE
+           GEMINI WAVE
         ========================================== */
 
         @keyframes geminiWave {
 
             0% {
-
                 background-position:
                     0% 50%;
-
             }
 
             20% {
-
                 background-position:
                     35% 30%;
-
             }
 
             40% {
-
                 background-position:
                     70% 50%;
-
             }
 
             60% {
-
                 background-position:
                     100% 70%;
-
             }
 
             80% {
-
                 background-position:
                     55% 50%;
-
             }
 
             100% {
-
                 background-position:
                     0% 50%;
-
             }
 
         }
@@ -704,24 +714,18 @@
         @keyframes moveTextGradient {
 
             0% {
-
                 background-position:
                     0% 50%;
-
             }
 
             50% {
-
                 background-position:
                     100% 50%;
-
             }
 
             100% {
-
                 background-position:
                     0% 50%;
-
             }
 
         }
@@ -734,24 +738,18 @@
         @keyframes floatLogo {
 
             0% {
-
                 transform:
                     translateY(0px);
-
             }
 
             50% {
-
                 transform:
                     translateY(-10px);
-
             }
 
             100% {
-
                 transform:
                     translateY(0px);
-
             }
 
         }
@@ -839,9 +837,6 @@
                 font-size:
                     0.7rem;
 
-                margin-left:
-                    5px;
-
             }
 
 
@@ -911,9 +906,6 @@
 
                 font-size:
                     0.62rem;
-
-                margin-left:
-                    4px;
 
             }
 
@@ -1056,10 +1048,12 @@
 
         <div class="logo-title">
 
-            hyfted
-
             <span class="beta-label">
                 (BETA)
+            </span>
+
+            <span class="brand-name">
+                hyfted
             </span>
 
         </div>
