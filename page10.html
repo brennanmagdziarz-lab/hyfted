@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Page 10 - Hyfted Sounds</title>
+<title>Full Songs</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,136 +13,66 @@
 <style>
 
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
 body {
+    margin: 0;
     min-height: 100vh;
-    padding: 110px 15px 120px;
 
     font-family: 'Outfit', sans-serif;
     color: white;
 
+    padding: 45px 15px 100px;
+
     background: linear-gradient(
-        135deg,
-        #1677ff,
-        #6246ea,
-        #9b36d6,
-        #e33cff,
-        #ff5fcf,
-        #7c5cff,
-        #29c6ff,
-        #1677ff
+        120deg,
+        #4285f4,
+        #8e44ad,
+        #00bcd4,
+        #4285f4,
+        #9c27b0,
+        #00acc1
     );
 
-    background-size: 500% 500%;
-    animation: geminiWave 7s ease-in-out infinite;
+    background-size: 400% 400%;
+
+    animation: geminiWave 5s ease-in-out infinite;
+}
+
+@keyframes geminiWave {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    25% {
+        background-position: 50% 100%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    75% {
+        background-position: 50% 0%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
 }
 
 
 /* =========================
-   NAVIGATION
-========================= */
-
-.navigation-wrapper {
-    width: 100%;
-
-    position: fixed;
-    top: 20px;
-    left: 0;
-
-    z-index: 1000;
-
-    display: flex;
-    justify-content: center;
-
-    padding: 0 15px;
-}
-
-.navigation {
-    display: flex;
-    gap: 6px;
-
-    padding: 7px;
-
-    max-width: 100%;
-
-    background: rgba(255,255,255,0.42);
-
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-
-    border: 1px solid rgba(255,255,255,0.35);
-
-    border-radius: 50px;
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,0.15);
-
-    overflow-x: auto;
-
-    scrollbar-width: none;
-
-    white-space: nowrap;
-}
-
-.navigation::-webkit-scrollbar {
-    display: none;
-}
-
-.nav-link-item {
-    color: #000 !important;
-
-    text-decoration: none;
-
-    padding: 9px 15px;
-
-    font-size: 0.82rem;
-    font-weight: 700;
-
-    border-radius: 50px;
-
-    transition: 0.2s;
-}
-
-.nav-link-item:hover {
-    background: rgba(255,255,255,0.5);
-}
-
-.nav-link-item.active-tab {
-    background: white !important;
-
-    box-shadow:
-        0 4px 12px rgba(0,0,0,0.12);
-}
-
-
-/* =========================
-   MAIN APP
+   MAIN
 ========================= */
 
 .app {
     width: 100%;
-    max-width: 800px;
-
+    max-width: 850px;
     margin: auto;
-
-    padding: 28px;
-
-    background: rgba(255,255,255,0.11);
-
-    backdrop-filter: blur(22px);
-    -webkit-backdrop-filter: blur(22px);
-
-    border:
-        1px solid rgba(255,255,255,0.2);
-
-    border-radius: 28px;
-
-    box-shadow:
-        0 20px 50px rgba(0,0,0,0.2);
 }
 
 
@@ -160,7 +90,7 @@ body {
 
     color: rgba(255,255,255,0.7);
 
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 }
 
 h1 {
@@ -169,27 +99,40 @@ h1 {
     font-family: 'Great Vibes', cursive;
 
     font-size: 4rem;
-
     font-weight: 400;
 
-    margin-bottom: 5px;
+    margin: 0;
 
-    background:
-        linear-gradient(
-            270deg,
-            #ffffff,
-            #a5f3fc,
-            #fbcfe8,
-            #ffffff
-        );
+    background: linear-gradient(
+        270deg,
+        #ffffff,
+        #a5f3fc,
+        #fbcfe8,
+        #ffffff
+    );
 
     background-size: 400% 400%;
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    animation:
-        moveTextGradient 5s ease infinite;
+    animation: titleWave 5s ease infinite;
+}
+
+@keyframes titleWave {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
 }
 
 .subtitle {
@@ -199,16 +142,19 @@ h1 {
 
     color: rgba(255,255,255,0.72);
 
-    margin-bottom: 25px;
+    margin-top: 3px;
+    margin-bottom: 28px;
 }
 
 
 /* =========================
-   SEARCH
+   SEARCH BAR
 ========================= */
 
 .search-wrapper {
     position: relative;
+
+    width: 100%;
 
     margin-bottom: 25px;
 }
@@ -221,9 +167,11 @@ h1 {
 
     transform: translateY(-50%);
 
-    font-size: 1.05rem;
+    font-size: 1rem;
 
     opacity: 0.7;
+
+    pointer-events: none;
 }
 
 .search {
@@ -231,16 +179,14 @@ h1 {
 
     height: 50px;
 
-    padding:
-        0 20px 0 48px;
+    padding: 0 20px 0 47px;
 
-    border: 1px solid rgba(255,255,255,0.25);
+    border: none;
+    outline: none;
 
     border-radius: 50px;
 
-    outline: none;
-
-    background: rgba(0,0,0,0.18);
+    background: rgba(0,0,0,0.22);
 
     color: white;
 
@@ -248,7 +194,8 @@ h1 {
 
     font-size: 0.95rem;
 
-    backdrop-filter: blur(10px);
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.12);
 }
 
 .search::placeholder {
@@ -256,10 +203,7 @@ h1 {
 }
 
 .search:focus {
-    background: rgba(0,0,0,0.25);
-
-    border-color:
-        rgba(255,255,255,0.5);
+    background: rgba(0,0,0,0.3);
 }
 
 
@@ -268,11 +212,7 @@ h1 {
 ========================= */
 
 .song-list {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 7px;
+    width: 100%;
 }
 
 
@@ -284,61 +224,56 @@ h1 {
     display: grid;
 
     grid-template-columns:
-        48px
+        50px
         1fr
         auto
-        45px;
+        44px;
 
     align-items: center;
 
-    gap: 13px;
+    gap: 14px;
 
-    padding: 10px 13px;
+    padding: 12px 8px;
 
-    border-radius: 15px;
+    border-radius: 12px;
 
-    transition: 0.2s;
+    transition: background 0.2s ease;
 
     cursor: pointer;
 }
 
 .song:hover {
-    background:
-        rgba(255,255,255,0.13);
+    background: rgba(255,255,255,0.12);
 }
 
 
-/* ART */
+/* =========================
+   ART
+========================= */
 
 .art {
-    width: 48px;
-    height: 48px;
+    width: 50px;
+    height: 50px;
 
-    border-radius: 10px;
+    border-radius: 9px;
 
     display: flex;
 
     justify-content: center;
     align-items: center;
 
-    font-size: 1.3rem;
+    font-size: 1.35rem;
 
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,0.4),
-            rgba(255,255,255,0.08)
-        );
-
-    border:
-        1px solid rgba(255,255,255,0.2);
+    background: rgba(0,0,0,0.2);
 
     box-shadow:
         0 5px 15px rgba(0,0,0,0.15);
 }
 
 
-/* SONG INFO */
+/* =========================
+   SONG INFO
+========================= */
 
 .song-info {
     min-width: 0;
@@ -359,24 +294,28 @@ h1 {
 .song-category {
     font-size: 0.72rem;
 
-    color:
-        rgba(255,255,255,0.58);
+    color: rgba(255,255,255,0.58);
 
-    margin-top: 2px;
+    margin-top: 3px;
 }
 
 
-/* DURATION */
+/* =========================
+   LOCKED
+========================= */
 
-.duration {
-    font-size: 0.72rem;
+.locked {
+    font-size: 0.7rem;
 
-    color:
-        rgba(255,255,255,0.65);
+    color: rgba(255,255,255,0.65);
+
+    white-space: nowrap;
 }
 
 
-/* PLAY */
+/* =========================
+   PLAY BUTTON
+========================= */
 
 .play-button {
     width: 38px;
@@ -384,15 +323,15 @@ h1 {
 
     border-radius: 50%;
 
-    border: 1px solid
-        rgba(255,255,255,0.35);
+    border: none;
 
-    background:
-        rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.18);
 
     color: white;
 
     cursor: pointer;
+
+    font-size: 0.9rem;
 
     display: flex;
 
@@ -403,8 +342,7 @@ h1 {
 }
 
 .play-button:hover {
-    background:
-        rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.32);
 
     transform: scale(1.08);
 }
@@ -419,212 +357,141 @@ h1 {
 
     text-align: center;
 
-    padding: 35px 10px;
+    padding: 30px;
 
-    color:
-        rgba(255,255,255,0.65);
+    color: rgba(255,255,255,0.65);
 
     font-size: 0.9rem;
 }
 
 
 /* =========================
-   BOTTOM PLAYER
+   SUBSCRIPTION
 ========================= */
 
-.player {
-    position: fixed;
+.subscription-area {
+    text-align: center;
 
-    bottom: 15px;
-
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width:
-        min(760px, calc(100% - 30px));
-
-    padding: 12px 16px;
-
-    display: grid;
-
-    grid-template-columns:
-        1fr
-        auto
-        1fr;
-
-    align-items: center;
-
-    gap: 15px;
-
-    background:
-        rgba(20,10,40,0.65);
-
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-
-    border:
-        1px solid rgba(255,255,255,0.2);
-
-    border-radius: 20px;
-
-    box-shadow:
-        0 10px 40px rgba(0,0,0,0.3);
-
-    z-index: 2000;
+    margin-top: 35px;
 }
 
+.subscription-text {
+    font-size: 0.8rem;
 
-/* CURRENT SONG */
+    color: rgba(255,255,255,0.7);
 
-.now-playing {
-    min-width: 0;
+    margin-bottom: 14px;
 }
 
-.now-title {
-    font-size: 0.85rem;
+.subscription-button {
+    display: inline-block;
 
-    font-weight: 600;
+    padding: 16px 30px;
 
-    white-space: nowrap;
+    border-radius: 30px;
 
-    overflow: hidden;
+    background: linear-gradient(
+        120deg,
+        #ff0080,
+        #7928ca,
+        #00c6ff,
+        #00f2fe,
+        #ff0080
+    );
 
-    text-overflow: ellipsis;
-}
+    background-size: 400% 400%;
 
-.now-status {
-    font-size: 0.65rem;
-
-    color:
-        rgba(255,255,255,0.55);
-}
-
-
-/* MAIN PLAY */
-
-.main-play {
-    width: 42px;
-    height: 42px;
-
-    border-radius: 50%;
-
-    border: none;
-
-    background: white;
-
-    color: #5d35d5;
-
-    font-size: 1rem;
-
-    cursor: pointer;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-}
-
-
-/* PLAYER PROGRESS */
-
-.player-right {
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-}
-
-.player-progress {
-    width: 120px;
-
-    accent-color: white;
-}
-
-.player-time {
-    font-size: 0.65rem;
-
-    color:
-        rgba(255,255,255,0.6);
-
-    white-space: nowrap;
-}
-
-
-/* =========================
-   BOTTOM BUTTON
-========================= */
-
-.back-row {
-    display: flex;
-
-    justify-content: center;
-
-    gap: 12px;
-
-    margin-top: 25px;
-}
-
-.back-btn {
-    padding: 11px 22px;
-
-    border-radius: 50px;
+    animation: subscriptionGeminiWave 4s ease-in-out infinite;
 
     color: white;
 
     text-decoration: none;
 
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: 700;
 
-    background:
-        rgba(255,255,255,0.15);
+    font-size: 1rem;
 
-    border:
-        1px solid rgba(255,255,255,0.25);
+    box-shadow:
+        0 0 15px rgba(255,255,255,0.3),
+        0 8px 25px rgba(0,0,0,0.25);
+
+    transition: transform 0.2s;
 }
 
-.back-btn:hover {
-    background:
-        rgba(255,255,255,0.25);
+@keyframes subscriptionGeminiWave {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    20% {
+        background-position: 50% 100%;
+    }
+
+    40% {
+        background-position: 100% 50%;
+    }
+
+    60% {
+        background-position: 50% 0%;
+    }
+
+    80% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+
+}
+
+.subscription-button:hover {
+    transform: scale(1.05);
 }
 
 
 /* =========================
-   ANIMATIONS
+   BACK BUTTON
 ========================= */
 
-@keyframes geminiWave {
+.back-button {
+    display: block;
 
-    0% {
-        background-position: 0% 50%;
-    }
+    width: fit-content;
 
-    50% {
-        background-position: 100% 50%;
-    }
+    margin: 25px auto 0;
 
-    100% {
-        background-position: 0% 50%;
-    }
+    padding: 12px 25px;
 
+    border-radius: 30px;
+
+    background: rgba(255,255,255,0.15);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    font-size: 0.9rem;
+
+    transition: 0.2s;
 }
 
-@keyframes moveTextGradient {
+.back-button:hover {
+    background: rgba(255,255,255,0.25);
 
-    0% {
-        background-position: 0% 50%;
-    }
+    transform: scale(1.04);
+}
 
-    50% {
-        background-position: 100% 50%;
-    }
 
-    100% {
-        background-position: 0% 50%;
-    }
+/* =========================
+   HIDDEN AUDIO
+========================= */
 
+audio {
+    display: none;
 }
 
 
@@ -635,14 +502,7 @@ h1 {
 @media (max-width: 600px) {
 
     body {
-        padding:
-            105px 10px 115px;
-    }
-
-    .app {
-        padding: 20px 12px;
-
-        border-radius: 22px;
+        padding: 30px 12px 70px;
     }
 
     h1 {
@@ -651,43 +511,24 @@ h1 {
 
     .song {
         grid-template-columns:
-            42px
+            45px
             1fr
-            35px;
+            38px;
 
-        gap: 10px;
+        gap: 11px;
+
+        padding: 11px 5px;
     }
 
     .art {
-        width: 42px;
-        height: 42px;
+        width: 45px;
+        height: 45px;
     }
 
-    .duration {
+    .locked {
         display: none;
     }
 
-    .player {
-        grid-template-columns:
-            1fr
-            auto;
-
-        gap: 10px;
-    }
-
-    .player-right {
-        display: none;
-    }
-
-}
-
-
-/* =========================
-   HIDE AUDIO
-========================= */
-
-audio {
-    display: none;
 }
 
 </style>
@@ -696,60 +537,21 @@ audio {
 
 <body>
 
-
-<!-- =========================
-     NAVIGATION
-========================= -->
-
-<div class="navigation-wrapper">
-
-    <div class="navigation">
-
-        <a href="index.html" class="nav-link-item">
-            Home
-        </a>
-
-        <a href="page2.html" class="nav-link-item">
-            Music
-        </a>
-
-        <a href="page3.html" class="nav-link-item">
-            Breathing
-        </a>
-
-        <a href="page5.html" class="nav-link-item">
-            AI Chat
-        </a>
-
-        <a href="page6.html" class="nav-link-item">
-            Visualizer
-        </a>
-
-        <a href="page7.html" class="nav-link-item">
-            Affirmations
-        </a>
-
-    </div>
-
-</div>
-
-
-<!-- =========================
-     APP
-========================= -->
-
 <div class="app">
+
+
+    <!-- HEADER -->
 
     <div class="beta">
         (BETA)
     </div>
 
     <h1>
-        Hyfted Sounds
+        Full Songs
     </h1>
 
     <div class="subtitle">
-        Your sample library
+        Listen to the full versions of our music.
     </div>
 
 
@@ -765,52 +567,52 @@ audio {
             id="search"
             class="search"
             type="text"
-            placeholder="Search your sounds..."
+            placeholder="Search full songs..."
             autocomplete="off"
         >
 
     </div>
 
 
-    <!-- SONGS -->
+    <!-- SONG LIST -->
 
     <div
         id="songList"
         class="song-list">
 
 
-        <!-- CALM MUSIC -->
+        <!-- RELAXING PIANO -->
 
         <div
             class="song"
-            data-title="Calm Music"
-            data-category="Lofi Calm Relaxing"
-            onclick="selectSong(0)"
+            data-title="Relaxing Piano"
+            data-category="Piano Relaxing Calm"
+            onclick="requestSong('relaxing-piano')"
         >
 
             <div class="art">
-                🌊
+                🎹
             </div>
 
             <div class="song-info">
 
                 <div class="song-title">
-                    Calm Music
+                    Relaxing Piano
                 </div>
 
                 <div class="song-category">
-                    Lofi • Calm
+                    Piano • Relaxing
                 </div>
 
             </div>
 
-            <div class="duration">
-                1:00
+            <div class="locked">
+                🔒 Premium
             </div>
 
             <button
                 class="play-button"
-                onclick="event.stopPropagation(); selectSong(0)"
+                onclick="event.stopPropagation(); requestSong('relaxing-piano')"
             >
                 ▶
             </button>
@@ -818,13 +620,91 @@ audio {
         </div>
 
 
-        <!-- PRETTY JOHN -->
+        <!-- COFFEE SHOP JAZZ -->
 
         <div
             class="song"
-            data-title="Pretty John"
-            data-category="Lofi Chill"
-            onclick="selectSong(1)"
+            data-title="Relaxing Jazz Coffee Shop"
+            data-category="Jazz Coffee Shop Relaxing"
+            onclick="requestSong('coffee-shop-jazz')"
+        >
+
+            <div class="art">
+                ☕
+            </div>
+
+            <div class="song-info">
+
+                <div class="song-title">
+                    Relaxing Jazz Coffee Shop
+                </div>
+
+                <div class="song-category">
+                    Jazz • Coffee Shop
+                </div>
+
+            </div>
+
+            <div class="locked">
+                🔒 Premium
+            </div>
+
+            <button
+                class="play-button"
+                onclick="event.stopPropagation(); requestSong('coffee-shop-jazz')"
+            >
+                ▶
+            </button>
+
+        </div>
+
+
+        <!-- JAZZ PIANO -->
+
+        <div
+            class="song"
+            data-title="Relaxing Jazz Piano"
+            data-category="Jazz Piano Relaxing"
+            onclick="requestSong('jazz-piano')"
+        >
+
+            <div class="art">
+                🎷
+            </div>
+
+            <div class="song-info">
+
+                <div class="song-title">
+                    Relaxing Jazz Piano
+                </div>
+
+                <div class="song-category">
+                    Jazz • Piano
+                </div>
+
+            </div>
+
+            <div class="locked">
+                🔒 Premium
+            </div>
+
+            <button
+                class="play-button"
+                onclick="event.stopPropagation(); requestSong('jazz-piano')"
+            >
+                ▶
+            </button>
+
+        </div>
+
+
+        <!-- PODCAST LOFI -->
+
+        <div
+            class="song"
+            data-title="Podcast Lo-Fi Music"
+            data-category="Lofi Podcast Chill"
+            onclick="requestSong('lofi')"
         >
 
             <div class="art">
@@ -834,22 +714,61 @@ audio {
             <div class="song-info">
 
                 <div class="song-title">
-                    Pretty John
+                    Podcast Lo-Fi Music
                 </div>
 
                 <div class="song-category">
-                    Lofi • Chill
+                    Lo-Fi • Chill
                 </div>
 
             </div>
 
-            <div class="duration">
-                1:01
+            <div class="locked">
+                🔒 Premium
             </div>
 
             <button
                 class="play-button"
-                onclick="event.stopPropagation(); selectSong(1)"
+                onclick="event.stopPropagation(); requestSong('lofi')"
+            >
+                ▶
+            </button>
+
+        </div>
+
+
+        <!-- SMOOTH JAZZ -->
+
+        <div
+            class="song"
+            data-title="Smooth Jazz Instrumental Music"
+            data-category="Smooth Jazz Instrumental"
+            onclick="requestSong('smooth-jazz')"
+        >
+
+            <div class="art">
+                🎺
+            </div>
+
+            <div class="song-info">
+
+                <div class="song-title">
+                    Smooth Jazz Instrumental Music
+                </div>
+
+                <div class="song-category">
+                    Smooth Jazz • Instrumental
+                </div>
+
+            </div>
+
+            <div class="locked">
+                🔒 Premium
+            </div>
+
+            <button
+                class="play-button"
+                onclick="event.stopPropagation(); requestSong('smooth-jazz')"
             >
                 ▶
             </button>
@@ -864,393 +783,256 @@ audio {
         id="noResults"
         class="no-results">
 
-        No sounds found.
+        No songs found.
 
     </div>
 
 
-    <!-- BACK BUTTONS -->
+    <!-- SUBSCRIPTION -->
 
-    <div class="back-row">
+    <div class="subscription-area">
 
-        <a
-            href="page2.html"
-            class="back-btn">
-
-            ← Music
-
-        </a>
+        <div class="subscription-text">
+            🔒 A monthly subscription is required to listen to full songs.
+        </div>
 
         <a
-            href="index.html"
-            class="back-btn">
+            href="https://buy.stripe.com/test_7sY00cb6bg2D4yCdJd7wA00"
+            class="subscription-button">
 
-            Home
+            Monthly Subscription
 
         </a>
 
     </div>
 
+
+    <!-- BACK -->
+
+    <a
+        href="page2.html"
+        class="back-button">
+
+        ← Back to Samples
+
+    </a>
+
+
 </div>
 
 
 <!-- =========================
-     AUDIO FILES
+     AUDIO PLAYERS
 ========================= -->
 
 <audio
-    id="audio0"
-    preload="metadata">
-
-    <source
-        src="./calm-music.mp3.mp3"
-        type="audio/mpeg">
-
+    id="audio-relaxing-piano"
+    data-song="relaxing-piano"
+    preload="none">
 </audio>
-
 
 <audio
-    id="audio1"
-    preload="metadata">
-
-    <source
-        src="./prettyjohn1-lofi-lofi-music_61sec-587180%202.mp3"
-        type="audio/mpeg">
-
+    id="audio-coffee-shop-jazz"
+    data-song="coffee-shop-jazz"
+    preload="none">
 </audio>
 
+<audio
+    id="audio-jazz-piano"
+    data-song="jazz-piano"
+    preload="none">
+</audio>
 
-<!-- =========================
-     BOTTOM PLAYER
-========================= -->
+<audio
+    id="audio-lofi"
+    data-song="lofi"
+    preload="none">
+</audio>
 
-<div class="player">
-
-    <div class="now-playing">
-
-        <div
-            id="nowTitle"
-            class="now-title">
-
-            Nothing Playing
-
-        </div>
-
-        <div
-            id="nowStatus"
-            class="now-status">
-
-            Choose a sound
-
-        </div>
-
-    </div>
-
-
-    <button
-        id="mainPlay"
-        class="main-play"
-        onclick="toggleCurrent()">
-
-        ▶
-
-    </button>
-
-
-    <div class="player-right">
-
-        <input
-            id="playerProgress"
-            class="player-progress"
-            type="range"
-            min="0"
-            max="100"
-            value="0"
-        >
-
-        <span
-            id="playerTime"
-            class="player-time">
-
-            0:00
-
-        </span>
-
-    </div>
-
-</div>
+<audio
+    id="audio-smooth-jazz"
+    data-song="smooth-jazz"
+    preload="none">
+</audio>
 
 
 <script>
-
-/* =========================
-   SONG DATA
-========================= */
-
-const songs = [
-
-    {
-        title: "Calm Music",
-        audio: document.getElementById("audio0")
-    },
-
-    {
-        title: "Pretty John",
-        audio: document.getElementById("audio1")
-    }
-
-];
-
-
-let currentSong = null;
-
-
-/* =========================
-   SELECT SONG
-========================= */
-
-function selectSong(index) {
-
-    const song = songs[index];
-
-    if (currentSong !== null &&
-        currentSong !== song) {
-
-        currentSong.audio.pause();
-
-        currentSong.audio.currentTime = 0;
-
-    }
-
-    currentSong = song;
-
-    document.getElementById("nowTitle")
-        .textContent = song.title;
-
-    document.getElementById("nowStatus")
-        .textContent = "Playing...";
-
-    song.audio.play()
-        .then(() => {
-
-            document.getElementById("mainPlay")
-                .textContent = "Ⅱ";
-
-        })
-        .catch(() => {
-
-            document.getElementById("nowStatus")
-                .textContent =
-                "Audio could not be played.";
-
-        });
-
-}
-
-
-/* =========================
-   MAIN PLAY BUTTON
-========================= */
-
-function toggleCurrent() {
-
-    if (currentSong === null) {
-
-        selectSong(0);
-
-        return;
-
-    }
-
-    if (currentSong.audio.paused) {
-
-        currentSong.audio.play();
-
-        document.getElementById("mainPlay")
-            .textContent = "Ⅱ";
-
-        document.getElementById("nowStatus")
-            .textContent = "Playing...";
-
-    } else {
-
-        currentSong.audio.pause();
-
-        document.getElementById("mainPlay")
-            .textContent = "▶";
-
-        document.getElementById("nowStatus")
-            .textContent = "Paused";
-
-    }
-
-}
-
-
-/* =========================
-   AUDIO EVENTS
-========================= */
-
-songs.forEach(song => {
-
-    song.audio.addEventListener(
-        "timeupdate",
-        () => {
-
-            if (currentSong !== song)
-                return;
-
-            const percent =
-                (song.audio.currentTime /
-                song.audio.duration) * 100;
-
-            document.getElementById(
-                "playerProgress"
-            ).value =
-                Number.isFinite(percent)
-                ? percent
-                : 0;
-
-            document.getElementById(
-                "playerTime"
-            ).textContent =
-                formatTime(
-                    song.audio.currentTime
-                );
-
-        }
-    );
-
-
-    song.audio.addEventListener(
-        "ended",
-        () => {
-
-            if (currentSong !== song)
-                return;
-
-            document.getElementById(
-                "mainPlay"
-            ).textContent = "▶";
-
-            document.getElementById(
-                "nowStatus"
-            ).textContent = "Finished";
-
-            document.getElementById(
-                "playerProgress"
-            ).value = 0;
-
-        }
-    );
-
-});
-
-
-/* =========================
-   SEEK
-========================= */
-
-document.getElementById(
-    "playerProgress"
-).addEventListener(
-    "input",
-    function() {
-
-        if (currentSong === null)
-            return;
-
-        if (!currentSong.audio.duration)
-            return;
-
-        currentSong.audio.currentTime =
-            (this.value / 100) *
-            currentSong.audio.duration;
-
-    }
-);
 
 
 /* =========================
    SEARCH
 ========================= */
 
-document.getElementById(
-    "search"
-).addEventListener(
-    "input",
-    function() {
+document
+.getElementById("search")
+.addEventListener("input", function() {
 
-        const query =
-            this.value.toLowerCase().trim();
+    const query =
+        this.value.toLowerCase().trim();
 
-        const songElements =
-            document.querySelectorAll(".song");
+    const songs =
+        document.querySelectorAll(".song");
 
-        let visible = 0;
+    let visible = 0;
 
-        songElements.forEach(song => {
+    songs.forEach(song => {
 
-            const title =
-                song.dataset.title.toLowerCase();
+        const title =
+            song.dataset.title.toLowerCase();
 
-            const category =
-                song.dataset.category.toLowerCase();
+        const category =
+            song.dataset.category.toLowerCase();
 
-            if (
-                title.includes(query) ||
-                category.includes(query)
-            ) {
+        if (
+            title.includes(query) ||
+            category.includes(query)
+        ) {
 
-                song.style.display = "";
+            song.style.display = "";
 
-                visible++;
+            visible++;
 
-            } else {
+        } else {
 
-                song.style.display = "none";
+            song.style.display = "none";
 
-            }
+        }
 
-        });
+    });
 
+    document
+    .getElementById("noResults")
+    .style.display =
+        visible === 0
+        ? "block"
+        : "none";
 
-        document.getElementById(
-            "noResults"
-        ).style.display =
-            visible === 0
-            ? "block"
-            : "none";
-
-    }
-);
+});
 
 
 /* =========================
-   FORMAT TIME
+   PAID SONG SYSTEM
 ========================= */
 
-function formatTime(seconds) {
+async function requestSong(songName) {
 
-    if (!Number.isFinite(seconds))
-        return "0:00";
+    const audio =
+        document.querySelector(
+            'audio[data-song="' +
+            songName +
+            '"]'
+        );
 
-    const minutes =
-        Math.floor(seconds / 60);
+    if (!audio) {
 
-    const secs =
-        Math.floor(seconds % 60);
+        alert(
+            "Audio player could not be found."
+        );
 
-    return minutes +
-        ":" +
-        secs
-        .toString()
-        .padStart(2, "0");
+        return;
+
+    }
+
+
+    /*
+        Stop every other song.
+    */
+
+    document
+    .querySelectorAll("audio")
+    .forEach(otherAudio => {
+
+        if (otherAudio !== audio) {
+
+            otherAudio.pause();
+
+            otherAudio.currentTime = 0;
+
+        }
+
+    });
+
+
+    /*
+        If this song is already loaded,
+        play it immediately.
+    */
+
+    if (audio.src) {
+
+        if (audio.paused) {
+
+            audio.play();
+
+        } else {
+
+            audio.pause();
+
+        }
+
+        return;
+
+    }
+
+
+    /*
+        Ask the secure server
+        for authorized access.
+    */
+
+    try {
+
+        const response =
+            await fetch(
+                "/api/paid-song?song=" +
+                encodeURIComponent(songName)
+            );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Subscription required"
+            );
+
+        }
+
+
+        const data =
+            await response.json();
+
+
+        if (!data.url) {
+
+            throw new Error(
+                "No audio URL returned"
+            );
+
+        }
+
+
+        /*
+            The server provides the
+            temporary authorized URL.
+        */
+
+        audio.src = data.url;
+
+        await audio.play();
+
+
+    } catch (error) {
+
+        alert(
+            "🔒 A monthly subscription is required to listen to the full songs."
+        );
+
+    }
 
 }
 
-</script>
 
+</script>
 
 </body>
 </html>
