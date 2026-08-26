@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Full Songs</title>
+<title>Page 10 - Hyfted Sounds</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +20,7 @@
 
 body {
     min-height: 100vh;
-    padding: 110px 15px 120px;
+    padding: 110px 15px 140px;
 
     font-family: 'Outfit', sans-serif;
     color: white;
@@ -48,9 +48,11 @@ body {
 
 .navigation-wrapper {
     width: 100%;
+
     position: fixed;
     top: 20px;
     left: 0;
+
     z-index: 1000;
 
     display: flex;
@@ -64,6 +66,7 @@ body {
     gap: 6px;
 
     padding: 7px;
+
     max-width: 100%;
 
     background: rgba(255,255,255,0.42);
@@ -72,13 +75,16 @@ body {
     -webkit-backdrop-filter: blur(25px);
 
     border: 1px solid rgba(255,255,255,0.35);
+
     border-radius: 50px;
 
     box-shadow:
         0 10px 30px rgba(0,0,0,0.15);
 
     overflow-x: auto;
+
     scrollbar-width: none;
+
     white-space: nowrap;
 }
 
@@ -88,6 +94,7 @@ body {
 
 .nav-link-item {
     color: #000 !important;
+
     text-decoration: none;
 
     padding: 9px 15px;
@@ -129,7 +136,8 @@ body {
     backdrop-filter: blur(22px);
     -webkit-backdrop-filter: blur(22px);
 
-    border: 1px solid rgba(255,255,255,0.2);
+    border:
+        1px solid rgba(255,255,255,0.2);
 
     border-radius: 28px;
 
@@ -161,6 +169,7 @@ h1 {
     font-family: 'Great Vibes', cursive;
 
     font-size: 4rem;
+
     font-weight: 400;
 
     margin-bottom: 5px;
@@ -200,7 +209,8 @@ h1 {
 
 .search-wrapper {
     position: relative;
-    margin-bottom: 18px;
+
+    margin-bottom: 15px;
 }
 
 .search-icon {
@@ -212,14 +222,17 @@ h1 {
     transform: translateY(-50%);
 
     font-size: 1.05rem;
+
     opacity: 0.7;
 }
 
 .search {
     width: 100%;
+
     height: 50px;
 
-    padding: 0 20px 0 48px;
+    padding:
+        0 20px 0 48px;
 
     border: 1px solid rgba(255,255,255,0.25);
 
@@ -232,6 +245,7 @@ h1 {
     color: white;
 
     font-family: 'Outfit', sans-serif;
+
     font-size: 0.95rem;
 
     backdrop-filter: blur(10px);
@@ -260,7 +274,7 @@ h1 {
 
     overflow-x: auto;
 
-    padding: 4px 2px 14px;
+    padding: 3px 2px 16px;
 
     scrollbar-width: none;
 }
@@ -285,6 +299,7 @@ h1 {
     font-family: 'Outfit', sans-serif;
 
     font-size: 0.78rem;
+
     font-weight: 600;
 
     cursor: pointer;
@@ -298,6 +313,7 @@ h1 {
 
 .section-button.active {
     background: white;
+
     color: #5d35d5;
 }
 
@@ -308,14 +324,17 @@ h1 {
 
 .song-list {
     display: flex;
+
     flex-direction: column;
-    gap: 4px;
+
+    gap: 5px;
 }
 
 
 /* =========================
-   SONG ROW
-   NO GLASSY BORDER
+   SONG
+   NO GLASSY BACKGROUND
+   NO BORDER
 ========================= */
 
 .song {
@@ -335,21 +354,25 @@ h1 {
 
     border-radius: 15px;
 
-    transition: 0.2s;
-
     cursor: pointer;
 
-    /* REMOVED GLASSY BACKGROUND/BORDER */
-    background: transparent;
-    border: none;
+    transition: 0.2s;
+
+    background: transparent !important;
+
+    border: none !important;
+
+    box-shadow: none !important;
 }
 
 .song:hover {
-    background: rgba(255,255,255,0.10);
+    background: rgba(255,255,255,0.08) !important;
 }
 
 
-/* ART */
+/* =========================
+   ART
+========================= */
 
 .art {
     width: 48px;
@@ -360,6 +383,7 @@ h1 {
     display: flex;
 
     justify-content: center;
+
     align-items: center;
 
     font-size: 1.3rem;
@@ -379,7 +403,9 @@ h1 {
 }
 
 
-/* SONG INFO */
+/* =========================
+   SONG INFO
+========================= */
 
 .song-info {
     min-width: 0;
@@ -387,6 +413,7 @@ h1 {
 
 .song-title {
     font-size: 0.95rem;
+
     font-weight: 600;
 
     white-space: nowrap;
@@ -406,7 +433,25 @@ h1 {
 }
 
 
-/* DURATION */
+/* =========================
+   LOCK MESSAGE
+========================= */
+
+.subscription-required {
+    font-size: 0.68rem;
+
+    font-weight: 600;
+
+    color:
+        rgba(255,255,255,0.62);
+
+    margin-top: 3px;
+}
+
+
+/* =========================
+   DURATION
+========================= */
 
 .duration {
     font-size: 0.72rem;
@@ -416,7 +461,9 @@ h1 {
 }
 
 
-/* PLAY */
+/* =========================
+   PLAY BUTTON
+========================= */
 
 .play-button {
     width: 38px;
@@ -437,6 +484,7 @@ h1 {
     display: flex;
 
     justify-content: center;
+
     align-items: center;
 
     transition: 0.2s;
@@ -469,6 +517,86 @@ h1 {
 
 
 /* =========================
+   SUBSCRIPTION BUTTON
+========================= */
+
+.subscription-button {
+    display: block;
+
+    width: 100%;
+
+    margin-top: 30px;
+
+    padding: 17px 20px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            120deg,
+            #ff0080,
+            #7928ca,
+            #00c6ff,
+            #00f2fe,
+            #ff0080
+        );
+
+    background-size: 400% 400%;
+
+    animation:
+        subscriptionGeminiWave 4s ease-in-out infinite;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    font-size: 1rem;
+
+    text-align: center;
+
+    box-shadow:
+        0 0 15px rgba(255,255,255,0.35),
+        0 8px 25px rgba(0,0,0,0.25);
+
+    transition: transform 0.2s;
+}
+
+.subscription-button:hover {
+    transform: scale(1.025);
+}
+
+@keyframes subscriptionGeminiWave {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    20% {
+        background-position: 50% 100%;
+    }
+
+    40% {
+        background-position: 100% 50%;
+    }
+
+    60% {
+        background-position: 50% 0%;
+    }
+
+    80% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+
+}
+
+
+/* =========================
    BOTTOM PLAYER
 ========================= */
 
@@ -476,6 +604,7 @@ h1 {
     position: fixed;
 
     bottom: 15px;
+
     left: 50%;
 
     transform: translateX(-50%);
@@ -561,6 +690,7 @@ h1 {
     display: flex;
 
     justify-content: center;
+
     align-items: center;
 }
 
@@ -592,7 +722,7 @@ h1 {
 
 
 /* =========================
-   BOTTOM BUTTONS
+   BACK BUTTONS
 ========================= */
 
 .back-row {
@@ -615,6 +745,7 @@ h1 {
     text-decoration: none;
 
     font-size: 0.85rem;
+
     font-weight: 600;
 
     background:
@@ -675,11 +806,12 @@ h1 {
 
     body {
         padding:
-            105px 10px 115px;
+            105px 10px 145px;
     }
 
     .app {
-        padding: 20px 12px;
+        padding:
+            20px 12px;
 
         border-radius: 22px;
     }
@@ -820,38 +952,48 @@ audio {
         <button
             class="section-button active"
             data-section="all">
+
             All
+
         </button>
 
         <button
             class="section-button"
             data-section="lofi">
+
             Lo-Fi
+
         </button>
 
         <button
             class="section-button"
             data-section="piano">
+
             Relaxing Piano
+
         </button>
 
         <button
             class="section-button"
             data-section="stress">
+
             Relief Stress
+
         </button>
 
         <button
             class="section-button"
             data-section="jazz">
+
             Jazz
+
         </button>
 
     </div>
 
 
     <!-- =========================
-         SONGS
+         SONG LIST
     ========================= -->
 
     <div
@@ -859,7 +1001,7 @@ audio {
         class="song-list">
 
 
-        <!-- CALM MUSIC -->
+        <!-- SONG 1 -->
 
         <div
             class="song"
@@ -880,7 +1022,11 @@ audio {
                 </div>
 
                 <div class="song-category">
-                    Lofi • Calm • Relief Stress
+                    Lofi • Calm
+                </div>
+
+                <div class="subscription-required">
+                    🔒 Monthly subscription required
                 </div>
 
             </div>
@@ -893,13 +1039,13 @@ audio {
                 class="play-button"
                 onclick="event.stopPropagation(); selectSong(0)"
             >
-                ▶
+                🔒
             </button>
 
         </div>
 
 
-        <!-- PRETTY JOHN -->
+        <!-- SONG 2 -->
 
         <div
             class="song"
@@ -923,6 +1069,10 @@ audio {
                     Lofi • Chill
                 </div>
 
+                <div class="subscription-required">
+                    🔒 Monthly subscription required
+                </div>
+
             </div>
 
             <div class="duration">
@@ -933,13 +1083,13 @@ audio {
                 class="play-button"
                 onclick="event.stopPropagation(); selectSong(1)"
             >
-                ▶
+                🔒
             </button>
 
         </div>
 
 
-        <!-- RELAXING PIANO -->
+        <!-- SONG 3 -->
 
         <div
             class="song"
@@ -963,6 +1113,10 @@ audio {
                     Piano • Relaxing
                 </div>
 
+                <div class="subscription-required">
+                    🔒 Monthly subscription required
+                </div>
+
             </div>
 
             <div class="duration">
@@ -973,13 +1127,13 @@ audio {
                 class="play-button"
                 onclick="event.stopPropagation(); selectSong(2)"
             >
-                ▶
+                🔒
             </button>
 
         </div>
 
 
-        <!-- JAZZ -->
+        <!-- SONG 4 -->
 
         <div
             class="song"
@@ -1003,6 +1157,10 @@ audio {
                     Jazz • Coffee Shop
                 </div>
 
+                <div class="subscription-required">
+                    🔒 Monthly subscription required
+                </div>
+
             </div>
 
             <div class="duration">
@@ -1013,13 +1171,13 @@ audio {
                 class="play-button"
                 onclick="event.stopPropagation(); selectSong(3)"
             >
-                ▶
+                🔒
             </button>
 
         </div>
 
 
-        <!-- SMOOTH JAZZ -->
+        <!-- SONG 5 -->
 
         <div
             class="song"
@@ -1043,6 +1201,10 @@ audio {
                     Jazz • Instrumental
                 </div>
 
+                <div class="subscription-required">
+                    🔒 Monthly subscription required
+                </div>
+
             </div>
 
             <div class="duration">
@@ -1053,7 +1215,7 @@ audio {
                 class="play-button"
                 onclick="event.stopPropagation(); selectSong(4)"
             >
-                ▶
+                🔒
             </button>
 
         </div>
@@ -1071,7 +1233,22 @@ audio {
     </div>
 
 
-    <!-- BACK BUTTONS -->
+    <!-- =========================
+         SUBSCRIPTION
+    ========================= -->
+
+    <a
+        href="https://buy.stripe.com/test_7sY00cb6bg2D4yCdJd7wA00"
+        class="subscription-button">
+
+        🔓 Subscribe to Unlock Full Songs
+
+    </a>
+
+
+    <!-- =========================
+         BACK BUTTONS
+    ========================= -->
 
     <div class="back-row">
 
@@ -1103,36 +1280,22 @@ audio {
 <audio
     id="audio0"
     preload="metadata">
-
-    <source
-        src="./calm-music.mp3.mp3"
-        type="audio/mpeg">
-
 </audio>
-
 
 <audio
     id="audio1"
     preload="metadata">
-
-    <source
-        src="./prettyjohn1-lofi-lofi-music_61sec-587180%202.mp3"
-        type="audio/mpeg">
-
 </audio>
-
 
 <audio
     id="audio2"
     preload="metadata">
 </audio>
 
-
 <audio
     id="audio3"
     preload="metadata">
 </audio>
-
 
 <audio
     id="audio4"
@@ -1160,7 +1323,7 @@ audio {
             id="nowStatus"
             class="now-status">
 
-            Choose a sound
+            Subscribe to unlock songs
 
         </div>
 
@@ -1211,26 +1374,31 @@ const songs = [
 
     {
         title: "Calm Music",
+        id: "calm-music",
         audio: document.getElementById("audio0")
     },
 
     {
         title: "Pretty John",
+        id: "prettyjohn",
         audio: document.getElementById("audio1")
     },
 
     {
         title: "Relaxing Piano",
+        id: "relaxing-piano",
         audio: document.getElementById("audio2")
     },
 
     {
         title: "Relaxing Jazz Coffee Shop",
+        id: "coffee-shop-jazz",
         audio: document.getElementById("audio3")
     },
 
     {
         title: "Smooth Jazz Instrumental Music",
+        id: "smooth-jazz",
         audio: document.getElementById("audio4")
     }
 
@@ -1244,7 +1412,7 @@ let currentSong = null;
    SELECT SONG
 ========================= */
 
-function selectSong(index) {
+async function selectSong(index) {
 
     const song = songs[index];
 
@@ -1257,67 +1425,147 @@ function selectSong(index) {
 
         currentSong.audio.currentTime = 0;
 
+        currentSong.audio.removeAttribute("src");
+
+        currentSong.audio.load();
+
     }
 
+
     currentSong = song;
+
 
     document.getElementById("nowTitle")
         .textContent = song.title;
 
     document.getElementById("nowStatus")
-        .textContent = "Playing...";
+        .textContent =
+        "Checking subscription...";
 
-    song.audio.play()
-        .then(() => {
 
-            document.getElementById("mainPlay")
-                .textContent = "Ⅱ";
+    try {
 
-        })
-        .catch(() => {
+        const response = await fetch(
+            "/api/paid-song?song=" +
+            encodeURIComponent(song.id)
+        );
 
-            document.getElementById("nowStatus")
-                .textContent =
-                "Audio could not be played.";
 
-        });
+        if (!response.ok) {
+
+            throw new Error(
+                "Subscription required"
+            );
+
+        }
+
+
+        const data =
+            await response.json();
+
+
+        if (!data.url) {
+
+            throw new Error(
+                "No authorized URL"
+            );
+
+        }
+
+
+        song.audio.src = data.url;
+
+
+        await song.audio.play();
+
+
+        document.getElementById(
+            "mainPlay"
+        ).textContent = "Ⅱ";
+
+
+        document.getElementById(
+            "nowStatus"
+        ).textContent =
+            "Playing...";
+
+
+    } catch (error) {
+
+        song.audio.pause();
+
+
+        document.getElementById(
+            "mainPlay"
+        ).textContent = "▶";
+
+
+        document.getElementById(
+            "nowStatus"
+        ).textContent =
+            "🔒 Monthly subscription required";
+
+
+        alert(
+            "🔒 A monthly subscription is required to listen to the full songs."
+        );
+
+    }
 
 }
 
 
 /* =========================
-   MAIN PLAY BUTTON
+   MAIN PLAY
 ========================= */
 
-function toggleCurrent() {
+async function toggleCurrent() {
 
     if (currentSong === null) {
 
-        selectSong(0);
+        await selectSong(0);
 
         return;
 
     }
 
+
     if (currentSong.audio.paused) {
 
-        currentSong.audio.play();
+        try {
 
-        document.getElementById("mainPlay")
-            .textContent = "Ⅱ";
+            await currentSong.audio.play();
 
-        document.getElementById("nowStatus")
-            .textContent = "Playing...";
+            document.getElementById(
+                "mainPlay"
+            ).textContent = "Ⅱ";
+
+            document.getElementById(
+                "nowStatus"
+            ).textContent =
+                "Playing...";
+
+        } catch {
+
+            document.getElementById(
+                "nowStatus"
+            ).textContent =
+                "🔒 Monthly subscription required";
+
+        }
 
     } else {
 
         currentSong.audio.pause();
 
-        document.getElementById("mainPlay")
-            .textContent = "▶";
+        document.getElementById(
+            "mainPlay"
+        ).textContent = "▶";
 
-        document.getElementById("nowStatus")
-            .textContent = "Paused";
+        document.getElementById(
+            "nowStatus"
+        ).textContent =
+            "Paused";
 
     }
 
@@ -1332,14 +1580,19 @@ songs.forEach(song => {
 
     song.audio.addEventListener(
         "timeupdate",
-        () => {
+        function() {
 
             if (currentSong !== song)
                 return;
 
+            if (!song.audio.duration)
+                return;
+
+
             const percent =
                 (song.audio.currentTime /
                 song.audio.duration) * 100;
+
 
             document.getElementById(
                 "playerProgress"
@@ -1347,6 +1600,7 @@ songs.forEach(song => {
                 Number.isFinite(percent)
                 ? percent
                 : 0;
+
 
             document.getElementById(
                 "playerTime"
@@ -1361,18 +1615,22 @@ songs.forEach(song => {
 
     song.audio.addEventListener(
         "ended",
-        () => {
+        function() {
 
             if (currentSong !== song)
                 return;
+
 
             document.getElementById(
                 "mainPlay"
             ).textContent = "▶";
 
+
             document.getElementById(
                 "nowStatus"
-            ).textContent = "Finished";
+            ).textContent =
+                "Finished";
+
 
             document.getElementById(
                 "playerProgress"
@@ -1400,6 +1658,7 @@ document.getElementById(
         if (!currentSong.audio.duration)
             return;
 
+
         currentSong.audio.currentTime =
             (this.value / 100) *
             currentSong.audio.duration;
@@ -1426,6 +1685,7 @@ document.getElementById(
 
 let currentSection = "all";
 
+
 document.querySelectorAll(
     ".section-button"
 ).forEach(button => {
@@ -1438,14 +1698,19 @@ document.querySelectorAll(
                 ".section-button"
             ).forEach(btn => {
 
-                btn.classList.remove("active");
+                btn.classList.remove(
+                    "active"
+                );
 
             });
 
+
             this.classList.add("active");
+
 
             currentSection =
                 this.dataset.section;
+
 
             filterSongs();
 
@@ -1468,10 +1733,15 @@ function filterSongs() {
         .toLowerCase()
         .trim();
 
+
     const songElements =
-        document.querySelectorAll(".song");
+        document.querySelectorAll(
+            ".song"
+        );
+
 
     let visible = 0;
+
 
     songElements.forEach(song => {
 
@@ -1479,21 +1749,28 @@ function filterSongs() {
             song.dataset.title
             .toLowerCase();
 
+
         const category =
             song.dataset.category
             .toLowerCase();
+
 
         const section =
             song.dataset.section
             .toLowerCase();
 
+
         const matchesSearch =
             title.includes(query) ||
             category.includes(query);
 
+
         const matchesSection =
             currentSection === "all" ||
-            section.includes(currentSection);
+            section.includes(
+                currentSection
+            );
+
 
         if (
             matchesSearch &&
@@ -1532,11 +1809,14 @@ function formatTime(seconds) {
     if (!Number.isFinite(seconds))
         return "0:00";
 
+
     const minutes =
         Math.floor(seconds / 60);
 
+
     const secs =
         Math.floor(seconds % 60);
+
 
     return minutes +
         ":" +
