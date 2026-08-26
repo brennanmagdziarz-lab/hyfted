@@ -108,8 +108,8 @@ body {
 
 
 /* =========================
-   MAIN APP
-   NO GLASSY CONTAINER
+   MAIN CONTENT
+   NO GLASS CONTAINER
 ========================= */
 
 .app {
@@ -120,13 +120,13 @@ body {
 
     background: transparent;
 
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-
     border: none;
     border-radius: 0;
 
     box-shadow: none;
+
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
 }
 
 
@@ -239,7 +239,7 @@ h1 {
 
 
 /* =========================
-   SECTIONS
+   CATEGORIES
 ========================= */
 
 .categories {
@@ -320,7 +320,6 @@ h1 {
 
 /* =========================
    SONG
-   NO BORDER
 ========================= */
 
 .song {
@@ -357,7 +356,9 @@ h1 {
 }
 
 
-/* ART */
+/* =========================
+   ART
+========================= */
 
 .art {
     width: 48px;
@@ -386,7 +387,9 @@ h1 {
 }
 
 
-/* SONG INFO */
+/* =========================
+   SONG INFO
+========================= */
 
 .song-info {
     min-width: 0;
@@ -420,7 +423,9 @@ h1 {
 }
 
 
-/* PLAY */
+/* =========================
+   PLAY BUTTON
+========================= */
 
 .play-button {
     width: 38px;
@@ -497,22 +502,10 @@ h1 {
 
     border-radius: 30px;
 
-    background:
-        linear-gradient(
-            120deg,
-            #ff0080,
-            #7928ca,
-            #00c6ff,
-            #00f2fe,
-            #ff0080
-        );
+    /* BLACK BUTTON */
+    background: #000000;
 
-    background-size: 400% 400%;
-
-    animation:
-        subscriptionGeminiWave 4s ease-in-out infinite;
-
-    color: white;
+    color: #ffffff;
 
     text-decoration: none;
 
@@ -521,14 +514,17 @@ h1 {
     font-size: 0.95rem;
 
     box-shadow:
-        0 0 15px rgba(255,255,255,0.35),
         0 8px 25px rgba(0,0,0,0.25);
 
-    transition: transform 0.2s;
+    transition:
+        transform 0.2s,
+        background 0.2s;
 }
 
 .subscription-button:hover {
     transform: scale(1.05);
+
+    background: #111111;
 }
 
 
@@ -714,30 +710,6 @@ h1 {
 
 }
 
-@keyframes subscriptionGeminiWave {
-
-    0% {
-        background-position: 0% 50%;
-    }
-
-    25% {
-        background-position: 50% 100%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    75% {
-        background-position: 50% 0%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-
-}
-
 
 /* =========================
    MOBILE
@@ -887,9 +859,7 @@ audio {
     </div>
 
 
-    <!-- =========================
-         SECTIONS
-    ========================= -->
+    <!-- CATEGORIES -->
 
     <div class="categories">
 
@@ -944,9 +914,7 @@ audio {
     </div>
 
 
-    <!-- =========================
-         SONG LIST
-    ========================= -->
+    <!-- SONG LIST -->
 
     <div id="songList" class="song-list">
 
@@ -1169,7 +1137,7 @@ audio {
             class="subscription-button">
 
             Monthly Subscription
-                    (Standard)
+            (Standard)
 
         </a>
 
@@ -1386,8 +1354,6 @@ async function attemptPlay(index) {
         }
 
 
-        /* Stop previous song */
-
         if (
             currentSong !== null &&
             currentSong !== song
@@ -1402,14 +1368,7 @@ async function attemptPlay(index) {
 
         currentSong = song;
 
-
-        /*
-            The secure server supplies
-            the authorized temporary URL.
-        */
-
         song.audio.src = data.url;
-
 
         await song.audio.play();
 
