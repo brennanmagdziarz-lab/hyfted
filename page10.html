@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Page 10 - Hyfted Sounds</title>
+<title>Full Songs</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +20,7 @@
 
 body {
     min-height: 100vh;
-    padding: 110px 15px 120px;
+    padding: 110px 15px 170px;
 
     font-family: 'Outfit', sans-serif;
     color: white;
@@ -55,16 +55,13 @@ body {
 
     display: flex;
     justify-content: center;
-
     padding: 0 15px;
 }
 
 .navigation {
     display: flex;
     gap: 6px;
-
     padding: 7px;
-
     max-width: 100%;
 
     background: rgba(255,255,255,0.42);
@@ -73,14 +70,11 @@ body {
     -webkit-backdrop-filter: blur(25px);
 
     border: 1px solid rgba(255,255,255,0.35);
-
     border-radius: 50px;
 
-    box-shadow:
-        0 10px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 
     overflow-x: auto;
-
     scrollbar-width: none;
     white-space: nowrap;
 }
@@ -109,9 +103,7 @@ body {
 
 .nav-link-item.active-tab {
     background: white !important;
-
-    box-shadow:
-        0 4px 12px rgba(0,0,0,0.12);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 }
 
 
@@ -122,9 +114,7 @@ body {
 .app {
     width: 100%;
     max-width: 800px;
-
     margin: auto;
-
     padding: 28px;
 
     background: rgba(255,255,255,0.11);
@@ -132,13 +122,10 @@ body {
     backdrop-filter: blur(22px);
     -webkit-backdrop-filter: blur(22px);
 
-    border:
-        1px solid rgba(255,255,255,0.2);
-
+    border: 1px solid rgba(255,255,255,0.2);
     border-radius: 28px;
 
-    box-shadow:
-        0 20px 50px rgba(0,0,0,0.2);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
 }
 
 
@@ -165,7 +152,6 @@ h1 {
     font-family: 'Great Vibes', cursive;
 
     font-size: 4rem;
-
     font-weight: 400;
 
     margin-bottom: 5px;
@@ -184,8 +170,7 @@ h1 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    animation:
-        moveTextGradient 5s ease infinite;
+    animation: moveTextGradient 5s ease infinite;
 }
 
 .subtitle {
@@ -205,7 +190,7 @@ h1 {
 
 .search-wrapper {
     position: relative;
-    margin-bottom: 18px;
+    margin-bottom: 15px;
 }
 
 .search-icon {
@@ -217,13 +202,11 @@ h1 {
     transform: translateY(-50%);
 
     font-size: 1.05rem;
-
     opacity: 0.7;
 }
 
 .search {
     width: 100%;
-
     height: 50px;
 
     padding: 0 20px 0 48px;
@@ -241,8 +224,6 @@ h1 {
     font-family: 'Outfit', sans-serif;
 
     font-size: 0.95rem;
-
-    backdrop-filter: blur(10px);
 }
 
 .search::placeholder {
@@ -252,28 +233,74 @@ h1 {
 .search:focus {
     background: rgba(0,0,0,0.25);
 
-    border-color:
-        rgba(255,255,255,0.5);
+    border-color: rgba(255,255,255,0.5);
 }
 
 
 /* =========================
-   CATEGORY SECTIONS
+   SECTIONS
 ========================= */
 
-.category-section {
-    margin-top: 24px;
+.categories {
+    display: flex;
+
+    gap: 8px;
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    padding: 3px 2px 10px;
+
+    scrollbar-width: none;
+
+    margin-bottom: 10px;
 }
 
-.category-title {
-    font-size: 1.15rem;
-    font-weight: 700;
+.categories::-webkit-scrollbar {
+    display: none;
+}
 
-    text-align: left;
+.category-button {
+    flex-shrink: 0;
 
-    margin-bottom: 8px;
+    padding: 9px 16px;
+
+    border-radius: 50px;
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    background: rgba(255,255,255,0.10);
 
     color: white;
+
+    font-family: 'Outfit', sans-serif;
+
+    font-size: 0.78rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition: all 0.2s ease;
+}
+
+.category-button:hover {
+    background: rgba(255,255,255,0.20);
+
+    transform: translateY(-1px);
+}
+
+.category-button.active {
+    background: white;
+
+    color: #633bd4;
+
+    border-color: white;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
 
@@ -283,14 +310,15 @@ h1 {
 
 .song-list {
     display: flex;
+
     flex-direction: column;
-    gap: 3px;
+
+    gap: 7px;
 }
 
 
 /* =========================
-   SONG ROW
-   COMPLETELY NO GLASS
+   SONG
 ========================= */
 
 .song {
@@ -299,36 +327,25 @@ h1 {
     grid-template-columns:
         48px
         1fr
-        auto
-        45px;
+        auto;
 
     align-items: center;
 
     gap: 13px;
 
-    padding: 10px 13px;
+    padding: 12px 13px;
 
     border-radius: 15px;
 
     transition: 0.2s;
-
-    cursor: pointer;
-
-    background: none !important;
-    border: none !important;
-    box-shadow: none !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
 }
 
 .song:hover {
-    background: rgba(255,255,255,0.08) !important;
+    background: rgba(255,255,255,0.13);
 }
 
 
-/* =========================
-   ART
-========================= */
+/* ART */
 
 .art {
     width: 48px;
@@ -350,17 +367,14 @@ h1 {
             rgba(255,255,255,0.08)
         );
 
-    border:
-        1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.2);
 
     box-shadow:
         0 5px 15px rgba(0,0,0,0.15);
 }
 
 
-/* =========================
-   SONG INFO
-========================= */
+/* SONG INFO */
 
 .song-info {
     min-width: 0;
@@ -368,7 +382,6 @@ h1 {
 
 .song-title {
     font-size: 0.95rem;
-
     font-weight: 600;
 
     white-space: nowrap;
@@ -381,28 +394,21 @@ h1 {
 .song-category {
     font-size: 0.72rem;
 
-    color:
-        rgba(255,255,255,0.58);
+    color: rgba(255,255,255,0.58);
 
     margin-top: 2px;
 }
 
+.locked-small {
+    font-size: 0.68rem;
 
-/* =========================
-   DURATION
-========================= */
+    color: rgba(255,255,255,0.65);
 
-.duration {
-    font-size: 0.72rem;
-
-    color:
-        rgba(255,255,255,0.65);
+    margin-top: 4px;
 }
 
 
-/* =========================
-   PLAY BUTTON
-========================= */
+/* PLAY */
 
 .play-button {
     width: 38px;
@@ -410,11 +416,9 @@ h1 {
 
     border-radius: 50%;
 
-    border: 1px solid
-        rgba(255,255,255,0.35);
+    border: 1px solid rgba(255,255,255,0.35);
 
-    background:
-        rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.15);
 
     color: white;
 
@@ -429,22 +433,9 @@ h1 {
 }
 
 .play-button:hover {
-    background:
-        rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.3);
 
     transform: scale(1.08);
-}
-
-
-/* =========================
-   LOCK
-========================= */
-
-.lock {
-    font-size: 0.75rem;
-
-    color:
-        rgba(255,255,255,0.65);
 }
 
 
@@ -459,10 +450,110 @@ h1 {
 
     padding: 35px 10px;
 
-    color:
-        rgba(255,255,255,0.65);
+    color: rgba(255,255,255,0.65);
 
     font-size: 0.9rem;
+}
+
+
+/* =========================
+   SUBSCRIPTION
+========================= */
+
+.subscription-box {
+    text-align: center;
+
+    margin-top: 35px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.subscription-text {
+    font-size: 0.85rem;
+
+    color: rgba(255,255,255,0.75);
+
+    margin-bottom: 15px;
+}
+
+.subscription-button {
+    display: inline-block;
+
+    padding: 16px 28px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            120deg,
+            #ff0080,
+            #7928ca,
+            #00c6ff,
+            #00f2fe,
+            #ff0080
+        );
+
+    background-size: 400% 400%;
+
+    animation:
+        subscriptionGeminiWave 4s ease-in-out infinite;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    font-size: 0.95rem;
+
+    box-shadow:
+        0 0 15px rgba(255,255,255,0.35),
+        0 8px 25px rgba(0,0,0,0.25);
+
+    transition: transform 0.2s;
+}
+
+.subscription-button:hover {
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   BACK BUTTONS
+========================= */
+
+.back-row {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+.back-btn {
+    padding: 11px 22px;
+
+    border-radius: 50px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+
+    background: rgba(255,255,255,0.15);
+
+    border: 1px solid rgba(255,255,255,0.25);
+}
+
+.back-btn:hover {
+    background: rgba(255,255,255,0.25);
 }
 
 
@@ -479,8 +570,7 @@ h1 {
 
     transform: translateX(-50%);
 
-    width:
-        min(760px, calc(100% - 30px));
+    width: min(760px, calc(100% - 30px));
 
     padding: 12px 16px;
 
@@ -495,14 +585,12 @@ h1 {
 
     gap: 15px;
 
-    background:
-        rgba(20,10,40,0.65);
+    background: rgba(20,10,40,0.65);
 
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
 
-    border:
-        1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.2);
 
     border-radius: 20px;
 
@@ -512,16 +600,12 @@ h1 {
     z-index: 2000;
 }
 
-
-/* CURRENT SONG */
-
 .now-playing {
     min-width: 0;
 }
 
 .now-title {
     font-size: 0.85rem;
-
     font-weight: 600;
 
     white-space: nowrap;
@@ -534,12 +618,8 @@ h1 {
 .now-status {
     font-size: 0.65rem;
 
-    color:
-        rgba(255,255,255,0.55);
+    color: rgba(255,255,255,0.55);
 }
-
-
-/* MAIN PLAY */
 
 .main-play {
     width: 42px;
@@ -563,9 +643,6 @@ h1 {
     align-items: center;
 }
 
-
-/* PLAYER PROGRESS */
-
 .player-right {
     display: flex;
 
@@ -583,143 +660,9 @@ h1 {
 .player-time {
     font-size: 0.65rem;
 
-    color:
-        rgba(255,255,255,0.6);
+    color: rgba(255,255,255,0.6);
 
     white-space: nowrap;
-}
-
-
-/* =========================
-   SUBSCRIPTION
-========================= */
-
-.subscription-area {
-    text-align: center;
-
-    margin-top: 35px;
-
-    padding-top: 10px;
-}
-
-.subscription-required {
-    font-size: 0.9rem;
-
-    font-weight: 700;
-
-    color: rgba(255,255,255,0.85);
-
-    margin-bottom: 15px;
-}
-
-.subscription-button {
-    display: inline-block;
-
-    padding: 15px 28px;
-
-    border-radius: 30px;
-
-    background: linear-gradient(
-        120deg,
-        #ff0080,
-        #7928ca,
-        #00c6ff,
-        #00f2fe,
-        #ff0080
-    );
-
-    background-size: 400% 400%;
-
-    animation:
-        subscriptionGeminiWave 4s ease-in-out infinite;
-
-    color: white;
-
-    text-decoration: none;
-
-    font-weight: bold;
-
-    font-size: 17px;
-
-    box-shadow:
-        0 0 15px rgba(255,255,255,0.35),
-        0 8px 25px rgba(0,0,0,0.25);
-
-    transition: transform 0.2s;
-}
-
-.subscription-button:hover {
-    transform: scale(1.05);
-}
-
-@keyframes subscriptionGeminiWave {
-
-    0% {
-        background-position: 0% 50%;
-    }
-
-    20% {
-        background-position: 50% 100%;
-    }
-
-    40% {
-        background-position: 100% 50%;
-    }
-
-    60% {
-        background-position: 50% 0%;
-    }
-
-    80% {
-        background-position: 0% 50%;
-    }
-
-    100% {
-        background-position: 100% 50%;
-    }
-
-}
-
-
-/* =========================
-   BOTTOM BUTTONS
-========================= */
-
-.back-row {
-    display: flex;
-
-    justify-content: center;
-
-    gap: 12px;
-
-    margin-top: 25px;
-
-    flex-wrap: wrap;
-}
-
-.back-btn {
-    padding: 11px 22px;
-
-    border-radius: 50px;
-
-    color: white;
-
-    text-decoration: none;
-
-    font-size: 0.85rem;
-
-    font-weight: 600;
-
-    background:
-        rgba(255,255,255,0.15);
-
-    border:
-        1px solid rgba(255,255,255,0.25);
-}
-
-.back-btn:hover {
-    background:
-        rgba(255,255,255,0.25);
 }
 
 
@@ -759,6 +702,30 @@ h1 {
 
 }
 
+@keyframes subscriptionGeminiWave {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    25% {
+        background-position: 50% 100%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    75% {
+        background-position: 50% 0%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
+}
+
 
 /* =========================
    MOBILE
@@ -767,13 +734,11 @@ h1 {
 @media (max-width: 600px) {
 
     body {
-        padding:
-            105px 10px 115px;
+        padding: 105px 10px 170px;
     }
 
     .app {
         padding: 20px 12px;
-
         border-radius: 22px;
     }
 
@@ -785,7 +750,7 @@ h1 {
         grid-template-columns:
             42px
             1fr
-            35px;
+            38px;
 
         gap: 10px;
     }
@@ -793,10 +758,6 @@ h1 {
     .art {
         width: 42px;
         height: 42px;
-    }
-
-    .duration {
-        display: none;
     }
 
     .player {
@@ -812,9 +773,6 @@ h1 {
     }
 
 }
-
-
-/* HIDDEN AUDIO */
 
 audio {
     display: none;
@@ -839,7 +797,7 @@ audio {
             Home
         </a>
 
-        <a href="page2.html" class="nav-link-item active-tab">
+        <a href="page2.html" class="nav-link-item">
             Music
         </a>
 
@@ -865,7 +823,7 @@ audio {
 
 
 <!-- =========================
-     MAIN APP
+     APP
 ========================= -->
 
 <div class="app">
@@ -879,13 +837,11 @@ audio {
     </h1>
 
     <div class="subtitle">
-        Your sample library
+        Your full-song library
     </div>
 
 
-    <!-- =========================
-         SEARCH
-    ========================= -->
+    <!-- SEARCH -->
 
     <div class="search-wrapper">
 
@@ -897,7 +853,7 @@ audio {
             id="search"
             class="search"
             type="text"
-            placeholder="Search your sounds..."
+            placeholder="Search your songs..."
             autocomplete="off"
         >
 
@@ -905,266 +861,266 @@ audio {
 
 
     <!-- =========================
-         LO-FI SECTION
+         SECTIONS
     ========================= -->
 
-    <div
-        class="category-section"
-        data-section="lofi">
+    <div class="categories">
 
-        <div class="category-title">
+        <button
+            class="category-button active"
+            data-category="all">
+
+            All
+
+        </button>
+
+        <button
+            class="category-button"
+            data-category="lofi">
+
             Lo-Fi
-        </div>
 
-        <div class="song-list">
+        </button>
 
-            <div
-                class="song"
-                data-title="Pretty John"
-                data-category="Lofi Chill">
+        <button
+            class="category-button"
+            data-category="piano">
 
-                <div class="art">
-                    🎧
-                </div>
-
-                <div class="song-info">
-
-                    <div class="song-title">
-                        Pretty John
-                    </div>
-
-                    <div class="song-category">
-                        Lo-Fi • Chill
-                    </div>
-
-                </div>
-
-                <div class="duration">
-                    1:01
-                </div>
-
-                <button
-                    class="play-button"
-                    onclick="event.stopPropagation(); selectSong(1)">
-
-                    ▶
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- =========================
-         RELAXING PIANO
-========================= -->
-
-    <div
-        class="category-section"
-        data-section="piano">
-
-        <div class="category-title">
             Relaxing Piano
-        </div>
 
-        <div class="song-list">
+        </button>
 
-            <div
-                class="song"
-                data-title="Relaxing Piano"
-                data-category="Relaxing Piano Calm">
+        <button
+            class="category-button"
+            data-category="stress">
 
-                <div class="art">
-                    🎹
-                </div>
+            Stress Relief
 
-                <div class="song-info">
+        </button>
 
-                    <div class="song-title">
-                        Relaxing Piano
-                    </div>
+        <button
+            class="category-button"
+            data-category="jazz">
 
-                    <div class="song-category">
-                        Piano • Relaxing
-                    </div>
-
-                </div>
-
-                <div class="duration">
-                    🔒
-                </div>
-
-                <button
-                    class="play-button"
-                    onclick="event.stopPropagation(); playLockedSong('Relaxing Piano')">
-
-                    🔒
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- =========================
-         RELIEF & STRESS
-========================= -->
-
-    <div
-        class="category-section"
-        data-section="stress">
-
-        <div class="category-title">
-            Relief & Stress
-        </div>
-
-        <div class="song-list">
-
-            <div
-                class="song"
-                data-title="Calm Music"
-                data-category="Calm Relief Stress Relaxing">
-
-                <div class="art">
-                    🌊
-                </div>
-
-                <div class="song-info">
-
-                    <div class="song-title">
-                        Calm Music
-                    </div>
-
-                    <div class="song-category">
-                        Calm • Relaxing
-                    </div>
-
-                </div>
-
-                <div class="duration">
-                    1:00
-                </div>
-
-                <button
-                    class="play-button"
-                    onclick="event.stopPropagation(); selectSong(0)">
-
-                    ▶
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- =========================
-         JAZZ
-========================= -->
-
-    <div
-        class="category-section"
-        data-section="jazz">
-
-        <div class="category-title">
             Jazz
-        </div>
 
-        <div class="song-list">
+        </button>
 
-            <div
-                class="song"
-                data-title="Relaxing Jazz Coffee Shop"
-                data-category="Jazz Coffee Shop Relaxing">
+        <button
+            class="category-button"
+            data-category="chill">
 
-                <div class="art">
-                    ☕
-                </div>
+            Chill
 
-                <div class="song-info">
-
-                    <div class="song-title">
-                        Relaxing Jazz Coffee Shop
-                    </div>
-
-                    <div class="song-category">
-                        Jazz • Coffee Shop
-                    </div>
-
-                </div>
-
-                <div class="duration">
-                    🔒
-                </div>
-
-                <button
-                    class="play-button"
-                    onclick="event.stopPropagation(); playLockedSong('Relaxing Jazz Coffee Shop')">
-
-                    🔒
-
-                </button>
-
-            </div>
-
-
-            <div
-                class="song"
-                data-title="Relaxing Jazz Piano"
-                data-category="Jazz Piano Relaxing">
-
-                <div class="art">
-                    🎹
-                </div>
-
-                <div class="song-info">
-
-                    <div class="song-title">
-                        Relaxing Jazz Piano
-                    </div>
-
-                    <div class="song-category">
-                        Jazz • Piano
-                    </div>
-
-                </div>
-
-                <div class="duration">
-                    🔒
-                </div>
-
-                <button
-                    class="play-button"
-                    onclick="event.stopPropagation(); playLockedSong('Relaxing Jazz Piano')">
-
-                    🔒
-
-                </button>
-
-            </div>
-
-        </div>
+        </button>
 
     </div>
 
 
     <!-- =========================
-         NO RESULTS
+         SONG LIST
     ========================= -->
+
+    <div id="songList" class="song-list">
+
+
+        <!-- SONG 1 -->
+
+        <div
+            class="song"
+            data-title="Relaxing Piano"
+            data-category="piano stress chill"
+        >
+
+            <div class="art">
+                🎹
+            </div>
+
+            <div class="song-info">
+
+                <div class="song-title">
+                    Relaxing Piano
+                </div>
+
+                <div class="song-category">
+                    Relaxing Piano • Stress Relief
+                </div>
+
+                <div class="locked-small">
+                    🔒 Monthly subscription required
+                </div>
+
+            </div>
+
+            <button
+                class="play-button"
+                onclick="attemptPlay(0)"
+            >
+                ▶
+            </button>
+
+        </div>
+
+
+        <!-- SONG 2 -->
+
+        <div
+            class="song"
+            data-title="Relaxing Jazz Coffee Shop"
+            data-category="jazz chill stress"
+        >
+
+            <div class="art">
+                ☕
+            </div>
+
+            <div class="song-info">
+
+                <div class="song-title">
+                    Relaxing Jazz Coffee Shop
+                </div>
+
+                <div class="song-category">
+                    Jazz • Chill
+                </div>
+
+                <div class="locked-small">
+                    🔒 Monthly subscription required
+                </div>
+
+            </div>
+
+            <button
+                class="play-button"
+                onclick="attemptPlay(1)"
+            >
+                ▶
+            </button>
+
+        </div>
+
+
+        <!-- SONG 3 -->
+
+        <div
+            class="song"
+            data-title="Relaxing Jazz Piano"
+            data-category="jazz piano chill"
+        >
+
+            <div class="art">
+                🎹
+            </div>
+
+            <div class="song-info">
+
+                <div class="song-title">
+                    Relaxing Jazz Piano
+                </div>
+
+                <div class="song-category">
+                    Jazz • Piano
+                </div>
+
+                <div class="locked-small">
+                    🔒 Monthly subscription required
+                </div>
+
+            </div>
+
+            <button
+                class="play-button"
+                onclick="attemptPlay(2)"
+            >
+                ▶
+            </button>
+
+        </div>
+
+
+        <!-- SONG 4 -->
+
+        <div
+            class="song"
+            data-title="Podcast Lo-Fi Music"
+            data-category="lofi chill"
+        >
+
+            <div class="art">
+                🎧
+            </div>
+
+            <div class="song-info">
+
+                <div class="song-title">
+                    Podcast Lo-Fi Music
+                </div>
+
+                <div class="song-category">
+                    Lo-Fi • Chill
+                </div>
+
+                <div class="locked-small">
+                    🔒 Monthly subscription required
+                </div>
+
+            </div>
+
+            <button
+                class="play-button"
+                onclick="attemptPlay(3)"
+            >
+                ▶
+            </button>
+
+        </div>
+
+
+        <!-- SONG 5 -->
+
+        <div
+            class="song"
+            data-title="Smooth Jazz Instrumental Music"
+            data-category="jazz chill stress"
+        >
+
+            <div class="art">
+                🎷
+            </div>
+
+            <div class="song-info">
+
+                <div class="song-title">
+                    Smooth Jazz Instrumental Music
+                </div>
+
+                <div class="song-category">
+                    Jazz • Relaxing
+                </div>
+
+                <div class="locked-small">
+                    🔒 Monthly subscription required
+                </div>
+
+            </div>
+
+            <button
+                class="play-button"
+                onclick="attemptPlay(4)"
+            >
+                ▶
+            </button>
+
+        </div>
+
+    </div>
+
 
     <div
         id="noResults"
         class="no-results">
 
-        No sounds found.
+        No songs found.
 
     </div>
 
@@ -1173,26 +1129,26 @@ audio {
          SUBSCRIPTION
     ========================= -->
 
-    <div class="subscription-area">
+    <div class="subscription-box">
 
-        <div class="subscription-required">
-            🔒 Monthly subscription required for full songs
+        <div class="subscription-text">
+
+            🔒 Subscribe to unlock all full songs.
+
         </div>
 
         <a
             href="https://buy.stripe.com/test_7sY00cb6bg2D4yCdJd7wA00"
             class="subscription-button">
 
-            Monthly Subscription Purchase
+            Monthly Subscription
 
         </a>
 
     </div>
 
 
-    <!-- =========================
-         BACK BUTTONS
-    ========================= -->
+    <!-- BACK BUTTONS -->
 
     <div class="back-row">
 
@@ -1223,23 +1179,32 @@ audio {
 
 <audio
     id="audio0"
-    preload="metadata">
-
-    <source
-        src="./calm-music.mp3.mp3"
-        type="audio/mpeg">
-
+    preload="none"
+    data-song="relaxing-piano">
 </audio>
-
 
 <audio
     id="audio1"
-    preload="metadata">
+    preload="none"
+    data-song="coffee-shop-jazz">
+</audio>
 
-    <source
-        src="./prettyjohn1-lofi-lofi-music_61sec-587180%202.mp3"
-        type="audio/mpeg">
+<audio
+    id="audio2"
+    preload="none"
+    data-song="jazz-piano">
+</audio>
 
+<audio
+    id="audio3"
+    preload="none"
+    data-song="lofi">
+</audio>
+
+<audio
+    id="audio4"
+    preload="none"
+    data-song="smooth-jazz">
 </audio>
 
 
@@ -1263,7 +1228,7 @@ audio {
             id="nowStatus"
             class="now-status">
 
-            Choose a sound
+            Choose a song
 
         </div>
 
@@ -1313,13 +1278,33 @@ audio {
 const songs = [
 
     {
-        title: "Calm Music",
+        title: "Relaxing Piano",
+        key: "relaxing-piano",
         audio: document.getElementById("audio0")
     },
 
     {
-        title: "Pretty John",
+        title: "Relaxing Jazz Coffee Shop",
+        key: "coffee-shop-jazz",
         audio: document.getElementById("audio1")
+    },
+
+    {
+        title: "Relaxing Jazz Piano",
+        key: "jazz-piano",
+        audio: document.getElementById("audio2")
+    },
+
+    {
+        title: "Podcast Lo-Fi Music",
+        key: "lofi",
+        audio: document.getElementById("audio3")
+    },
+
+    {
+        title: "Smooth Jazz Instrumental Music",
+        key: "smooth-jazz",
+        audio: document.getElementById("audio4")
     }
 
 ];
@@ -1329,92 +1314,141 @@ let currentSong = null;
 
 
 /* =========================
-   SELECT FREE SAMPLE
+   LOCKED SONG SYSTEM
 ========================= */
 
-function selectSong(index) {
+async function attemptPlay(index) {
 
     const song = songs[index];
 
-    if (
-        currentSong !== null &&
-        currentSong !== song
-    ) {
+    document.getElementById("nowTitle")
+        .textContent = song.title;
 
-        currentSong.audio.pause();
-        currentSong.audio.currentTime = 0;
+    document.getElementById("nowStatus")
+        .textContent = "Checking subscription...";
+
+
+    try {
+
+        const response = await fetch(
+            "/api/paid-song?song=" +
+            encodeURIComponent(song.key)
+        );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Subscription required"
+            );
+
+        }
+
+
+        const data =
+            await response.json();
+
+
+        if (!data.url) {
+
+            throw new Error(
+                "No audio URL returned"
+            );
+
+        }
+
+
+        /* Stop previous song */
+
+        if (
+            currentSong !== null &&
+            currentSong !== song
+        ) {
+
+            currentSong.audio.pause();
+
+            currentSong.audio.currentTime = 0;
+
+        }
+
+
+        currentSong = song;
+
+
+        /*
+            The secure server supplies
+            the authorized temporary URL.
+        */
+
+        song.audio.src = data.url;
+
+
+        await song.audio.play();
+
+
+        document.getElementById(
+            "mainPlay"
+        ).textContent = "Ⅱ";
+
+
+        document.getElementById(
+            "nowStatus"
+        ).textContent = "Playing...";
+
+
+    } catch (error) {
+
+        document.getElementById(
+            "nowStatus"
+        ).textContent =
+            "Subscription required";
+
+
+        alert(
+            "🔒 A monthly subscription is required to listen to the full songs."
+        );
 
     }
 
-    currentSong = song;
-
-    document.getElementById(
-        "nowTitle"
-    ).textContent = song.title;
-
-    document.getElementById(
-        "nowStatus"
-    ).textContent = "Playing...";
-
-    song.audio.play()
-        .then(() => {
-
-            document.getElementById(
-                "mainPlay"
-            ).textContent = "Ⅱ";
-
-        })
-        .catch(() => {
-
-            document.getElementById(
-                "nowStatus"
-            ).textContent =
-                "Audio could not be played.";
-
-        });
-
 }
 
 
 /* =========================
-   LOCKED SONG
-========================= */
-
-function playLockedSong(songName) {
-
-    alert(
-        "🔒 Monthly subscription required to listen to " +
-        songName +
-        "."
-    );
-
-}
-
-
-/* =========================
-   MAIN PLAY
+   MAIN PLAYER
 ========================= */
 
 function toggleCurrent() {
 
     if (currentSong === null) {
 
-        selectSong(0);
+        attemptPlay(0);
+
         return;
 
     }
 
+
     if (currentSong.audio.paused) {
 
-        currentSong.audio.play();
+        currentSong.audio.play()
+            .then(() => {
 
-        document.getElementById(
-            "mainPlay"
-        ).textContent = "Ⅱ";
+                document.getElementById(
+                    "mainPlay"
+                ).textContent = "Ⅱ";
 
-        document.getElementById(
-            "nowStatus"
-        ).textContent = "Playing...";
+                document.getElementById(
+                    "nowStatus"
+                ).textContent = "Playing...";
+
+            })
+            .catch(() => {
+
+                attemptPlay(
+                    songs.indexOf(currentSong)
+                );
+
+            });
 
     } else {
 
@@ -1441,16 +1475,16 @@ songs.forEach(song => {
 
     song.audio.addEventListener(
         "timeupdate",
-        () => {
+        function() {
 
             if (currentSong !== song)
                 return;
 
+
             const percent =
-                (
-                    song.audio.currentTime /
-                    song.audio.duration
-                ) * 100;
+                (song.audio.currentTime /
+                song.audio.duration) * 100;
+
 
             document.getElementById(
                 "playerProgress"
@@ -1458,6 +1492,7 @@ songs.forEach(song => {
                 Number.isFinite(percent)
                 ? percent
                 : 0;
+
 
             document.getElementById(
                 "playerTime"
@@ -1472,18 +1507,21 @@ songs.forEach(song => {
 
     song.audio.addEventListener(
         "ended",
-        () => {
+        function() {
 
             if (currentSong !== song)
                 return;
+
 
             document.getElementById(
                 "mainPlay"
             ).textContent = "▶";
 
+
             document.getElementById(
                 "nowStatus"
             ).textContent = "Finished";
+
 
             document.getElementById(
                 "playerProgress"
@@ -1496,7 +1534,7 @@ songs.forEach(song => {
 
 
 /* =========================
-   SEEK
+   PROGRESS
 ========================= */
 
 document.getElementById(
@@ -1505,11 +1543,15 @@ document.getElementById(
     "input",
     function() {
 
-        if (currentSong === null)
+        if (
+            currentSong === null ||
+            !currentSong.audio.duration
+        ) {
+
             return;
 
-        if (!currentSong.audio.duration)
-            return;
+        }
+
 
         currentSong.audio.currentTime =
             (this.value / 100) *
@@ -1529,70 +1571,122 @@ document.getElementById(
     "input",
     function() {
 
-        const query =
-            this.value.toLowerCase().trim();
-
-        const songElements =
-            document.querySelectorAll(".song");
-
-        const sections =
-            document.querySelectorAll(
-                ".category-section"
-            );
-
-        let visible = 0;
-
-
-        songElements.forEach(song => {
-
-            const title =
-                song.dataset.title.toLowerCase();
-
-            const category =
-                song.dataset.category.toLowerCase();
-
-            if (
-                title.includes(query) ||
-                category.includes(query)
-            ) {
-
-                song.style.display = "";
-
-                visible++;
-
-            } else {
-
-                song.style.display = "none";
-
-            }
-
-        });
-
-
-        sections.forEach(section => {
-
-            const visibleSongs =
-                section.querySelectorAll(
-                    ".song:not([style*='display: none'])"
-                );
-
-            section.style.display =
-                visibleSongs.length === 0
-                ? "none"
-                : "";
-
-        });
-
-
-        document.getElementById(
-            "noResults"
-        ).style.display =
-            visible === 0
-            ? "block"
-            : "none";
+        applyFilters();
 
     }
 );
+
+
+/* =========================
+   CATEGORIES
+========================= */
+
+let selectedCategory = "all";
+
+
+document.querySelectorAll(
+    ".category-button"
+).forEach(button => {
+
+    button.addEventListener(
+        "click",
+        function() {
+
+            document.querySelectorAll(
+                ".category-button"
+            ).forEach(btn => {
+
+                btn.classList.remove(
+                    "active"
+                );
+
+            });
+
+
+            this.classList.add("active");
+
+
+            selectedCategory =
+                this.dataset.category;
+
+
+            applyFilters();
+
+        }
+    );
+
+});
+
+
+/* =========================
+   FILTER
+========================= */
+
+function applyFilters() {
+
+    const query =
+        document.getElementById(
+            "search"
+        ).value
+        .toLowerCase()
+        .trim();
+
+
+    const songElements =
+        document.querySelectorAll(".song");
+
+
+    let visible = 0;
+
+
+    songElements.forEach(song => {
+
+        const title =
+            song.dataset.title.toLowerCase();
+
+
+        const category =
+            song.dataset.category.toLowerCase();
+
+
+        const matchesSearch =
+            title.includes(query) ||
+            category.includes(query);
+
+
+        const matchesCategory =
+            selectedCategory === "all" ||
+            category.includes(
+                selectedCategory
+            );
+
+
+        if (
+            matchesSearch &&
+            matchesCategory
+        ) {
+
+            song.style.display = "";
+
+            visible++;
+
+        } else {
+
+            song.style.display = "none";
+
+        }
+
+    });
+
+
+    document.getElementById(
+        "noResults"
+    ).style.display =
+        visible === 0
+        ? "block"
+        : "none";
+
+}
 
 
 /* =========================
@@ -1604,11 +1698,14 @@ function formatTime(seconds) {
     if (!Number.isFinite(seconds))
         return "0:00";
 
+
     const minutes =
         Math.floor(seconds / 60);
 
+
     const secs =
         Math.floor(seconds % 60);
+
 
     return minutes +
         ":" +
