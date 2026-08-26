@@ -156,7 +156,7 @@ h1 {
 
     width: 100%;
 
-    margin-bottom: 25px;
+    margin-bottom: 35px;
 }
 
 .search-icon {
@@ -204,6 +204,44 @@ h1 {
 
 .search:focus {
     background: rgba(0,0,0,0.3);
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.music-section {
+    margin-bottom: 32px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 1.25rem;
+
+    font-weight: 700;
+
+    margin-bottom: 7px;
+
+    padding-left: 5px;
+}
+
+.section-title span {
+    font-size: 1.25rem;
+}
+
+.section-subtitle {
+    font-size: 0.75rem;
+
+    color: rgba(255,255,255,0.55);
+
+    margin-left: 5px;
+
+    margin-bottom: 10px;
 }
 
 
@@ -372,7 +410,7 @@ h1 {
 .subscription-area {
     text-align: center;
 
-    margin-top: 35px;
+    margin-top: 40px;
 }
 
 .subscription-text {
@@ -509,6 +547,10 @@ audio {
         font-size: 3.2rem;
     }
 
+    .section-title {
+        font-size: 1.1rem;
+    }
+
     .song {
         grid-template-columns:
             45px
@@ -574,210 +616,391 @@ audio {
     </div>
 
 
-    <!-- SONG LIST -->
+    <!-- =====================================================
+         LO-FI SECTION
+    ====================================================== -->
 
-    <div
-        id="songList"
-        class="song-list">
+    <div class="music-section">
 
+        <div class="section-title">
+            <span>🎧</span>
+            Lo-Fi
+        </div>
 
-        <!-- RELAXING PIANO -->
-
-        <div
-            class="song"
-            data-title="Relaxing Piano"
-            data-category="Piano Relaxing Calm"
-            onclick="requestSong('relaxing-piano')"
-        >
-
-            <div class="art">
-                🎹
-            </div>
-
-            <div class="song-info">
-
-                <div class="song-title">
-                    Relaxing Piano
-                </div>
-
-                <div class="song-category">
-                    Piano • Relaxing
-                </div>
-
-            </div>
-
-            <div class="locked">
-                🔒 Premium
-            </div>
-
-            <button
-                class="play-button"
-                onclick="event.stopPropagation(); requestSong('relaxing-piano')"
-            >
-                ▶
-            </button>
-
+        <div class="section-subtitle">
+            Chill beats and mellow sounds
         </div>
 
 
-        <!-- COFFEE SHOP JAZZ -->
+        <div class="song-list">
 
-        <div
-            class="song"
-            data-title="Relaxing Jazz Coffee Shop"
-            data-category="Jazz Coffee Shop Relaxing"
-            onclick="requestSong('coffee-shop-jazz')"
-        >
-
-            <div class="art">
-                ☕
-            </div>
-
-            <div class="song-info">
-
-                <div class="song-title">
-                    Relaxing Jazz Coffee Shop
-                </div>
-
-                <div class="song-category">
-                    Jazz • Coffee Shop
-                </div>
-
-            </div>
-
-            <div class="locked">
-                🔒 Premium
-            </div>
-
-            <button
-                class="play-button"
-                onclick="event.stopPropagation(); requestSong('coffee-shop-jazz')"
+            <div
+                class="song"
+                data-title="Podcast Lo-Fi Music"
+                data-category="Lofi Podcast Chill"
+                onclick="requestSong('lofi')"
             >
-                ▶
-            </button>
+
+                <div class="art">
+                    🎧
+                </div>
+
+                <div class="song-info">
+
+                    <div class="song-title">
+                        Podcast Lo-Fi Music
+                    </div>
+
+                    <div class="song-category">
+                        Lo-Fi • Chill
+                    </div>
+
+                </div>
+
+                <div class="locked">
+                    🔒 Premium
+                </div>
+
+                <button
+                    class="play-button"
+                    onclick="event.stopPropagation(); requestSong('lofi')"
+                >
+                    ▶
+                </button>
+
+            </div>
 
         </div>
-
-
-        <!-- JAZZ PIANO -->
-
-        <div
-            class="song"
-            data-title="Relaxing Jazz Piano"
-            data-category="Jazz Piano Relaxing"
-            onclick="requestSong('jazz-piano')"
-        >
-
-            <div class="art">
-                🎷
-            </div>
-
-            <div class="song-info">
-
-                <div class="song-title">
-                    Relaxing Jazz Piano
-                </div>
-
-                <div class="song-category">
-                    Jazz • Piano
-                </div>
-
-            </div>
-
-            <div class="locked">
-                🔒 Premium
-            </div>
-
-            <button
-                class="play-button"
-                onclick="event.stopPropagation(); requestSong('jazz-piano')"
-            >
-                ▶
-            </button>
-
-        </div>
-
-
-        <!-- PODCAST LOFI -->
-
-        <div
-            class="song"
-            data-title="Podcast Lo-Fi Music"
-            data-category="Lofi Podcast Chill"
-            onclick="requestSong('lofi')"
-        >
-
-            <div class="art">
-                🎧
-            </div>
-
-            <div class="song-info">
-
-                <div class="song-title">
-                    Podcast Lo-Fi Music
-                </div>
-
-                <div class="song-category">
-                    Lo-Fi • Chill
-                </div>
-
-            </div>
-
-            <div class="locked">
-                🔒 Premium
-            </div>
-
-            <button
-                class="play-button"
-                onclick="event.stopPropagation(); requestSong('lofi')"
-            >
-                ▶
-            </button>
-
-        </div>
-
-
-        <!-- SMOOTH JAZZ -->
-
-        <div
-            class="song"
-            data-title="Smooth Jazz Instrumental Music"
-            data-category="Smooth Jazz Instrumental"
-            onclick="requestSong('smooth-jazz')"
-        >
-
-            <div class="art">
-                🎺
-            </div>
-
-            <div class="song-info">
-
-                <div class="song-title">
-                    Smooth Jazz Instrumental Music
-                </div>
-
-                <div class="song-category">
-                    Smooth Jazz • Instrumental
-                </div>
-
-            </div>
-
-            <div class="locked">
-                🔒 Premium
-            </div>
-
-            <button
-                class="play-button"
-                onclick="event.stopPropagation(); requestSong('smooth-jazz')"
-            >
-                ▶
-            </button>
-
-        </div>
-
 
     </div>
 
+
+    <!-- =====================================================
+         RELAXING PIANO SECTION
+    ====================================================== -->
+
+    <div class="music-section">
+
+        <div class="section-title">
+            <span>🎹</span>
+            Relaxing Piano
+        </div>
+
+        <div class="section-subtitle">
+            Peaceful piano melodies
+        </div>
+
+
+        <div class="song-list">
+
+            <div
+                class="song"
+                data-title="Relaxing Piano"
+                data-category="Piano Relaxing Calm"
+                onclick="requestSong('relaxing-piano')"
+            >
+
+                <div class="art">
+                    🎹
+                </div>
+
+                <div class="song-info">
+
+                    <div class="song-title">
+                        Relaxing Piano
+                    </div>
+
+                    <div class="song-category">
+                        Piano • Relaxing
+                    </div>
+
+                </div>
+
+                <div class="locked">
+                    🔒 Premium
+                </div>
+
+                <button
+                    class="play-button"
+                    onclick="event.stopPropagation(); requestSong('relaxing-piano')"
+                >
+                    ▶
+                </button>
+
+            </div>
+
+
+            <div
+                class="song"
+                data-title="Relaxing Jazz Piano"
+                data-category="Jazz Piano Relaxing"
+                onclick="requestSong('jazz-piano')"
+            >
+
+                <div class="art">
+                    🎹
+                </div>
+
+                <div class="song-info">
+
+                    <div class="song-title">
+                        Relaxing Jazz Piano
+                    </div>
+
+                    <div class="song-category">
+                        Jazz • Piano
+                    </div>
+
+                </div>
+
+                <div class="locked">
+                    🔒 Premium
+                </div>
+
+                <button
+                    class="play-button"
+                    onclick="event.stopPropagation(); requestSong('jazz-piano')"
+                >
+                    ▶
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         RELAX & UNWIND SECTION
+    ====================================================== -->
+
+    <div class="music-section">
+
+        <div class="section-title">
+            <span>☕</span>
+            Relax & Unwind
+        </div>
+
+        <div class="section-subtitle">
+            Smooth sounds for slowing down
+        </div>
+
+
+        <div class="song-list">
+
+            <div
+                class="song"
+                data-title="Relaxing Jazz Coffee Shop"
+                data-category="Jazz Coffee Shop Relaxing"
+                onclick="requestSong('coffee-shop-jazz')"
+            >
+
+                <div class="art">
+                    ☕
+                </div>
+
+                <div class="song-info">
+
+                    <div class="song-title">
+                        Relaxing Jazz Coffee Shop
+                    </div>
+
+                    <div class="song-category">
+                        Jazz • Coffee Shop
+                    </div>
+
+                </div>
+
+                <div class="locked">
+                    🔒 Premium
+                </div>
+
+                <button
+                    class="play-button"
+                    onclick="event.stopPropagation(); requestSong('coffee-shop-jazz')"
+                >
+                    ▶
+                </button>
+
+            </div>
+
+
+            <div
+                class="song"
+                data-title="Smooth Jazz Instrumental Music"
+                data-category="Smooth Jazz Instrumental Relaxing"
+                onclick="requestSong('smooth-jazz')"
+            >
+
+                <div class="art">
+                    🎺
+                </div>
+
+                <div class="song-info">
+
+                    <div class="song-title">
+                        Smooth Jazz Instrumental Music
+                    </div>
+
+                    <div class="song-category">
+                        Smooth Jazz • Instrumental
+                    </div>
+
+                </div>
+
+                <div class="locked">
+                    🔒 Premium
+                </div>
+
+                <button
+                    class="play-button"
+                    onclick="event.stopPropagation(); requestSong('smooth-jazz')"
+                >
+                    ▶
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         STRESS RELIEF SECTION
+    ====================================================== -->
+
+    <div class="music-section">
+
+        <div class="section-title">
+            <span>🧘</span>
+            Stress Relief
+        </div>
+
+        <div class="section-subtitle">
+            Music for relaxing your mind
+        </div>
+
+
+        <div class="song-list">
+
+            <div
+                class="song"
+                data-title="Relaxing Piano"
+                data-category="Stress Relief Piano Calm"
+                onclick="requestSong('relaxing-piano')"
+            >
+
+                <div class="art">
+                    🌿
+                </div>
+
+                <div class="song-info">
+
+                    <div class="song-title">
+                        Relaxing Piano
+                    </div>
+
+                    <div class="song-category">
+                        Stress Relief • Piano
+                    </div>
+
+                </div>
+
+                <div class="locked">
+                    🔒 Premium
+                </div>
+
+                <button
+                    class="play-button"
+                    onclick="event.stopPropagation(); requestSong('relaxing-piano')"
+                >
+                    ▶
+                </button>
+
+            </div>
+
+
+            <div
+                class="song"
+                data-title="Relaxing Jazz Coffee Shop"
+                data-category="Stress Relief Jazz Calm"
+                onclick="requestSong('coffee-shop-jazz')"
+            >
+
+                <div class="art">
+                    🌊
+                </div>
+
+                <div class="song-info">
+
+                    <div class="song-title">
+                        Relaxing Jazz Coffee Shop
+                    </div>
+
+                    <div class="song-category">
+                        Stress Relief • Jazz
+                    </div>
+
+                </div>
+
+                <div class="locked">
+                    🔒 Premium
+                </div>
+
+                <button
+                    class="play-button"
+                    onclick="event.stopPropagation(); requestSong('coffee-shop-jazz')"
+                >
+                    ▶
+                </button>
+
+            </div>
+
+
+            <div
+                class="song"
+                data-title="Smooth Jazz Instrumental Music"
+                data-category="Stress Relief Smooth Jazz"
+                onclick="requestSong('smooth-jazz')"
+            >
+
+                <div class="art">
+                    🌙
+                </div>
+
+                <div class="song-info">
+
+                    <div class="song-title">
+                        Smooth Jazz Instrumental Music
+                    </div>
+
+                    <div class="song-category">
+                        Stress Relief • Smooth Jazz
+                    </div>
+
+                </div>
+
+                <div class="locked">
+                    🔒 Premium
+                </div>
+
+                <button
+                    class="play-button"
+                    onclick="event.stopPropagation(); requestSong('smooth-jazz')"
+                >
+                    ▶
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- NO RESULTS -->
 
     <div
         id="noResults"
@@ -821,9 +1044,9 @@ audio {
 </div>
 
 
-<!-- =========================
+<!-- =====================================================
      AUDIO PLAYERS
-========================= -->
+====================================================== -->
 
 <audio
     id="audio-relaxing-piano"
@@ -859,9 +1082,9 @@ audio {
 <script>
 
 
-/* =========================
-   SEARCH
-========================= */
+/* =====================================================
+   SEARCH ALL SECTIONS
+====================================================== */
 
 document
 .getElementById("search")
@@ -873,7 +1096,11 @@ document
     const songs =
         document.querySelectorAll(".song");
 
+    const sections =
+        document.querySelectorAll(".music-section");
+
     let visible = 0;
+
 
     songs.forEach(song => {
 
@@ -882,6 +1109,7 @@ document
 
         const category =
             song.dataset.category.toLowerCase();
+
 
         if (
             title.includes(query) ||
@@ -900,6 +1128,32 @@ document
 
     });
 
+
+    /*
+        Hide empty sections when searching.
+    */
+
+    sections.forEach(section => {
+
+        const visibleSongs =
+            section.querySelectorAll(
+                ".song:not([style*='display: none'])"
+            );
+
+        if (query !== "" &&
+            visibleSongs.length === 0) {
+
+            section.style.display = "none";
+
+        } else {
+
+            section.style.display = "";
+
+        }
+
+    });
+
+
     document
     .getElementById("noResults")
     .style.display =
@@ -910,9 +1164,9 @@ document
 });
 
 
-/* =========================
+/* =====================================================
    PAID SONG SYSTEM
-========================= */
+====================================================== */
 
 async function requestSong(songName) {
 
@@ -922,6 +1176,7 @@ async function requestSong(songName) {
             songName +
             '"]'
         );
+
 
     if (!audio) {
 
@@ -955,7 +1210,7 @@ async function requestSong(songName) {
 
     /*
         If this song is already loaded,
-        play it immediately.
+        play or pause it.
     */
 
     if (audio.src) {
@@ -1012,8 +1267,8 @@ async function requestSong(songName) {
 
 
         /*
-            The server provides the
-            temporary authorized URL.
+            Server provides temporary
+            authorized audio URL.
         */
 
         audio.src = data.url;
@@ -1030,7 +1285,6 @@ async function requestSong(songName) {
     }
 
 }
-
 
 </script>
 
