@@ -20,7 +20,7 @@
 
 body {
     min-height: 100vh;
-    padding: 110px 15px 120px;
+    padding: 110px 15px 170px;
 
     font-family: 'Outfit', sans-serif;
     color: white;
@@ -72,8 +72,7 @@ body {
     border: 1px solid rgba(255,255,255,0.35);
     border-radius: 50px;
 
-    box-shadow:
-        0 10px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 
     overflow-x: auto;
     scrollbar-width: none;
@@ -104,9 +103,7 @@ body {
 
 .nav-link-item.active-tab {
     background: white !important;
-
-    box-shadow:
-        0 4px 12px rgba(0,0,0,0.12);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 }
 
 
@@ -128,8 +125,7 @@ body {
     border: 1px solid rgba(255,255,255,0.2);
     border-radius: 28px;
 
-    box-shadow:
-        0 20px 50px rgba(0,0,0,0.2);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
 }
 
 
@@ -174,8 +170,7 @@ h1 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    animation:
-        moveTextGradient 5s ease infinite;
+    animation: moveTextGradient 5s ease infinite;
 }
 
 .subtitle {
@@ -229,8 +224,6 @@ h1 {
     font-family: 'Outfit', sans-serif;
 
     font-size: 0.95rem;
-
-    backdrop-filter: blur(10px);
 }
 
 .search::placeholder {
@@ -240,13 +233,12 @@ h1 {
 .search:focus {
     background: rgba(0,0,0,0.25);
 
-    border-color:
-        rgba(255,255,255,0.5);
+    border-color: rgba(255,255,255,0.5);
 }
 
 
 /* =========================
-   CATEGORY SECTIONS
+   SECTIONS
 ========================= */
 
 .categories {
@@ -308,8 +300,7 @@ h1 {
 
     border-color: white;
 
-    box-shadow:
-        0 4px 15px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
 
@@ -327,7 +318,7 @@ h1 {
 
 
 /* =========================
-   SONG ROW
+   SONG
 ========================= */
 
 .song {
@@ -336,25 +327,21 @@ h1 {
     grid-template-columns:
         48px
         1fr
-        auto
-        45px;
+        auto;
 
     align-items: center;
 
     gap: 13px;
 
-    padding: 10px 13px;
+    padding: 12px 13px;
 
     border-radius: 15px;
 
     transition: 0.2s;
-
-    cursor: pointer;
 }
 
 .song:hover {
-    background:
-        rgba(255,255,255,0.13);
+    background: rgba(255,255,255,0.13);
 }
 
 
@@ -380,8 +367,7 @@ h1 {
             rgba(255,255,255,0.08)
         );
 
-    border:
-        1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.2);
 
     box-shadow:
         0 5px 15px rgba(0,0,0,0.15);
@@ -408,20 +394,17 @@ h1 {
 .song-category {
     font-size: 0.72rem;
 
-    color:
-        rgba(255,255,255,0.58);
+    color: rgba(255,255,255,0.58);
 
     margin-top: 2px;
 }
 
+.locked-small {
+    font-size: 0.68rem;
 
-/* DURATION */
+    color: rgba(255,255,255,0.65);
 
-.duration {
-    font-size: 0.72rem;
-
-    color:
-        rgba(255,255,255,0.65);
+    margin-top: 4px;
 }
 
 
@@ -433,11 +416,9 @@ h1 {
 
     border-radius: 50%;
 
-    border: 1px solid
-        rgba(255,255,255,0.35);
+    border: 1px solid rgba(255,255,255,0.35);
 
-    background:
-        rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.15);
 
     color: white;
 
@@ -452,8 +433,7 @@ h1 {
 }
 
 .play-button:hover {
-    background:
-        rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.3);
 
     transform: scale(1.08);
 }
@@ -470,138 +450,78 @@ h1 {
 
     padding: 35px 10px;
 
-    color:
-        rgba(255,255,255,0.65);
+    color: rgba(255,255,255,0.65);
 
     font-size: 0.9rem;
 }
 
 
 /* =========================
-   BOTTOM PLAYER
+   SUBSCRIPTION
 ========================= */
 
-.player {
-    position: fixed;
+.subscription-box {
+    text-align: center;
 
-    bottom: 15px;
+    margin-top: 35px;
 
-    left: 50%;
+    padding-top: 25px;
 
-    transform: translateX(-50%);
+    border-top: 1px solid rgba(255,255,255,0.12);
+}
 
-    width:
-        min(760px, calc(100% - 30px));
+.subscription-text {
+    font-size: 0.85rem;
 
-    padding: 12px 16px;
+    color: rgba(255,255,255,0.75);
 
-    display: grid;
+    margin-bottom: 15px;
+}
 
-    grid-template-columns:
-        1fr
-        auto
-        1fr;
+.subscription-button {
+    display: inline-block;
 
-    align-items: center;
+    padding: 16px 28px;
 
-    gap: 15px;
+    border-radius: 30px;
 
     background:
-        rgba(20,10,40,0.65);
+        linear-gradient(
+            120deg,
+            #ff0080,
+            #7928ca,
+            #00c6ff,
+            #00f2fe,
+            #ff0080
+        );
 
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
+    background-size: 400% 400%;
 
-    border:
-        1px solid rgba(255,255,255,0.2);
+    animation:
+        subscriptionGeminiWave 4s ease-in-out infinite;
 
-    border-radius: 20px;
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    font-size: 0.95rem;
 
     box-shadow:
-        0 10px 40px rgba(0,0,0,0.3);
+        0 0 15px rgba(255,255,255,0.35),
+        0 8px 25px rgba(0,0,0,0.25);
 
-    z-index: 2000;
+    transition: transform 0.2s;
 }
 
-
-/* CURRENT SONG */
-
-.now-playing {
-    min-width: 0;
-}
-
-.now-title {
-    font-size: 0.85rem;
-    font-weight: 600;
-
-    white-space: nowrap;
-
-    overflow: hidden;
-
-    text-overflow: ellipsis;
-}
-
-.now-status {
-    font-size: 0.65rem;
-
-    color:
-        rgba(255,255,255,0.55);
-}
-
-
-/* MAIN PLAY */
-
-.main-play {
-    width: 42px;
-    height: 42px;
-
-    border-radius: 50%;
-
-    border: none;
-
-    background: white;
-
-    color: #5d35d5;
-
-    font-size: 1rem;
-
-    cursor: pointer;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-}
-
-
-/* PLAYER PROGRESS */
-
-.player-right {
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-}
-
-.player-progress {
-    width: 120px;
-
-    accent-color: white;
-}
-
-.player-time {
-    font-size: 0.65rem;
-
-    color:
-        rgba(255,255,255,0.6);
-
-    white-space: nowrap;
+.subscription-button:hover {
+    transform: scale(1.05);
 }
 
 
 /* =========================
-   BOTTOM BUTTONS
+   BACK BUTTONS
 ========================= */
 
 .back-row {
@@ -627,16 +547,122 @@ h1 {
 
     font-weight: 600;
 
-    background:
-        rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.15);
 
-    border:
-        1px solid rgba(255,255,255,0.25);
+    border: 1px solid rgba(255,255,255,0.25);
 }
 
 .back-btn:hover {
-    background:
-        rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.25);
+}
+
+
+/* =========================
+   BOTTOM PLAYER
+========================= */
+
+.player {
+    position: fixed;
+
+    bottom: 15px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: min(760px, calc(100% - 30px));
+
+    padding: 12px 16px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        auto
+        1fr;
+
+    align-items: center;
+
+    gap: 15px;
+
+    background: rgba(20,10,40,0.65);
+
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,0.3);
+
+    z-index: 2000;
+}
+
+.now-playing {
+    min-width: 0;
+}
+
+.now-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.now-status {
+    font-size: 0.65rem;
+
+    color: rgba(255,255,255,0.55);
+}
+
+.main-play {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: white;
+
+    color: #5d35d5;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.player-right {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.player-progress {
+    width: 120px;
+
+    accent-color: white;
+}
+
+.player-time {
+    font-size: 0.65rem;
+
+    color: rgba(255,255,255,0.6);
+
+    white-space: nowrap;
 }
 
 
@@ -676,6 +702,30 @@ h1 {
 
 }
 
+@keyframes subscriptionGeminiWave {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    25% {
+        background-position: 50% 100%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    75% {
+        background-position: 50% 0%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
+}
+
 
 /* =========================
    MOBILE
@@ -684,13 +734,11 @@ h1 {
 @media (max-width: 600px) {
 
     body {
-        padding:
-            105px 10px 115px;
+        padding: 105px 10px 170px;
     }
 
     .app {
         padding: 20px 12px;
-
         border-radius: 22px;
     }
 
@@ -702,7 +750,7 @@ h1 {
         grid-template-columns:
             42px
             1fr
-            35px;
+            38px;
 
         gap: 10px;
     }
@@ -710,10 +758,6 @@ h1 {
     .art {
         width: 42px;
         height: 42px;
-    }
-
-    .duration {
-        display: none;
     }
 
     .player {
@@ -729,11 +773,6 @@ h1 {
     }
 
 }
-
-
-/* =========================
-   HIDE AUDIO
-========================= */
 
 audio {
     display: none;
@@ -798,13 +837,11 @@ audio {
     </h1>
 
     <div class="subtitle">
-        Your sample library
+        Your full-song library
     </div>
 
 
-    <!-- =========================
-         SEARCH
-    ========================= -->
+    <!-- SEARCH -->
 
     <div class="search-wrapper">
 
@@ -816,7 +853,7 @@ audio {
             id="search"
             class="search"
             type="text"
-            placeholder="Search your sounds..."
+            placeholder="Search your songs..."
             autocomplete="off"
         >
 
@@ -881,12 +918,10 @@ audio {
 
 
     <!-- =========================
-         SONGS
+         SONG LIST
     ========================= -->
 
-    <div
-        id="songList"
-        class="song-list">
+    <div id="songList" class="song-list">
 
 
         <!-- SONG 1 -->
@@ -895,7 +930,6 @@ audio {
             class="song"
             data-title="Relaxing Piano"
             data-category="piano stress chill"
-            onclick="selectSong(0)"
         >
 
             <div class="art">
@@ -912,15 +946,15 @@ audio {
                     Relaxing Piano • Stress Relief
                 </div>
 
-            </div>
+                <div class="locked-small">
+                    🔒 Monthly subscription required
+                </div>
 
-            <div class="duration">
-                —
             </div>
 
             <button
                 class="play-button"
-                onclick="event.stopPropagation(); selectSong(0)"
+                onclick="attemptPlay(0)"
             >
                 ▶
             </button>
@@ -934,7 +968,6 @@ audio {
             class="song"
             data-title="Relaxing Jazz Coffee Shop"
             data-category="jazz chill stress"
-            onclick="selectSong(1)"
         >
 
             <div class="art">
@@ -951,15 +984,15 @@ audio {
                     Jazz • Chill
                 </div>
 
-            </div>
+                <div class="locked-small">
+                    🔒 Monthly subscription required
+                </div>
 
-            <div class="duration">
-                —
             </div>
 
             <button
                 class="play-button"
-                onclick="event.stopPropagation(); selectSong(1)"
+                onclick="attemptPlay(1)"
             >
                 ▶
             </button>
@@ -973,7 +1006,6 @@ audio {
             class="song"
             data-title="Relaxing Jazz Piano"
             data-category="jazz piano chill"
-            onclick="selectSong(2)"
         >
 
             <div class="art">
@@ -990,15 +1022,15 @@ audio {
                     Jazz • Piano
                 </div>
 
-            </div>
+                <div class="locked-small">
+                    🔒 Monthly subscription required
+                </div>
 
-            <div class="duration">
-                —
             </div>
 
             <button
                 class="play-button"
-                onclick="event.stopPropagation(); selectSong(2)"
+                onclick="attemptPlay(2)"
             >
                 ▶
             </button>
@@ -1012,7 +1044,6 @@ audio {
             class="song"
             data-title="Podcast Lo-Fi Music"
             data-category="lofi chill"
-            onclick="selectSong(3)"
         >
 
             <div class="art">
@@ -1029,15 +1060,15 @@ audio {
                     Lo-Fi • Chill
                 </div>
 
-            </div>
+                <div class="locked-small">
+                    🔒 Monthly subscription required
+                </div>
 
-            <div class="duration">
-                —
             </div>
 
             <button
                 class="play-button"
-                onclick="event.stopPropagation(); selectSong(3)"
+                onclick="attemptPlay(3)"
             >
                 ▶
             </button>
@@ -1051,7 +1082,6 @@ audio {
             class="song"
             data-title="Smooth Jazz Instrumental Music"
             data-category="jazz chill stress"
-            onclick="selectSong(4)"
         >
 
             <div class="art">
@@ -1068,15 +1098,15 @@ audio {
                     Jazz • Relaxing
                 </div>
 
-            </div>
+                <div class="locked-small">
+                    🔒 Monthly subscription required
+                </div>
 
-            <div class="duration">
-                —
             </div>
 
             <button
                 class="play-button"
-                onclick="event.stopPropagation(); selectSong(4)"
+                onclick="attemptPlay(4)"
             >
                 ▶
             </button>
@@ -1090,14 +1120,35 @@ audio {
         id="noResults"
         class="no-results">
 
-        No sounds found.
+        No songs found.
 
     </div>
 
 
     <!-- =========================
-         BACK BUTTONS
+         SUBSCRIPTION
     ========================= -->
+
+    <div class="subscription-box">
+
+        <div class="subscription-text">
+
+            🔒 Subscribe to unlock all full songs.
+
+        </div>
+
+        <a
+            href="https://buy.stripe.com/test_7sY00cb6bg2D4yCdJd7wA00"
+            class="subscription-button">
+
+            Monthly Subscription
+
+        </a>
+
+    </div>
+
+
+    <!-- BACK BUTTONS -->
 
     <div class="back-row">
 
@@ -1126,24 +1177,34 @@ audio {
      AUDIO FILES
 ========================= -->
 
-<audio id="audio0" preload="metadata">
-    <source src="./relaxing-piano.mp3" type="audio/mpeg">
+<audio
+    id="audio0"
+    preload="none"
+    data-song="relaxing-piano">
 </audio>
 
-<audio id="audio1" preload="metadata">
-    <source src="./coffee-shop-jazz.mp3" type="audio/mpeg">
+<audio
+    id="audio1"
+    preload="none"
+    data-song="coffee-shop-jazz">
 </audio>
 
-<audio id="audio2" preload="metadata">
-    <source src="./jazz-piano.mp3" type="audio/mpeg">
+<audio
+    id="audio2"
+    preload="none"
+    data-song="jazz-piano">
 </audio>
 
-<audio id="audio3" preload="metadata">
-    <source src="./lofi.mp3" type="audio/mpeg">
+<audio
+    id="audio3"
+    preload="none"
+    data-song="lofi">
 </audio>
 
-<audio id="audio4" preload="metadata">
-    <source src="./smooth-jazz.mp3" type="audio/mpeg">
+<audio
+    id="audio4"
+    preload="none"
+    data-song="smooth-jazz">
 </audio>
 
 
@@ -1167,7 +1228,7 @@ audio {
             id="nowStatus"
             class="now-status">
 
-            Choose a sound
+            Choose a song
 
         </div>
 
@@ -1218,26 +1279,31 @@ const songs = [
 
     {
         title: "Relaxing Piano",
+        key: "relaxing-piano",
         audio: document.getElementById("audio0")
     },
 
     {
         title: "Relaxing Jazz Coffee Shop",
+        key: "coffee-shop-jazz",
         audio: document.getElementById("audio1")
     },
 
     {
         title: "Relaxing Jazz Piano",
+        key: "jazz-piano",
         audio: document.getElementById("audio2")
     },
 
     {
         title: "Podcast Lo-Fi Music",
+        key: "lofi",
         audio: document.getElementById("audio3")
     },
 
     {
         title: "Smooth Jazz Instrumental Music",
+        key: "smooth-jazz",
         audio: document.getElementById("audio4")
     }
 
@@ -1248,83 +1314,153 @@ let currentSong = null;
 
 
 /* =========================
-   SELECT SONG
+   LOCKED SONG SYSTEM
 ========================= */
 
-function selectSong(index) {
+async function attemptPlay(index) {
 
     const song = songs[index];
-
-    if (
-        currentSong !== null &&
-        currentSong !== song
-    ) {
-
-        currentSong.audio.pause();
-
-        currentSong.audio.currentTime = 0;
-
-    }
-
-    currentSong = song;
 
     document.getElementById("nowTitle")
         .textContent = song.title;
 
     document.getElementById("nowStatus")
-        .textContent = "Playing...";
+        .textContent = "Checking subscription...";
 
-    song.audio.play()
-        .then(() => {
 
-            document.getElementById("mainPlay")
-                .textContent = "Ⅱ";
+    try {
 
-        })
-        .catch(() => {
+        const response = await fetch(
+            "/api/paid-song?song=" +
+            encodeURIComponent(song.key)
+        );
 
-            document.getElementById("nowStatus")
-                .textContent =
-                "Audio could not be played.";
 
-        });
+        if (!response.ok) {
+
+            throw new Error(
+                "Subscription required"
+            );
+
+        }
+
+
+        const data =
+            await response.json();
+
+
+        if (!data.url) {
+
+            throw new Error(
+                "No audio URL returned"
+            );
+
+        }
+
+
+        /* Stop previous song */
+
+        if (
+            currentSong !== null &&
+            currentSong !== song
+        ) {
+
+            currentSong.audio.pause();
+
+            currentSong.audio.currentTime = 0;
+
+        }
+
+
+        currentSong = song;
+
+
+        /*
+            The secure server supplies
+            the authorized temporary URL.
+        */
+
+        song.audio.src = data.url;
+
+
+        await song.audio.play();
+
+
+        document.getElementById(
+            "mainPlay"
+        ).textContent = "Ⅱ";
+
+
+        document.getElementById(
+            "nowStatus"
+        ).textContent = "Playing...";
+
+
+    } catch (error) {
+
+        document.getElementById(
+            "nowStatus"
+        ).textContent =
+            "Subscription required";
+
+
+        alert(
+            "🔒 A monthly subscription is required to listen to the full songs."
+        );
+
+    }
 
 }
 
 
 /* =========================
-   MAIN PLAY BUTTON
+   MAIN PLAYER
 ========================= */
 
 function toggleCurrent() {
 
     if (currentSong === null) {
 
-        selectSong(0);
+        attemptPlay(0);
 
         return;
 
     }
 
+
     if (currentSong.audio.paused) {
 
-        currentSong.audio.play();
+        currentSong.audio.play()
+            .then(() => {
 
-        document.getElementById("mainPlay")
-            .textContent = "Ⅱ";
+                document.getElementById(
+                    "mainPlay"
+                ).textContent = "Ⅱ";
 
-        document.getElementById("nowStatus")
-            .textContent = "Playing...";
+                document.getElementById(
+                    "nowStatus"
+                ).textContent = "Playing...";
+
+            })
+            .catch(() => {
+
+                attemptPlay(
+                    songs.indexOf(currentSong)
+                );
+
+            });
 
     } else {
 
         currentSong.audio.pause();
 
-        document.getElementById("mainPlay")
-            .textContent = "▶";
+        document.getElementById(
+            "mainPlay"
+        ).textContent = "▶";
 
-        document.getElementById("nowStatus")
-            .textContent = "Paused";
+        document.getElementById(
+            "nowStatus"
+        ).textContent = "Paused";
 
     }
 
@@ -1339,14 +1475,16 @@ songs.forEach(song => {
 
     song.audio.addEventListener(
         "timeupdate",
-        () => {
+        function() {
 
             if (currentSong !== song)
                 return;
 
+
             const percent =
                 (song.audio.currentTime /
                 song.audio.duration) * 100;
+
 
             document.getElementById(
                 "playerProgress"
@@ -1354,6 +1492,7 @@ songs.forEach(song => {
                 Number.isFinite(percent)
                 ? percent
                 : 0;
+
 
             document.getElementById(
                 "playerTime"
@@ -1368,18 +1507,21 @@ songs.forEach(song => {
 
     song.audio.addEventListener(
         "ended",
-        () => {
+        function() {
 
             if (currentSong !== song)
                 return;
+
 
             document.getElementById(
                 "mainPlay"
             ).textContent = "▶";
 
+
             document.getElementById(
                 "nowStatus"
             ).textContent = "Finished";
+
 
             document.getElementById(
                 "playerProgress"
@@ -1392,7 +1534,7 @@ songs.forEach(song => {
 
 
 /* =========================
-   SEEK
+   PROGRESS
 ========================= */
 
 document.getElementById(
@@ -1401,11 +1543,15 @@ document.getElementById(
     "input",
     function() {
 
-        if (currentSong === null)
+        if (
+            currentSong === null ||
+            !currentSong.audio.duration
+        ) {
+
             return;
 
-        if (!currentSong.audio.duration)
-            return;
+        }
+
 
         currentSong.audio.currentTime =
             (this.value / 100) *
@@ -1432,10 +1578,11 @@ document.getElementById(
 
 
 /* =========================
-   CATEGORY BUTTONS
+   CATEGORIES
 ========================= */
 
 let selectedCategory = "all";
+
 
 document.querySelectorAll(
     ".category-button"
@@ -1449,14 +1596,19 @@ document.querySelectorAll(
                 ".category-button"
             ).forEach(btn => {
 
-                btn.classList.remove("active");
+                btn.classList.remove(
+                    "active"
+                );
 
             });
 
+
             this.classList.add("active");
+
 
             selectedCategory =
                 this.dataset.category;
+
 
             applyFilters();
 
@@ -1467,7 +1619,7 @@ document.querySelectorAll(
 
 
 /* =========================
-   SEARCH + CATEGORY FILTER
+   FILTER
 ========================= */
 
 function applyFilters() {
@@ -1475,28 +1627,39 @@ function applyFilters() {
     const query =
         document.getElementById(
             "search"
-        ).value.toLowerCase().trim();
+        ).value
+        .toLowerCase()
+        .trim();
+
 
     const songElements =
         document.querySelectorAll(".song");
 
+
     let visible = 0;
+
 
     songElements.forEach(song => {
 
         const title =
             song.dataset.title.toLowerCase();
 
+
         const category =
             song.dataset.category.toLowerCase();
+
 
         const matchesSearch =
             title.includes(query) ||
             category.includes(query);
 
+
         const matchesCategory =
             selectedCategory === "all" ||
-            category.includes(selectedCategory);
+            category.includes(
+                selectedCategory
+            );
+
 
         if (
             matchesSearch &&
@@ -1535,11 +1698,14 @@ function formatTime(seconds) {
     if (!Number.isFinite(seconds))
         return "0:00";
 
+
     const minutes =
         Math.floor(seconds / 60);
 
+
     const secs =
         Math.floor(seconds % 60);
+
 
     return minutes +
         ":" +
@@ -1550,7 +1716,6 @@ function formatTime(seconds) {
 }
 
 </script>
-
 
 </body>
 </html>
