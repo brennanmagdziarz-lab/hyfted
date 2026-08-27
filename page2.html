@@ -41,8 +41,7 @@ body {
 
 
 /* =========================
-   FULL-SCREEN BOTTOM UNDERGLOW
-   RECTANGULAR — NO ROUNDED EDGES
+   GEMINI BOTTOM UNDERGLOW
 ========================= */
 
 body::after {
@@ -52,66 +51,63 @@ body::after {
 
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: -30px;
 
     width: 100%;
-    height: 230px;
+    height: 145px;
 
     pointer-events: none;
-
-    z-index: 0;
 
     background:
         linear-gradient(
             90deg,
-            #1677ff,
-            #6246ea,
-            #9b36d6,
-            #e33cff,
-            #ff5fcf,
-            #7c5cff,
-            #29c6ff,
-            #1677ff
+            rgba(0,198,255,0.55),
+            rgba(106,92,255,0.65),
+            rgba(196,60,255,0.62),
+            rgba(255,53,184,0.58),
+            rgba(255,107,53,0.52),
+            rgba(255,230,0,0.45),
+            rgba(0,229,255,0.55),
+            rgba(106,92,255,0.65)
         );
 
     background-size: 500% 100%;
 
-    animation: bottomGeminiWave 6s ease-in-out infinite;
+    filter: blur(28px);
 
-    /*
-       Fade upward into the navy background.
-       The bottom remains colorful while the top
-       gradually disappears.
-    */
+    opacity: 0.65;
 
-    -webkit-mask-image:
+    animation: bottomGeminiWave 5s ease-in-out infinite;
+
+    z-index: 0;
+}
+
+
+/* Dark fade over the top of the glow */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 150px;
+
+    pointer-events: none;
+
+    background:
         linear-gradient(
-            to top,
-            black 0%,
-            black 12%,
-            rgba(0,0,0,0.85) 30%,
-            rgba(0,0,0,0.5) 55%,
-            rgba(0,0,0,0.18) 78%,
-            transparent 100%
+            to bottom,
+            rgba(7,21,47,0),
+            rgba(7,21,47,0.12) 35%,
+            rgba(7,21,47,0.55) 70%,
+            rgba(7,21,47,0.95) 100%
         );
 
-    mask-image:
-        linear-gradient(
-            to top,
-            black 0%,
-            black 12%,
-            rgba(0,0,0,0.85) 30%,
-            rgba(0,0,0,0.5) 55%,
-            rgba(0,0,0,0.18) 78%,
-            transparent 100%
-        );
-
-    filter:
-        blur(22px);
-
-    transform: translateY(15px) scaleX(1.04);
-
-    opacity: 0.85;
+    z-index: 0;
 }
 
 
@@ -182,7 +178,6 @@ body::after {
 
 /* =========================
    MAIN CONTAINER
-   NO OUTER BORDER
 ========================= */
 
 .container {
@@ -570,26 +565,27 @@ h1 {
 
     0% {
         background-position: 0% 50%;
+        opacity: 0.55;
     }
 
-    20% {
-        background-position: 25% 45%;
+    25% {
+        background-position: 30% 50%;
+        opacity: 0.65;
     }
 
-    40% {
-        background-position: 55% 55%;
+    50% {
+        background-position: 70% 50%;
+        opacity: 0.60;
     }
 
-    60% {
-        background-position: 80% 45%;
-    }
-
-    80% {
-        background-position: 100% 55%;
+    75% {
+        background-position: 100% 50%;
+        opacity: 0.65;
     }
 
     100% {
         background-position: 0% 50%;
+        opacity: 0.55;
     }
 
 }
@@ -650,10 +646,6 @@ h1 {
 
     .music-title {
         font-size: 1rem;
-    }
-
-    body::after {
-        height: 190px;
     }
 
 }
@@ -723,7 +715,9 @@ h1 {
     <div class="samples">
 
 
-        <!-- SAMPLE 1 -->
+        <!-- =========================
+             SAMPLE 1 — CALM MUSIC
+        ========================= -->
 
         <div class="music-item">
 
@@ -797,7 +791,9 @@ h1 {
         </div>
 
 
-        <!-- SAMPLE 2 -->
+        <!-- =========================
+             SAMPLE 2 — PRETTYJOHN LOFI
+        ========================= -->
 
         <div class="music-item">
 
@@ -871,7 +867,9 @@ h1 {
         </div>
 
 
-        <!-- SAMPLE 3 -->
+        <!-- =========================
+             SAMPLE 3 — PULSEBOX
+        ========================= -->
 
         <div class="music-item">
 
