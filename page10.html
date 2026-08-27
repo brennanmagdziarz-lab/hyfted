@@ -18,11 +18,10 @@
     box-sizing: border-box;
 }
 
-
-/* =========================
-   BODY
-   STATIC DARK NAVY
-========================= */
+html {
+    min-height: 100%;
+    background: #07152f;
+}
 
 body {
     min-height: 100vh;
@@ -31,93 +30,98 @@ body {
     font-family: 'Outfit', sans-serif;
     color: white;
 
-    background:
-        #07152f;
+    background: #07152f;
 
     position: relative;
-
     overflow-x: hidden;
 }
 
 
-/* =========================
-   RAINBOW BOTTOM UNDERGLOW
-========================= */
+/* =====================================================
+   FULL-WIDTH RAINBOW GEMINI UNDERGLOW
+   RECTANGULAR — NO ROUNDED EDGES
+===================================================== */
 
 body::after {
-    content: "";
 
-    position: fixed;
-
-    left: -10%;
-    bottom: -45px;
-
-    width: 120%;
-    height: 110px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #00c6ff,
-            #4169ff,
-            #7b35ff,
-            #c52cff,
-            #ff35b8,
-            #ff4f7b,
-            #ff8a3d,
-            #ffe600,
-            #35e8ff,
-            #00c6ff
-        );
-
-    background-size: 500% 100%;
-
-    filter: blur(30px);
-
-    opacity: 0.85;
-
-    animation: bottomGeminiWave 5s ease-in-out infinite;
-
-    pointer-events: none;
-
-    z-index: 0;
-}
-
-
-/* =========================
-   SECONDARY SOFT GLOW
-========================= */
-
-body::before {
     content: "";
 
     position: fixed;
 
     left: 0;
-    bottom: 0;
+    bottom: -35px;
 
-    width: 100%;
-    height: 55px;
+    width: 100vw;
+    height: 230px;
 
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0,198,255,0.25),
-            rgba(123,53,255,0.3),
-            rgba(255,53,184,0.3),
-            rgba(255,230,0,0.2),
-            rgba(0,198,255,0.25)
-        );
-
-    background-size: 500% 100%;
-
-    filter: blur(20px);
-
-    animation: bottomGeminiWave 5s ease-in-out infinite;
+    border-radius: 0;
 
     pointer-events: none;
 
     z-index: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #1677ff,
+            #6246ea,
+            #9b36d6,
+            #e33cff,
+            #ff5fcf,
+            #7c5cff,
+            #29c6ff,
+            #1677ff,
+            #6246ea,
+            #e33cff,
+            #ff5fcf,
+            #29c6ff
+        );
+
+    background-size: 500% 100%;
+
+    animation: bottomGeminiGlow 7s ease-in-out infinite;
+
+    filter: blur(28px);
+
+    opacity: 0.75;
+
+    /*
+       Fades upward from the bottom.
+       The bottom remains strong while the
+       top smoothly disappears.
+    */
+
+    -webkit-mask-image:
+        linear-gradient(
+            to top,
+            black 0%,
+            black 18%,
+            rgba(0,0,0,0.8) 35%,
+            rgba(0,0,0,0.45) 58%,
+            transparent 100%
+        );
+
+    mask-image:
+        linear-gradient(
+            to top,
+            black 0%,
+            black 18%,
+            rgba(0,0,0,0.8) 35%,
+            rgba(0,0,0,0.45) 58%,
+            transparent 100%
+        );
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.navigation-wrapper,
+.app,
+.player {
+    position: relative;
+    z-index: 2;
 }
 
 
@@ -217,18 +221,14 @@ body::before {
 
     background: transparent;
 
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-
     border: none;
 
     border-radius: 0;
 
     box-shadow: none;
 
-    position: relative;
-
-    z-index: 2;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
 }
 
 
@@ -273,11 +273,9 @@ h1 {
     background-size: 400% 400%;
 
     -webkit-background-clip: text;
-
     -webkit-text-fill-color: transparent;
 
-    /* Static now so the page stays relaxing */
-    animation: none;
+    animation: moveTextGradient 5s ease infinite;
 }
 
 .subtitle {
@@ -305,7 +303,6 @@ h1 {
     position: absolute;
 
     left: 17px;
-
     top: 50%;
 
     transform: translateY(-50%);
@@ -322,13 +319,13 @@ h1 {
 
     padding: 0 20px 0 48px;
 
-    border: 1px solid rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.25);
 
     border-radius: 50px;
 
     outline: none;
 
-    background: rgba(0,0,0,0.22);
+    background: rgba(0,0,0,0.18);
 
     color: white;
 
@@ -338,13 +335,13 @@ h1 {
 }
 
 .search::placeholder {
-    color: rgba(255,255,255,0.55);
+    color: rgba(255,255,255,0.6);
 }
 
 .search:focus {
-    background: rgba(0,0,0,0.3);
+    background: rgba(0,0,0,0.25);
 
-    border-color: rgba(255,255,255,0.4);
+    border-color: rgba(255,255,255,0.5);
 }
 
 
@@ -379,9 +376,9 @@ h1 {
 
     border-radius: 50px;
 
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.25);
 
-    background: rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.10);
 
     color: white;
 
@@ -399,7 +396,7 @@ h1 {
 }
 
 .category-button:hover {
-    background: rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.20);
 
     transform: translateY(-1px);
 }
@@ -407,12 +404,12 @@ h1 {
 .category-button.active {
     background: white;
 
-    color: #163263;
+    color: #633bd4;
 
     border-color: white;
 
     box-shadow:
-        0 4px 15px rgba(0,0,0,0.25);
+        0 4px 15px rgba(0,0,0,0.15);
 }
 
 
@@ -458,7 +455,7 @@ h1 {
 }
 
 .song:hover {
-    background: rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.13);
 }
 
 
@@ -482,12 +479,16 @@ h1 {
     font-size: 1.3rem;
 
     background:
-        rgba(255,255,255,0.12);
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.4),
+            rgba(255,255,255,0.08)
+        );
 
-    border: 1px solid rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.2);
 
     box-shadow:
-        0 5px 15px rgba(0,0,0,0.25);
+        0 5px 15px rgba(0,0,0,0.15);
 }
 
 
@@ -514,7 +515,7 @@ h1 {
 .song-category {
     font-size: 0.72rem;
 
-    color: rgba(255,255,255,0.55);
+    color: rgba(255,255,255,0.58);
 
     margin-top: 2px;
 }
@@ -522,14 +523,14 @@ h1 {
 .locked-small {
     font-size: 0.68rem;
 
-    color: rgba(255,255,255,0.6);
+    color: rgba(255,255,255,0.65);
 
     margin-top: 4px;
 }
 
 
 /* =========================
-   PLAY
+   PLAY BUTTON
 ========================= */
 
 .play-button {
@@ -539,9 +540,9 @@ h1 {
 
     border-radius: 50%;
 
-    border: 1px solid rgba(255,255,255,0.25);
+    border: 1px solid rgba(255,255,255,0.35);
 
-    background: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.15);
 
     color: white;
 
@@ -557,7 +558,7 @@ h1 {
 }
 
 .play-button:hover {
-    background: rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.3);
 
     transform: scale(1.08);
 }
@@ -642,7 +643,7 @@ h1 {
     font-size: 0.95rem;
 
     box-shadow:
-        0 8px 25px rgba(0,0,0,0.3);
+        0 8px 25px rgba(0,0,0,0.25);
 
     transition:
         transform 0.2s,
@@ -653,13 +654,13 @@ h1 {
     transform: scale(1.05);
 
     box-shadow:
-        0 10px 30px rgba(0,0,0,0.45);
+        0 10px 30px rgba(0,0,0,0.35);
 }
 
 
 /* =========================
-   PREMIUM BUTTON
-   GEMINI ANIMATION
+   PREMIUM
+   GEMINI COLOR WAVE
 ========================= */
 
 .premium-button {
@@ -705,8 +706,8 @@ h1 {
         premiumGeminiWave 3.2s ease-in-out infinite;
 
     box-shadow:
-        0 0 12px rgba(0,229,255,0.7),
-        0 0 25px rgba(196,60,255,0.55),
+        0 0 12px rgba(0,229,255,0.75),
+        0 0 25px rgba(196,60,255,0.65),
         0 8px 28px rgba(0,0,0,0.35);
 
     border: 1px solid rgba(255,255,255,0.7);
@@ -752,87 +753,6 @@ h1 {
 
 
 /* =========================
-   PREMIUM ANIMATIONS
-========================= */
-
-@keyframes premiumGeminiWave {
-
-    0% {
-        background-position: 0% 50%;
-    }
-
-    20% {
-        background-position: 35% 80%;
-    }
-
-    40% {
-        background-position: 70% 30%;
-    }
-
-    60% {
-        background-position: 100% 65%;
-    }
-
-    80% {
-        background-position: 55% 10%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-
-}
-
-@keyframes premiumShimmer {
-
-    0% {
-        background-position: 0% 50%;
-        opacity: 0.25;
-    }
-
-    50% {
-        background-position: 100% 50%;
-        opacity: 0.65;
-    }
-
-    100% {
-        background-position: 0% 50%;
-        opacity: 0.25;
-    }
-
-}
-
-
-/* =========================
-   BOTTOM GEMINI UNDERGLOW
-========================= */
-
-@keyframes bottomGeminiWave {
-
-    0% {
-        background-position: 0% 50%;
-    }
-
-    25% {
-        background-position: 50% 40%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    75% {
-        background-position: 50% 60%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-
-}
-
-
-/* =========================
    BACK BUTTONS
 ========================= */
 
@@ -859,15 +779,13 @@ h1 {
 
     font-weight: 600;
 
-    background: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.15);
 
-    border: 1px solid rgba(255,255,255,0.2);
-
-    transition: 0.2s;
+    border: 1px solid rgba(255,255,255,0.25);
 }
 
 .back-btn:hover {
-    background: rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.25);
 }
 
 
@@ -899,18 +817,17 @@ h1 {
 
     gap: 15px;
 
-    background: rgba(8,20,48,0.88);
+    background: rgba(20,10,40,0.65);
 
     backdrop-filter: blur(25px);
-
     -webkit-backdrop-filter: blur(25px);
 
-    border: 1px solid rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.2);
 
     border-radius: 20px;
 
     box-shadow:
-        0 10px 40px rgba(0,0,0,0.45);
+        0 10px 40px rgba(0,0,0,0.3);
 
     z-index: 2000;
 }
@@ -948,7 +865,7 @@ h1 {
 
     background: white;
 
-    color: #18336b;
+    color: #5d35d5;
 
     font-size: 1rem;
 
@@ -985,6 +902,108 @@ h1 {
 
 
 /* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes bottomGeminiGlow {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    20% {
+        background-position: 25% 50%;
+    }
+
+    40% {
+        background-position: 55% 50%;
+    }
+
+    60% {
+        background-position: 80% 50%;
+    }
+
+    80% {
+        background-position: 55% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
+}
+
+
+@keyframes moveTextGradient {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
+}
+
+
+@keyframes premiumGeminiWave {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    20% {
+        background-position: 35% 80%;
+    }
+
+    40% {
+        background-position: 70% 30%;
+    }
+
+    60% {
+        background-position: 100% 65%;
+    }
+
+    80% {
+        background-position: 55% 10%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
+}
+
+
+@keyframes premiumShimmer {
+
+    0% {
+        background-position: 0% 50%;
+
+        opacity: 0.25;
+    }
+
+    50% {
+        background-position: 100% 50%;
+
+        opacity: 0.65;
+    }
+
+    100% {
+        background-position: 0% 50%;
+
+        opacity: 0.25;
+    }
+
+}
+
+
+/* =========================
    MOBILE
 ========================= */
 
@@ -994,8 +1013,26 @@ h1 {
         padding: 105px 10px 170px;
     }
 
+    body::after {
+        height: 190px;
+
+        bottom: -30px;
+
+        filter: blur(24px);
+    }
+
     .app {
         padding: 20px 12px;
+
+        background: transparent;
+
+        border: none;
+
+        box-shadow: none;
+
+        backdrop-filter: none;
+
+        -webkit-backdrop-filter: none;
     }
 
     h1 {
@@ -1009,6 +1046,12 @@ h1 {
             38px;
 
         gap: 10px;
+
+        background: transparent;
+
+        border: none;
+
+        box-shadow: none;
     }
 
     .art {
@@ -1041,11 +1084,6 @@ h1 {
     }
 
 }
-
-
-/* =========================
-   AUDIO
-========================= */
 
 audio {
     display: none;
@@ -1139,43 +1177,37 @@ audio {
 
         <button
             class="category-button active"
-            data-category="all"
-        >
+            data-category="all">
             All
         </button>
 
         <button
             class="category-button"
-            data-category="lofi"
-        >
+            data-category="lofi">
             Lo-Fi
         </button>
 
         <button
             class="category-button"
-            data-category="piano"
-        >
+            data-category="piano">
             Relaxing Piano
         </button>
 
         <button
             class="category-button"
-            data-category="stress"
-        >
+            data-category="stress">
             Stress Relief
         </button>
 
         <button
             class="category-button"
-            data-category="jazz"
-        >
+            data-category="jazz">
             Jazz
         </button>
 
         <button
             class="category-button"
-            data-category="chill"
-        >
+            data-category="chill">
             Chill
         </button>
 
@@ -1187,13 +1219,10 @@ audio {
     <div id="songList" class="song-list">
 
 
-        <!-- SONG 1 -->
-
         <div
             class="song"
             data-title="Relaxing Piano"
-            data-category="piano stress chill"
-        >
+            data-category="piano stress chill">
 
             <div class="art">
                 🎹
@@ -1217,21 +1246,17 @@ audio {
 
             <button
                 class="play-button"
-                onclick="attemptPlay(0)"
-            >
+                onclick="attemptPlay(0)">
                 ▶
             </button>
 
         </div>
 
 
-        <!-- SONG 2 -->
-
         <div
             class="song"
             data-title="Relaxing Jazz Coffee Shop"
-            data-category="jazz chill stress"
-        >
+            data-category="jazz chill stress">
 
             <div class="art">
                 ☕
@@ -1255,21 +1280,17 @@ audio {
 
             <button
                 class="play-button"
-                onclick="attemptPlay(1)"
-            >
+                onclick="attemptPlay(1)">
                 ▶
             </button>
 
         </div>
 
 
-        <!-- SONG 3 -->
-
         <div
             class="song"
             data-title="Relaxing Jazz Piano"
-            data-category="jazz piano chill"
-        >
+            data-category="jazz piano chill">
 
             <div class="art">
                 🎹
@@ -1293,21 +1314,17 @@ audio {
 
             <button
                 class="play-button"
-                onclick="attemptPlay(2)"
-            >
+                onclick="attemptPlay(2)">
                 ▶
             </button>
 
         </div>
 
 
-        <!-- SONG 4 -->
-
         <div
             class="song"
             data-title="Podcast Lo-Fi Music"
-            data-category="lofi chill"
-        >
+            data-category="lofi chill">
 
             <div class="art">
                 🎧
@@ -1331,21 +1348,17 @@ audio {
 
             <button
                 class="play-button"
-                onclick="attemptPlay(3)"
-            >
+                onclick="attemptPlay(3)">
                 ▶
             </button>
 
         </div>
 
 
-        <!-- SONG 5 -->
-
         <div
             class="song"
             data-title="Smooth Jazz Instrumental Music"
-            data-category="jazz chill stress"
-        >
+            data-category="jazz chill stress">
 
             <div class="art">
                 🎷
@@ -1369,8 +1382,7 @@ audio {
 
             <button
                 class="play-button"
-                onclick="attemptPlay(4)"
-            >
+                onclick="attemptPlay(4)">
                 ▶
             </button>
 
@@ -1381,8 +1393,7 @@ audio {
 
     <div
         id="noResults"
-        class="no-results"
-    >
+        class="no-results">
         No songs found.
     </div>
 
@@ -1405,8 +1416,7 @@ audio {
 
             <a
                 href="https://buy.stripe.com/test_7sY00cb6bg2D4yCdJd7wA00"
-                class="subscription-button"
-            >
+                class="subscription-button">
                 Subscription (Standard)
             </a>
 
@@ -1415,8 +1425,7 @@ audio {
 
             <a
                 href="#"
-                class="subscription-button"
-            >
+                class="subscription-button">
                 Subscription (Plus)
             </a>
 
@@ -1425,33 +1434,29 @@ audio {
 
             <a
                 href="#"
-                class="premium-button"
-            >
+                class="premium-button">
                 Premium
             </a>
+
 
         </div>
 
     </div>
 
 
-    <!-- =========================
-         BACK BUTTONS
-    ========================= -->
+    <!-- BACK BUTTONS -->
 
     <div class="back-row">
 
         <a
             href="page2.html"
-            class="back-btn"
-        >
+            class="back-btn">
             ← Music
         </a>
 
         <a
             href="index.html"
-            class="back-btn"
-        >
+            class="back-btn">
             Home
         </a>
 
@@ -1467,32 +1472,32 @@ audio {
 <audio
     id="audio0"
     preload="none"
-    data-song="relaxing-piano"
-></audio>
+    data-song="relaxing-piano">
+</audio>
 
 <audio
     id="audio1"
     preload="none"
-    data-song="coffee-shop-jazz"
-></audio>
+    data-song="coffee-shop-jazz">
+</audio>
 
 <audio
     id="audio2"
     preload="none"
-    data-song="jazz-piano"
-></audio>
+    data-song="jazz-piano">
+</audio>
 
 <audio
     id="audio3"
     preload="none"
-    data-song="lofi"
-></audio>
+    data-song="lofi">
+</audio>
 
 <audio
     id="audio4"
     preload="none"
-    data-song="smooth-jazz"
-></audio>
+    data-song="smooth-jazz">
+</audio>
 
 
 <!-- =========================
@@ -1505,15 +1510,13 @@ audio {
 
         <div
             id="nowTitle"
-            class="now-title"
-        >
+            class="now-title">
             Nothing Playing
         </div>
 
         <div
             id="nowStatus"
-            class="now-status"
-        >
+            class="now-status">
             Choose a song
         </div>
 
@@ -1523,8 +1526,7 @@ audio {
     <button
         id="mainPlay"
         class="main-play"
-        onclick="toggleCurrent()"
-    >
+        onclick="toggleCurrent()">
         ▶
     </button>
 
@@ -1542,8 +1544,7 @@ audio {
 
         <span
             id="playerTime"
-            class="player-time"
-        >
+            class="player-time">
             0:00
         </span>
 
