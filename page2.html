@@ -18,6 +18,11 @@
     box-sizing: border-box;
 }
 
+html {
+    min-height: 100%;
+    background: #07152f;
+}
+
 body {
     min-height: 100vh;
     padding: 125px 15px 40px;
@@ -28,20 +33,85 @@ body {
 
     font-family: 'Great Vibes', cursive;
 
-    background: linear-gradient(
-        135deg,
-        #1677ff,
-        #6246ea,
-        #9b36d6,
-        #e33cff,
-        #ff5fcf,
-        #7c5cff,
-        #29c6ff,
-        #1677ff
-    );
+    background: #07152f;
 
-    background-size: 500% 500%;
-    animation: geminiWave 5s ease-in-out infinite;
+    position: relative;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   FULL-SCREEN BOTTOM UNDERGLOW
+   RECTANGULAR — NO ROUNDED EDGES
+========================= */
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 230px;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #1677ff,
+            #6246ea,
+            #9b36d6,
+            #e33cff,
+            #ff5fcf,
+            #7c5cff,
+            #29c6ff,
+            #1677ff
+        );
+
+    background-size: 500% 100%;
+
+    animation: bottomGeminiWave 6s ease-in-out infinite;
+
+    /*
+       Fade upward into the navy background.
+       The bottom remains colorful while the top
+       gradually disappears.
+    */
+
+    -webkit-mask-image:
+        linear-gradient(
+            to top,
+            black 0%,
+            black 12%,
+            rgba(0,0,0,0.85) 30%,
+            rgba(0,0,0,0.5) 55%,
+            rgba(0,0,0,0.18) 78%,
+            transparent 100%
+        );
+
+    mask-image:
+        linear-gradient(
+            to top,
+            black 0%,
+            black 12%,
+            rgba(0,0,0,0.85) 30%,
+            rgba(0,0,0,0.5) 55%,
+            rgba(0,0,0,0.18) 78%,
+            transparent 100%
+        );
+
+    filter:
+        blur(22px);
+
+    transform: translateY(15px) scaleX(1.04);
+
+    opacity: 0.85;
 }
 
 
@@ -123,7 +193,6 @@ body {
 
     text-align: center;
 
-    /* Removed the large outer glass border */
     background: transparent;
 
     backdrop-filter: none;
@@ -133,6 +202,9 @@ body {
     border-radius: 0;
 
     box-shadow: none;
+
+    position: relative;
+    z-index: 2;
 }
 
 
@@ -494,14 +566,26 @@ h1 {
    ANIMATIONS
 ========================= */
 
-@keyframes geminiWave {
+@keyframes bottomGeminiWave {
 
     0% {
         background-position: 0% 50%;
     }
 
-    50% {
-        background-position: 100% 50%;
+    20% {
+        background-position: 25% 45%;
+    }
+
+    40% {
+        background-position: 55% 55%;
+    }
+
+    60% {
+        background-position: 80% 45%;
+    }
+
+    80% {
+        background-position: 100% 55%;
     }
 
     100% {
@@ -509,6 +593,7 @@ h1 {
     }
 
 }
+
 
 @keyframes moveTextGradient {
 
@@ -565,6 +650,10 @@ h1 {
 
     .music-title {
         font-size: 1rem;
+    }
+
+    body::after {
+        height: 190px;
     }
 
 }
@@ -634,9 +723,7 @@ h1 {
     <div class="samples">
 
 
-        <!-- =========================
-             SAMPLE 1 — CALM MUSIC
-        ========================= -->
+        <!-- SAMPLE 1 -->
 
         <div class="music-item">
 
@@ -710,9 +797,7 @@ h1 {
         </div>
 
 
-        <!-- =========================
-             SAMPLE 2 — PRETTYJOHN LOFI
-        ========================= -->
+        <!-- SAMPLE 2 -->
 
         <div class="music-item">
 
@@ -786,9 +871,7 @@ h1 {
         </div>
 
 
-        <!-- =========================
-             SAMPLE 3 — PULSEBOX
-        ========================= -->
+        <!-- SAMPLE 3 -->
 
         <div class="music-item">
 
